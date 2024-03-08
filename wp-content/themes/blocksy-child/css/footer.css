@@ -1,0 +1,15 @@
+#footer {
+    border-top: 1px solid #57EFD0;
+}
+
+
+#footer .footer-links > a {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px ) {
+    #footer .footer-links {
+        display: flex;
+    }
+}
