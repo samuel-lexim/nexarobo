@@ -1,15 +1,82 @@
 #footer {
-    border-top: 1px solid #57EFD0;
+    border-top: 1px solid #ABE1FA;
 }
 
+#footer .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 #footer .footer-links > a {
     margin-right: 10px;
+}
+
+
+@media screen and (min-width: 768px ) {
+    .ct-footer-copyright[data-id=copyright] {
+        font-weight: 400;
+    }
+}
+
+/* Newsletter Form */
+[data-hook-id="2174"] {
+    max-width: 290px;
+}
+
+[data-hook-id="2174"] .ct-block-wrapper {
+    margin-bottom: 15px;
+}
+
+[data-hook-id="2174"] .ct-block-wrapper > p.s18 {
     margin-bottom: 10px;
 }
 
-@media screen and (min-width: 768px ) {
-    #footer .footer-links {
-        display: flex;
+[data-hook-id="2174"] ._check label {
+    margin-bottom: 0;
+    color: #000 !important;
+}
+
+[data-hook-id="2174"] ._check a {
+    color: #000 !important;
+    text-decoration: none;
+}
+
+.ct-newsletter-subscribe-form {
+    position: relative;
+}
+
+.ct-newsletter-subscribe-block .ct-newsletter-subscribe-form .wp-element-button {
+    position: absolute;
+    width: 42px;
+    height: 23px;
+    min-height: 23px;
+    top: 9px;
+    right: 12px;
+    border-radius: 10px;
+    line-height: 0;
+    padding: 0;
+    border: 1px solid #37A7F4;
+    font-size: 0;
+    background-color: #37A7F4 !important;
+}
+
+.ct-newsletter-subscribe-form .wp-element-button:before {
+    content: "";
+    display: inline-flex;
+    width: 24px;
+    height: 20px;
+    background-image: url(../images/arrow.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 9999;
+    filter: unset !important;
+    opacity: 1 !important;
+    inset: auto;
+}
+
+@media only screen and (min-width: 768px ) {
+    [data-hook-id="2174"] .ct-block-wrapper > p.s18 {
+        margin-bottom: 15px;
     }
 }
