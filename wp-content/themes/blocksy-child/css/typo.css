@@ -55,7 +55,7 @@
 
 .s14 {
     font-family: "ProximaNova", sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.25;
     letter-spacing: 0.01em;
 }
@@ -104,7 +104,7 @@
 }
 
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 690px) {
     .h1 {
         font-size: 63px;
     }
@@ -141,7 +141,7 @@
     }
 }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1000px) {
     .h1 {
         font-size: 70px;
         line-height: 1.08;
