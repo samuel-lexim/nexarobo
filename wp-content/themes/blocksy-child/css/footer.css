@@ -45,6 +45,11 @@
     position: relative;
 }
 
+.ct-newsletter-subscribe-block .ct-newsletter-subscribe-form input[type="email"] {
+    padding-right: 50px;
+    width: 100%;
+}
+
 .ct-newsletter-subscribe-block .ct-newsletter-subscribe-form .wp-element-button {
     position: absolute;
     width: 42px;
@@ -73,6 +78,16 @@
     filter: unset !important;
     opacity: 1 !important;
     inset: auto;
+}
+
+@media only screen and (min-width: 690px) {
+    .ct-newsletter-subscribe-form[data-columns="2"] {
+        gap: 0;
+    }
+    
+    #footer [data-row="middle"] .ct-container > [data-column="content-block"] {
+        align-items: end;
+    }
 }
 
 @media only screen and (min-width: 768px ) {
