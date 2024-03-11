@@ -1,10 +1,41 @@
-/* Hero section */
-#post-2306 > .entry-content {
-    position: relative;
+.homePad {
+    padding-top: 110px;
+    padding-bottom: 110px;
 }
 
-#post-2306 .stk-block-image {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
+@media only screen and (min-width: 1000px) {
+    .homePad {
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+}
+
+
+/* Video section */
+.homeSectionVideo {
+
+}
+
+/* Redefining life section */
+@media only screen and (max-width: 767px) {
+    .home-redefining-wrap .s70 {
+        text-align: center !important;
+    }
+}
+
+
+/* home-GetYourQuote */
+.home-GetYourQuote-wrap {
+
+}
+
+.home-GetYourQuote-wrap .wp-block-cover {
+    min-height: 500px;
+}
+.home-GetYourQuote-wrap .l-fullwidth .wp-block-cover__inner-container {
+    width: 100% !important;
+}
+
+.home-GetYourQuote-wrap ._w560 {
+    max-width: 560px !important;
 }

@@ -11,3 +11,18 @@
     color: #37A7F4 !important;
     border-color: #fff !important;
 }
+
+.l-w1024 {
+    max-width: 1024px !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.l-w1000 {
+    max-width: 1000px !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+

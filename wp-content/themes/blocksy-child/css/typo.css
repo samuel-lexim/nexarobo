@@ -1,4 +1,4 @@
-.h1 {
+.h1, .s70 {
     font-family: "ProximaNova", sans-serif;
     font-size: 56px;
     font-weight: 600;
@@ -105,7 +105,7 @@
 
 
 @media only screen and (min-width: 690px) {
-    .h1 {
+    .h1, .s70 {
         font-size: 63px;
     }
     
@@ -142,7 +142,7 @@
 }
 
 @media only screen and (min-width: 1000px) {
-    .h1 {
+    .h1, .s70 {
         font-size: 70px;
         line-height: 1.08;
     }
@@ -181,4 +181,10 @@
         font-size: 14px;
         line-height: 1.25;
     }
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #37A7F4 0%, #D3F40B 100%);
+    background-clip: text;
+    color: transparent;
 }
