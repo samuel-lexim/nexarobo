@@ -1,5 +1,6 @@
-
 @import "typo.css";
+@import "layout.css";
+@import "header.css";
 @import "footer.css";
 
-
+@import "page-home.css";

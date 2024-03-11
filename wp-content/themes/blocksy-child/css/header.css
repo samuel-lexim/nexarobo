@@ -1,0 +1,8 @@
+
+
+@media only screen and (min-width: 1000px) {
+
+    .ct-header [data-device="desktop"] .ct-container-fluid {
+        max-width: 1200px;
+    }
+}

@@ -48,14 +48,23 @@ $trigger_label_alignment = blocksy_expand_responsive_value(
 
 	<span class="<?php echo $label_class ?>"><?php echo $trigger_label ?></span>
 
+    <?php /*
 	<svg
 		class="ct-icon"
 		width="18" height="14" viewBox="0 0 18 14"
 		aria-hidden="true"
-		data-type="<?php echo esc_attr($trigger_type) ?>">
-
+		data-type="<1?php echo esc_attr($trigger_type) ?>">
 		<rect y="0.00" width="18" height="1.7" rx="1"/>
 		<rect y="6.15" width="18" height="1.7" rx="1"/>
 		<rect y="12.3" width="18" height="1.7" rx="1"/>
 	</svg>
+    */
+	?>
+
+    <svg class="ct-icon" aria-hidden="true" data-type="<?php echo esc_attr($trigger_type) ?>"
+    width="32" height="16" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect y="10.345" width="27" height="5" rx="2.5" fill="white"/>
+        <rect x="5" y="0.344971" width="27" height="5" rx="2.5" fill="white"/>
+    </svg>
+
 </button>
