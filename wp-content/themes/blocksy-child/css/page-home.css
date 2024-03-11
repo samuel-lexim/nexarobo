@@ -39,10 +39,32 @@
     }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1024px) {
+    .journey-group {
+        max-width: 860px !important;
+    }
+    
+    .journey-group > .wp-block-stackable-heading {
+        padding: 0 40px;
+    }
+    
+    .journey-group > p {
+        padding: 0 90px;
+    
+    }
+
     .journey-group ._stepImg {
         display: block;
     }
+    
+    .journey-accordion {
+        display: none;
+    }
+    
+    .journey-group-desktop .wp-block-group > p:first-child {
+        font-weight: 500 !important;
+    }
+    
 }
 
 
