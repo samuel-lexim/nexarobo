@@ -1,4 +1,8 @@
 <?php
+if (!defined('_S_VERSION')) {
+    // Replace the version number of the theme on each release.
+    define('_S_VERSION', '1.0.0');
+}
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -11,6 +15,22 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('main-css', get_stylesheet_directory_uri() . '/css/main-style.css');
 });
 
+function add_custom_script_to_footer() {
+    /**
+     * Added in Custom Code Snippets of the theme
+     * <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     */
+
+    // Main js
+    wp_enqueue_script('main-script', get_stylesheet_directory_uri() . '/js/main.js',
+        array(), _S_VERSION, true);
+
+    // Added on Home page setting > Custom Snip
+//    wp_enqueue_script('home-script', get_stylesheet_directory_uri() . '/js/home.js',
+//        array(), _S_VERSION, true);
+
+}
+add_action('wp_footer', 'add_custom_script_to_footer');
 
 /* Disable WordPress Admin Bar for all users */
 add_filter('show_admin_bar', '__return_false');

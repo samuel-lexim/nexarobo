@@ -24,11 +24,31 @@
 }
 
 
-/* home-GetYourQuote */
-.home-GetYourQuote-wrap {
-
+/* Accordion section */
+.journey-group ._stepImg {
+    display: none;
 }
 
+.journey-accordion .stk-block-heading__text > span:first-child {
+    margin-right: 60px;
+}
+
+@media only screen and (max-width: 999px) {
+    .journey-accordion .stk-block-heading__text br {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .journey-group ._stepImg {
+        display: block;
+    }
+}
+
+
+
+
+/* home-GetYourQuote */
 .home-GetYourQuote-wrap .wp-block-cover {
     min-height: 500px;
 }
