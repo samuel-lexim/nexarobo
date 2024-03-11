@@ -1,0 +1,13 @@
+.l-fullwidth {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.white-button > a {
+    background-color: #fff !important;
+    color: #37A7F4 !important;
+    border-color: #fff !important;
+}

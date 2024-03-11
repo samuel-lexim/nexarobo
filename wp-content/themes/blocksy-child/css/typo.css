@@ -75,11 +75,11 @@
     font-weight: 200;
 }
 
-.fw300 {
+.fw300, .fwlight {
     font-weight: 300;
 }
 
-.fw400 {
+.fw400, .fwmedium {
     font-weight: 400;
 }
 

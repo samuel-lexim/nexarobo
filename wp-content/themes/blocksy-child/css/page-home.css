@@ -1,0 +1,10 @@
+/* Hero section */
+#post-2306 > .entry-content {
+    position: relative;
+}
+
+#post-2306 .stk-block-image {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
