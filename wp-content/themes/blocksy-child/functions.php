@@ -1,22 +1,19 @@
 <?php
-if (!defined('_S_VERSION')) {
-    // Replace the version number of the theme on each release.
-    define('_S_VERSION', '1.0.0');
-}
+const __VERSION = '6.5';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
 }
 
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css', [], __VERSION);
 
     // custom css
-    wp_enqueue_style('typo', get_stylesheet_directory_uri() . '/css/typo.css');
-    wp_enqueue_style('layout', get_stylesheet_directory_uri() . '/css/layout.css');
-    wp_enqueue_style('header', get_stylesheet_directory_uri() . '/css/header.css');
-    wp_enqueue_style('footer', get_stylesheet_directory_uri() . '/css/footer.css');
-    wp_enqueue_style('page-home', get_stylesheet_directory_uri() . '/css/page-home.css');
+    wp_enqueue_style('typo', get_stylesheet_directory_uri() . '/css/typo.css', [], __VERSION,);
+    wp_enqueue_style('layout', get_stylesheet_directory_uri() . '/css/layout.css', [], __VERSION,);
+    wp_enqueue_style('header', get_stylesheet_directory_uri() . '/css/header.css', [], __VERSION);
+    wp_enqueue_style('footer', get_stylesheet_directory_uri() . '/css/footer.css', [], __VERSION);
+    wp_enqueue_style('page-home', get_stylesheet_directory_uri() . '/css/page-home.css', [], __VERSION);
 
 
 });
@@ -29,7 +26,7 @@ function add_custom_script_to_footer() {
 
     // Main js
     wp_enqueue_script('main-script', get_stylesheet_directory_uri() . '/js/main.js',
-        array(), _S_VERSION, true);
+        array(), __VERSION, true);
 
     // Added on Home page setting > Custom Snip
 //    wp_enqueue_script('home-script', get_stylesheet_directory_uri() . '/js/home.js',
