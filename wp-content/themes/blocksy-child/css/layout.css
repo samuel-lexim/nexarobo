@@ -32,6 +32,9 @@
     max-width: 700px !important;
 }
 
+.maxWidth750 {
+    max-width: 750px !important;
+}
 
 /* Spacing */
 :is(.entry-content,.is-layout-flow,.is-layout-constrained) > *:where(.alignfull) {

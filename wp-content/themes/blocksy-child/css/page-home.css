@@ -7,13 +7,6 @@
     font-weight: 300 !important;
 }
 
-@media only screen and (min-width: 1000px) {
-    .home-hero {
-        min-height: 700px !important;
-        max-height: 700px;
-    }
-}
-
 
 /* Video section */
 @media only screen and (min-width: 1000px) {
@@ -33,7 +26,7 @@
     line-height: 1.08 !important;
 }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 999px) {
     .home-redefining-wrap .s70 {
         text-align: center !important;
     }
@@ -48,10 +41,7 @@
         max-width: 600px;
         margin: 0 auto;
     }
-}
 
-
-@media only screen and (min-width: 768px) {
     .home-redefining-wrap {
         padding-left: 30px;
         padding-right: 30px;
@@ -81,6 +71,10 @@
 }
 
 
+/* Home - success stories */
+
+
+
 /* Accordion section */
 .journey-group ._stepImg {
     display: none;
@@ -105,7 +99,7 @@
     }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1000px) {
     .journey-group {
         max-width: 860px !important;
     }
