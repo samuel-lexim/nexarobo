@@ -1,19 +1,29 @@
-.homePad {
-    padding-top: 110px;
-    padding-bottom: 110px;
+/* Hero section */
+.home-hero .wp-block-cover__inner-container > .wp-block-group > * {
+    max-width: 680px;
+}
+
+.home-hero .wp-block-cover__inner-container > .wp-block-group .wp-block-heading.fw300 {
+    font-weight: 300 !important;
 }
 
 @media only screen and (min-width: 1000px) {
-    .homePad {
-        padding-top: 150px;
-        padding-bottom: 150px;
+    .home-hero {
+        min-height: 700px !important;
+        max-height: 700px;
     }
 }
 
 
 /* Video section */
-.homeSectionVideo {
-
+@media only screen and (min-width: 1000px) {
+    .homeSectionVideo > .wp-block-heading {
+        margin-bottom: 30px !important;
+    }
+    
+    .homeSectionVideo > p {
+        margin-bottom: 50px;
+    }
 }
 
 /* Redefining life section */
@@ -23,14 +33,45 @@
     }
 }
 
+@media only screen and (min-width: 768px) {
+    .home-redefining-wrap {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    .home-redefining-wrap .stk-row.stk-inner-blocks > .stk-column:last-child {
+        padding-left: 30px;
+    }
+}
+
+@media only screen and (min-width: 1130px) {
+    .home-redefining-wrap {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .home-redefining-wrap .stk-row.stk-inner-blocks > .stk-column:last-child {
+        padding-left: 50px;
+    }
+}
+
 
 /* Accordion section */
 .journey-group ._stepImg {
     display: none;
 }
 
+.journey-accordion {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
 .journey-accordion .stk-block-heading__text > span:first-child {
     margin-right: 60px;
+}
+
+.journey-group > .wp-block-buttons {
+    margin-top: 0;
 }
 
 @media only screen and (max-width: 999px) {
@@ -50,9 +91,9 @@
     
     .journey-group > p {
         padding: 0 90px;
-    
+        
     }
-
+    
     .journey-group ._stepImg {
         display: block;
     }
@@ -68,12 +109,11 @@
 }
 
 
-
-
 /* home-GetYourQuote */
 .home-GetYourQuote-wrap .wp-block-cover {
     min-height: 500px;
 }
+
 .home-GetYourQuote-wrap .l-fullwidth .wp-block-cover__inner-container {
     width: 100% !important;
 }
