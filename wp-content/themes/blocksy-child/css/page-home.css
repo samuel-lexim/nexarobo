@@ -125,8 +125,19 @@
     }
 }
 
-@media only screen and (max-width: 689px) {
+@media only screen and (min-width: 1000px) {
+    .stk-block-carousel__dot,
+    .stk-block-carousel__dot.stk-block-carousel__dot--active {
+        width: 50px !important;
+        margin-inline-start: 9px;
+        margin-inline-end: 9px;
+    }
 
+    .stk-block-carousel__dot:before,
+    .stk-block-carousel__dot.stk-block-carousel__dot--active:before {
+        width: 50px !important;
+        height: 6px !important;
+    }
 }
 
 /* Home Product Slider */
