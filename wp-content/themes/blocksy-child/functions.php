@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '6.6';
+const __VERSION = '6.8';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -7,6 +7,10 @@ if (!defined('WP_DEBUG')) {
 
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css', [], __VERSION);
+
+    // Slick CSS
+//    wp_enqueue_style('slick', get_stylesheet_directory_uri() . '/css/slick/slick.css', [], __VERSION);
+//    wp_enqueue_style('slick-theme', get_stylesheet_directory_uri() . '/css/slick/slick-theme.css', [], __VERSION);
 
     // custom css
     wp_enqueue_style('typo', get_stylesheet_directory_uri() . '/css/typo.css', [], __VERSION,);
@@ -16,22 +20,21 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('page-home', get_stylesheet_directory_uri() . '/css/page-home.css', [], __VERSION);
 
 
+    // Jquery
+    wp_enqueue_script('jquery3', get_stylesheet_directory_uri() . '/js/jquery/jquery-3.7.1.min.js',
+        array(), __VERSION, true);
+//    wp_enqueue_script('jquery-migrate', get_stylesheet_directory_uri() . '/js/jquery/jquery-migrate-1.2.1.min.js',
+//        array(), __VERSION, true);
+
+    // Slick js
+    wp_enqueue_script('slick-js', get_stylesheet_directory_uri() . '/css/slick/slick.min.js',
+        array(), __VERSION, true);
 });
 
 function add_custom_script_to_footer() {
-    /**
-     * Added in Custom Code Snippets of the theme
-     * <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-     */
-
     // Main js
     wp_enqueue_script('main-script', get_stylesheet_directory_uri() . '/js/main.js',
         array(), __VERSION, true);
-
-    // Added on Home page setting > Custom Snip
-//    wp_enqueue_script('home-script', get_stylesheet_directory_uri() . '/js/home.js',
-//        array(), _S_VERSION, true);
-
 }
 add_action('wp_footer', 'add_custom_script_to_footer');
 
@@ -44,3 +47,55 @@ add_filter('blocksy:main:offcanvas:close:icon', function ($icon) {
     return $icon;
 });
 
+
+// Custom shortcode to display posts with Slick slider
+function custom_slick_posts_shortcode($atts) {
+    // Extract shortcode attributes
+    $atts = shortcode_atts(
+        array(
+            'post_type' => 'post',
+            'limit' => 15,
+        ),
+        $atts,
+        'slick_posts'
+    );
+
+    // Query arguments
+    $query_args = array(
+        'post_type' => $atts['post_type'],
+        'posts_per_page' => $atts['limit'],
+    );
+
+    // Fetch posts
+    $slick_posts_query = new WP_Query($query_args);
+
+    // Start building the output
+    $output = '<div class="slick-posts">';
+
+    // Check if there are any posts
+    if ($slick_posts_query->have_posts()) {
+        $output .= '<div class="slick-slider">';
+
+        while ($slick_posts_query->have_posts()) {
+            $slick_posts_query->the_post();
+            $output .= '<div class="slick-slide">';
+            // Get the featured image
+            if (has_post_thumbnail()) {
+                $output .= '<div class="featured-image">' . get_the_post_thumbnail() . '</div>';
+            }
+            $output .= '<h2>' . get_the_title() . '</h2>';
+            $output .= '<div class="entry-content">' . get_the_content() . '</div>';
+            $output .= '</div>'; // .slick-slide
+        }
+
+        $output .= '</div>'; // .slick-slider
+    } else {
+        $output .= '<p>No posts found</p>';
+    }
+
+    // Restore original post data
+    wp_reset_postdata();
+    $output .= '</div>'; // .slick-posts
+    return $output;
+}
+add_shortcode('slick_posts', 'custom_slick_posts_shortcode');

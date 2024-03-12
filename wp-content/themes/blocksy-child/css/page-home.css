@@ -85,6 +85,7 @@
 .stk-block-carousel__dot {
     margin-inline: max(0px,(24px - var(--dot-size)) / 2) !important;
     width: var(--dot-active-width, 30px) !important;
+    --dot-color: #abe1fa !important;
 }
 
 .stk-block-carousel__dot:before {
@@ -102,10 +103,18 @@
     width: var(--dot-active-width, 30px);
 }
 
+.stk-block-carousel__button svg {
+    width: 28px;
+}
+
+.stk-block-carousel__button {
+    background: transparent !important;
+}
+
 @media only screen and (max-width: 999px) {
     .stk-block-carousel__dot,
     .stk-block-carousel__dot.stk-block-carousel__dot--active {
-        margin-inline: 7px !important;
+        margin-inline: 5px !important;
         width: 10px !important;
     }
     
@@ -118,10 +127,84 @@
 
 @media only screen and (max-width: 689px) {
 
-
 }
 
 /* Home Product Slider */
+.homeProductCoverImg {
+    padding-bottom: 0;
+}
+
+.homeProductCoverImg .wp-block-cover__inner-container {
+    margin-top: 20vw !important;
+}
+
+.homeProductCoverImg ._headingSection .wp-block-stackable-heading {
+    margin-bottom: 20px;
+}
+
+
+.postSliderSection,
+.postSliderSection.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+    width: 100% !important;
+    max-width: 1350px !important;
+}
+
+.postSliderSection .stk-block-card__content  {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 61%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.postSliderSection .stk-block-card__content * {
+    color: #fff !important;
+    text-align: center;
+}
+
+
+.postSliderSection .stk-block-card__content .wp-block-stackable-heading {
+    margin-bottom: 6px !important;
+}
+
+.postSliderSection .stk-block-card__content .stk-block-subtitle__text {
+    font-size: 16px !important;
+}
+
+@media only screen and (max-width: 689px) {
+    .postSliderSection,
+    .postSliderSection .wp-block-stackable-carousel {
+        width: 100% !important;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .homeProductCoverImg {
+        padding-bottom: 0;
+    }
+    
+    .homeProductCoverImg .wp-block-cover__inner-container {
+        margin-top: 12vw !important;
+    }
+    
+    .postSliderSection {
+        margin-top: -22vw;
+    }
+
+    .postSliderSection,
+    .postSliderSection.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+        max-width: 1440px !important;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .postSliderSection .stk-block-card__content  {
+        top: 52%;
+    }
+}
 
 
 
