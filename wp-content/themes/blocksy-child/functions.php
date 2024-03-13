@@ -18,6 +18,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('header', get_stylesheet_directory_uri() . '/css/header.css', [], __VERSION);
     wp_enqueue_style('footer', get_stylesheet_directory_uri() . '/css/footer.css', [], __VERSION);
     wp_enqueue_style('page-home', get_stylesheet_directory_uri() . '/css/page-home.css', [], __VERSION);
+    wp_enqueue_style('page-about', get_stylesheet_directory_uri() . '/css/page-about.css', [], __VERSION);
 
 
     // Jquery
