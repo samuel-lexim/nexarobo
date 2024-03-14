@@ -1,0 +1,17 @@
+
+@media only screen and (max-width: 689px) {
+    ._ourVisionSubTxt br {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 689px) {
+    ._ourVisionSubTxt br {
+        display: none;
+    }
+    
+    .aboutOurPartnersSlider .stk-row > .wp-block-stackable-column {
+        max-width: calc(50vw - 45px);
+    }
+    
+}
