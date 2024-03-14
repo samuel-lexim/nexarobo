@@ -1,0 +1,138 @@
+.wpforms-container input[type=date],
+.wpforms-container input[type=datetime],
+.wpforms-container input[type=datetime-local],
+.wpforms-container input[type=email],
+.wpforms-container input[type=month],
+.wpforms-container input[type=number],
+.wpforms-container input[type=password],
+.wpforms-container input[type=range],
+.wpforms-container input[type=search],
+.wpforms-container input[type=tel],
+.wpforms-container input[type=text],
+.wpforms-container input[type=time],
+.wpforms-container input[type=url],
+.wpforms-container input[type=week],
+.wpforms-container select, .wpforms-container textarea {
+    min-height: 50px;
+    border-width: 1px;
+    border-color: #252525;
+}
+
+.wpforms-container .wpforms-field {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.wpforms-container .wpforms-one-half,
+.wpforms-container .wpforms-three-sixths,
+.wpforms-container .wpforms-two-fourths {
+    width: calc(50% - 6px);
+}
+
+.wpforms-container .wpforms-field.wpforms-five-sixths, .wpforms-container .wpforms-field.wpforms-four-sixths, .wpforms-container .wpforms-field.wpforms-four-fifths, .wpforms-container .wpforms-field.wpforms-one-fifth, .wpforms-container .wpforms-field.wpforms-one-fourth, .wpforms-container .wpforms-field.wpforms-one-half, .wpforms-container .wpforms-field.wpforms-one-sixth, .wpforms-container .wpforms-field.wpforms-one-third, .wpforms-container .wpforms-field.wpforms-three-fourths, .wpforms-container .wpforms-field.wpforms-three-fifths, .wpforms-container .wpforms-field.wpforms-three-sixths, .wpforms-container .wpforms-field.wpforms-two-fourths, .wpforms-container .wpforms-field.wpforms-two-fifths, .wpforms-container .wpforms-field.wpforms-two-sixths, .wpforms-container .wpforms-field.wpforms-two-thirds {
+    margin-left: 12px;
+}
+
+.wpforms-submit-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.wpforms-submit {
+    --theme-button-padding: inherit !important;
+}
+
+@media only screen and (max-width: 689px) {
+    .wpforms-container input[type=date],
+    .wpforms-container input[type=datetime],
+    .wpforms-container input[type=datetime-local],
+    .wpforms-container input[type=email],
+    .wpforms-container input[type=month],
+    .wpforms-container input[type=number],
+    .wpforms-container input[type=password],
+    .wpforms-container input[type=range],
+    .wpforms-container input[type=search],
+    .wpforms-container input[type=tel],
+    .wpforms-container input[type=text],
+    .wpforms-container input[type=time],
+    .wpforms-container input[type=url],
+    .wpforms-container input[type=week],
+    .wpforms-container select, .wpforms-container textarea {
+        border-radius: 0;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .wpforms-container .wpforms-one-half,
+    .wpforms-container .wpforms-three-sixths,
+    .wpforms-container .wpforms-two-fourths {
+        width: 100%;
+    }
+    
+    .wpforms-container .wpforms-field.wpforms-five-sixths, .wpforms-container .wpforms-field.wpforms-four-sixths, .wpforms-container .wpforms-field.wpforms-four-fifths, .wpforms-container .wpforms-field.wpforms-one-fifth, .wpforms-container .wpforms-field.wpforms-one-fourth, .wpforms-container .wpforms-field.wpforms-one-half, .wpforms-container .wpforms-field.wpforms-one-sixth, .wpforms-container .wpforms-field.wpforms-one-third, .wpforms-container .wpforms-field.wpforms-three-fourths, .wpforms-container .wpforms-field.wpforms-three-fifths, .wpforms-container .wpforms-field.wpforms-three-sixths, .wpforms-container .wpforms-field.wpforms-two-fourths, .wpforms-container .wpforms-field.wpforms-two-fifths, .wpforms-container .wpforms-field.wpforms-two-sixths, .wpforms-container .wpforms-field.wpforms-two-thirds {
+        margin-left: 0;
+    }
+}
+
+
+@media only screen and (min-width: 690px) {
+    .wpforms-container .wpforms-one-half,
+    .wpforms-container .wpforms-three-sixths,
+    .wpforms-container .wpforms-two-fourths {
+        width: calc(50% - 10px);
+    }
+    
+    .wpforms-container .wpforms-field.wpforms-five-sixths, .wpforms-container .wpforms-field.wpforms-four-sixths, .wpforms-container .wpforms-field.wpforms-four-fifths, .wpforms-container .wpforms-field.wpforms-one-fifth, .wpforms-container .wpforms-field.wpforms-one-fourth, .wpforms-container .wpforms-field.wpforms-one-half, .wpforms-container .wpforms-field.wpforms-one-sixth, .wpforms-container .wpforms-field.wpforms-one-third, .wpforms-container .wpforms-field.wpforms-three-fourths, .wpforms-container .wpforms-field.wpforms-three-fifths, .wpforms-container .wpforms-field.wpforms-three-sixths, .wpforms-container .wpforms-field.wpforms-two-fourths, .wpforms-container .wpforms-field.wpforms-two-fifths, .wpforms-container .wpforms-field.wpforms-two-sixths, .wpforms-container .wpforms-field.wpforms-two-thirds {
+        margin-left: 20px;
+    }
+    
+    .wpforms-container input[type=date],
+    .wpforms-container input[type=datetime],
+    .wpforms-container input[type=datetime-local],
+    .wpforms-container input[type=email],
+    .wpforms-container input[type=month],
+    .wpforms-container input[type=number],
+    .wpforms-container input[type=password],
+    .wpforms-container input[type=range],
+    .wpforms-container input[type=search],
+    .wpforms-container input[type=tel],
+    .wpforms-container input[type=text],
+    .wpforms-container input[type=time],
+    .wpforms-container input[type=url],
+    .wpforms-container input[type=week],
+    .wpforms-container select, .wpforms-container textarea {
+        font-size: 17px;
+    }
+    
+}
+
+@media only screen and (min-width: 1000px) {
+    .wpforms-container .wpforms-one-half,
+    .wpforms-container .wpforms-three-sixths,
+    .wpforms-container .wpforms-two-fourths {
+        width: calc(50% - 15px);
+    }
+    
+    .wpforms-container .wpforms-field.wpforms-five-sixths, .wpforms-container .wpforms-field.wpforms-four-sixths, .wpforms-container .wpforms-field.wpforms-four-fifths, .wpforms-container .wpforms-field.wpforms-one-fifth, .wpforms-container .wpforms-field.wpforms-one-fourth, .wpforms-container .wpforms-field.wpforms-one-half, .wpforms-container .wpforms-field.wpforms-one-sixth, .wpforms-container .wpforms-field.wpforms-one-third, .wpforms-container .wpforms-field.wpforms-three-fourths, .wpforms-container .wpforms-field.wpforms-three-fifths, .wpforms-container .wpforms-field.wpforms-three-sixths, .wpforms-container .wpforms-field.wpforms-two-fourths, .wpforms-container .wpforms-field.wpforms-two-fifths, .wpforms-container .wpforms-field.wpforms-two-sixths, .wpforms-container .wpforms-field.wpforms-two-thirds {
+        margin-left: 30px;
+    }
+    
+    .wpforms-container input[type=date],
+    .wpforms-container input[type=datetime],
+    .wpforms-container input[type=datetime-local],
+    .wpforms-container input[type=email],
+    .wpforms-container input[type=month],
+    .wpforms-container input[type=number],
+    .wpforms-container input[type=password],
+    .wpforms-container input[type=range],
+    .wpforms-container input[type=search],
+    .wpforms-container input[type=tel],
+    .wpforms-container input[type=text],
+    .wpforms-container input[type=time],
+    .wpforms-container input[type=url],
+    .wpforms-container input[type=week],
+    .wpforms-container select, .wpforms-container textarea {
+        font-size: 18px;
+    }
+}
