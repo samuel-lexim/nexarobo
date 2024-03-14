@@ -1,4 +1,8 @@
 
+.ourPartnersBlock .wp-block-button__link {
+    font-size: 18px !important;
+}
+
 @media only screen and (max-width: 689px) {
     ._ourVisionSubTxt br {
         display: none;
