@@ -10,6 +10,7 @@ add_action('wp_enqueue_scripts', function () {
 
     // custom css
     wp_enqueue_style('typo', get_stylesheet_directory_uri() . '/css/typo.css', [], __VERSION,);
+    wp_enqueue_style('elements', get_stylesheet_directory_uri() . '/css/elements.css', [], __VERSION,);
     wp_enqueue_style('layout', get_stylesheet_directory_uri() . '/css/layout.css', [], __VERSION,);
     wp_enqueue_style('wpform', get_stylesheet_directory_uri() . '/css/wpForm.css', [], __VERSION,);
     wp_enqueue_style('header', get_stylesheet_directory_uri() . '/css/header.css', [], __VERSION);

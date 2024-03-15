@@ -1,0 +1,73 @@
+/* Carousel */
+.stk-block-carousel__dot {
+    margin-inline: max(0px, (24px - var(--dot-size)) / 2) !important;
+    width: var(--dot-active-width, 30px) !important;
+    --dot-color: #abe1fa !important;
+}
+
+.stk-block-carousel__dot:before {
+    height: var(--dot-active-height);
+    width: var(--dot-active-width, 30px);
+}
+
+.stk-block-carousel__dot:hover:before {
+    background: #37a7f4;
+}
+
+.stk-block-carousel__dot.stk-block-carousel__dot--active:before {
+    background: #37a7f4;
+    height: var(--dot-active-height);
+    width: var(--dot-active-width, 30px);
+}
+
+.stk-block-carousel__button svg {
+    width: 28px;
+}
+
+.stk-block-carousel__button {
+    background: transparent !important;
+}
+
+@media only screen and (max-width: 999px) {
+    .stk-block-carousel__dot,
+    .stk-block-carousel__dot.stk-block-carousel__dot--active {
+        margin-inline: 5px !important;
+        width: 10px !important;
+    }
+    
+    .stk-block-carousel__dot:before,
+    .stk-block-carousel__dot.stk-block-carousel__dot--active:before {
+        height: 10px !important;
+        width: 10px !important;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .stk-block-carousel__dot,
+    .stk-block-carousel__dot.stk-block-carousel__dot--active {
+        width: 50px !important;
+        margin-inline-start: 9px;
+        margin-inline-end: 9px;
+    }
+    
+    .stk-block-carousel__dot:before,
+    .stk-block-carousel__dot.stk-block-carousel__dot--active:before {
+        width: 50px !important;
+        height: 6px !important;
+    }
+}
+
+/* White button */
+.whiteButton a:hover {
+    background-color: #37A7F4 !important;
+    color: #fff !important;
+}
+.whiteButton a:hover .stk-button__inner-text {
+    color: #fff !important;
+}
+
+@media only screen and (max-width: 689px) {
+    .whiteButton .stk-button .stk-button__inner-text {
+        font-size: 16px !important;
+    }
+}
