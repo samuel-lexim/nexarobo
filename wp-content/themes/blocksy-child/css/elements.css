@@ -46,8 +46,8 @@
     .stk-block-carousel__dot,
     .stk-block-carousel__dot.stk-block-carousel__dot--active {
         width: 50px !important;
-        margin-inline-start: 9px;
-        margin-inline-end: 9px;
+        margin-inline-start: 5px !important;
+        margin-inline-end: 5px !important;
     }
     
     .stk-block-carousel__dot:before,
