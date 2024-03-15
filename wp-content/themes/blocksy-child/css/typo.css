@@ -1,8 +1,8 @@
 .h1, .s70 {
     font-family: "ProximaNova", sans-serif;
-    font-size: 56px;
+    font-size: 50px;
     font-weight: 600;
-    line-height: 1.08;
+    line-height: 48px;
     letter-spacing: 0.01em;
 }
 
@@ -183,7 +183,7 @@
     }
 }
 
-.gradient-text {
+.gradient-text, .gradient-text  > * {
     background: linear-gradient(to right, #37A7F4 0%, #D3F40B 100%);
     background-clip: text;
     color: transparent;
