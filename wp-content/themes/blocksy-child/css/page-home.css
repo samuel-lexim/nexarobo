@@ -170,6 +170,7 @@
 /* Accordion section */
 .journey-group ._stepImg {
     display: none;
+    margin-bottom: 2px !important;
 }
 
 .journey-accordion {
