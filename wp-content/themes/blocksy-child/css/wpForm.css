@@ -16,11 +16,47 @@
     min-height: 50px;
     border-width: 1px;
     border-color: #252525;
+    border-radius: 8px !important;
+}
+
+::-webkit-input-placeholder {
+    color: #8B8B8B !important;
+    opacity: 1 !important;
+}
+
+::-moz-placeholder {
+    color: #8B8B8B !important;
+    opacity: 1 !important;
+}
+
+:-ms-input-placeholder {
+    color: #8B8B8B !important;
+    opacity: 1 !important;
+}
+
+:-moz-placeholder {
+    color: #8B8B8B !important;
+    opacity: 1 !important;
+}
+
+.wpforms-container ::placeholder {
+    color: #8B8B8B !important;
+    opacity: 1 !important;
+}
+
+.wpforms-container select:invalid {
+    color: #8B8B8B !important;
+    opacity: 1 !important;
 }
 
 .wpforms-container .wpforms-field {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.wpforms-submit-container {
+    margin-top: 27px;
+    text-align: center;
 }
 
 .wpforms-container .wpforms-one-half,
@@ -31,11 +67,6 @@
 
 .wpforms-container .wpforms-field.wpforms-five-sixths, .wpforms-container .wpforms-field.wpforms-four-sixths, .wpforms-container .wpforms-field.wpforms-four-fifths, .wpforms-container .wpforms-field.wpforms-one-fifth, .wpforms-container .wpforms-field.wpforms-one-fourth, .wpforms-container .wpforms-field.wpforms-one-half, .wpforms-container .wpforms-field.wpforms-one-sixth, .wpforms-container .wpforms-field.wpforms-one-third, .wpforms-container .wpforms-field.wpforms-three-fourths, .wpforms-container .wpforms-field.wpforms-three-fifths, .wpforms-container .wpforms-field.wpforms-three-sixths, .wpforms-container .wpforms-field.wpforms-two-fourths, .wpforms-container .wpforms-field.wpforms-two-fifths, .wpforms-container .wpforms-field.wpforms-two-sixths, .wpforms-container .wpforms-field.wpforms-two-thirds {
     margin-left: 12px;
-}
-
-.wpforms-submit-container {
-    margin-top: 20px;
-    text-align: center;
 }
 
 .wpforms-submit {
@@ -105,6 +136,14 @@
         font-size: 17px;
     }
     
+    .wpforms-container .wpforms-field {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .wpforms-submit-container {
+        margin-top: 20px;
+    }
 }
 
 @media only screen and (min-width: 1000px) {
