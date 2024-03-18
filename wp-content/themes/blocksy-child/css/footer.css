@@ -101,24 +101,26 @@ nav#footer-menu {
 
 .ct-newsletter-subscribe-block .ct-newsletter-subscribe-form .wp-element-button {
     position: absolute;
-    width: 42px;
-    height: 23px;
+    width: 28px;
+    height: 28px;
     min-height: 23px;
-    top: 9px;
-    right: 12px;
-    border-radius: 10px;
+    top: 6px;
+    right: 11px;
     line-height: 0;
     padding: 0;
     border: 1px solid #37A7F4;
     font-size: 0;
     background-color: #37A7F4 !important;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
 }
 
 .ct-newsletter-subscribe-form .wp-element-button:before {
     content: "";
     display: inline-flex;
-    width: 24px;
-    height: 20px;
+    width: 18px;
+    height: 13px;
     background-image: url(../images/arrow.svg);
     background-size: 100%;
     background-repeat: no-repeat;
