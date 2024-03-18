@@ -58,6 +58,44 @@
     }
 }
 
+
+
+/* Schedule button */
+.scheduleBlueButton button {
+    font-family: ct_font_proxima__nova, sans-serif !important;
+    background-color: #37A7F4 !important;
+    color: #fff !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 36px !important;
+    min-height: 36px !important;
+    margin: 0 auto;
+    border: 2px solid #37A7F4 !important;
+    border-radius: 20px !important;
+    padding: 0 50px !important;
+    display: inline-block !important;
+    min-width: 213px !important;
+    letter-spacing: 0.01em;
+    text-align: center;
+}
+
+.scheduleBlueButton button:hover {
+    background-color: #fff !important;
+    color: #37A7F4 !important;
+}
+
+@media only screen and (min-width: 690px) {
+    .scheduleBlueButton button {
+        font-size: 17px !important;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .scheduleBlueButton button {
+        font-size: 18px !important;
+    }
+}
+
 /* White button */
 .whiteButton a:hover {
     background-color: #37A7F4 !important;
