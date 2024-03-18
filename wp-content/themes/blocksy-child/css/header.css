@@ -3,9 +3,116 @@
     --toggle-icon-transform: none !important;
 }
 
-@media only screen and (min-width: 1000px) {
+nav[class*=menu] li[class*=current-menu-] > .ct-menu-link svg,
+nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg {
+    fill: none !important;
+}
 
-    .ct-header [data-device="desktop"] .ct-container-fluid {
-        max-width: 1200px;
+nav[class*=menu] li[class*=current-menu-] > .ct-menu-link svg path,
+nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg path {
+    stroke: var(--theme-icon-active-color, var(--theme-icon-hover-color, var(--theme-link-active-color, var(--theme-link-hover-color))));
+}
+
+@media only screen and (max-width: 999px) {
+    .ct-panel .ct-panel-actions {
+        padding-top: 27px;
+        padding-right: 23px;
+        padding-left: 23px;
     }
+    
+    .ct-panel .ct-panel-content-inner {
+        padding: 0 10px;
+        margin: 0;
+    }
+    
+    .ct-panel .mobile-menu .ct-sub-menu-parent {
+        column-gap: 0;
+    }
+    
+    .ct-panel .ct-menu-link:not(:empty) {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    
+    .ct-panel .sub-menu .ct-toggle-dropdown-mobile {
+        display: none;
+    }
+    
+    .ct-panel .sub-menu .sub-menu {
+        display: block !important;
+        padding-bottom: 10px;
+        margin-top: -5px;
+    }
+    
+    .ct-panel .sub-menu .sub-menu .ct-menu-link {
+        font-weight: 400;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+    .ct-header .menu > li > .ct-menu-link {
+        --menu-item-padding: 0 20px;
+    }
+    
+}
+
+@media only screen and (min-width: 1000px) {
+    .ct-header [data-device="desktop"] .ct-container-fluid {
+        max-width: 1220px;
+    }
+    
+    .ct-header .menu > li > .ct-menu-link {
+        --menu-item-padding: 0 40px;
+    }
+    
+    .ct-header .menu {
+        column-gap: 0;
+        justify-content: right !important;
+    }
+    
+    .ct-header .menu > li > ul.sub-menu {
+        padding: 30px 43px;
+        min-width: 212px;
+        max-width: 300px;
+        width: auto;
+        max-height: 700px;
+        box-shadow: 3px 4px 10px 0 #0000001A;
+    }
+    
+    .ct-header .menu .sub-menu .sub-menu {
+        position: relative;
+        left: 0;
+        padding-bottom: 20px;
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        background-color: transparent;
+        transform: none;
+        transition: none;
+    }
+    
+    .ct-header .menu > li > ul.sub-menu > li:last-child .sub-menu {
+        padding-bottom: 0;
+    }
+    
+    .ct-header .menu > li > ul.sub-menu .ct-toggle-dropdown-desktop,
+    .ct-header .menu > li > ul.sub-menu .ct-toggle-dropdown-desktop-ghost {
+        display: none !important;
+    }
+    
+    .ct-header .menu > li > ul.sub-menu .ct-menu-link {
+        padding: 5px 0;
+    }
+    
+    .ct-header .menu > li > ul.sub-menu li {
+        flex-wrap: wrap;
+    }
+    
+    .ct-header .menu > li > ul.sub-menu .sub-menu .ct-menu-link {
+        font-weight: 400;
+    
+    }
+    
 }
