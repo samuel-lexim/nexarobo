@@ -59,7 +59,7 @@ nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg path {
 
 @media only screen and (min-width: 1000px) {
     .ct-header [data-device="desktop"] .ct-container-fluid {
-        max-width: 1220px;
+        max-width: 1218px;
     }
     
     .ct-header .menu > li > .ct-menu-link {

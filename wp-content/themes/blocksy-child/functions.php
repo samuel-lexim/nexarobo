@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.7';
+const __VERSION = '7.8';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -13,6 +13,12 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('elements', get_stylesheet_directory_uri() . '/css/elements.css', [], __VERSION,);
     wp_enqueue_style('layout', get_stylesheet_directory_uri() . '/css/layout.css', [], __VERSION,);
     wp_enqueue_style('wpform', get_stylesheet_directory_uri() . '/css/wpForm.css', [], __VERSION,);
+
+    // Slick
+    wp_enqueue_style('slick-css', get_stylesheet_directory_uri() . '/css/slick/slick.min.css', [], __VERSION);
+    wp_enqueue_style('slick-theme', get_stylesheet_directory_uri() . '/css/slick/slick-theme.min.css', [], __VERSION);
+    wp_enqueue_style('slick-posts', get_stylesheet_directory_uri() . '/css/sc-slick_posts.css', [], __VERSION);
+
     wp_enqueue_style('header', get_stylesheet_directory_uri() . '/css/header.css', [], __VERSION);
     wp_enqueue_style('footer', get_stylesheet_directory_uri() . '/css/footer.css', [], __VERSION);
     wp_enqueue_style('page-home', get_stylesheet_directory_uri() . '/css/page-home.css', [], __VERSION);
@@ -29,6 +35,10 @@ add_action('wp_enqueue_scripts', function () {
 
 function add_custom_script_to_footer()
 {
+    // Slick JS
+    wp_enqueue_script('slick-js', get_stylesheet_directory_uri() . '/js/slick.min.js',
+        [], __VERSION, true);
+
     // Main js
     wp_enqueue_script('main-script', get_stylesheet_directory_uri() . '/js/main.js',
         [], __VERSION, true);
@@ -44,6 +54,32 @@ add_filter('blocksy:main:offcanvas:close:icon', function ($icon) {
     $icon = '<svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.54927 21H0L8.24556 10.2368L0.746365 0H5.2601L11.1244 8.18941L17.2019 0H21.538L13.8966 10.3538L22 21H17.4152L11.0178 12.3719L4.54927 21Z" fill="black"/></svg>';
     return $icon;
 });
+
+// Remove default image sizes here.
+function remove_extra_image_sizes()
+{
+    foreach (get_intermediate_image_sizes() as $size) {
+        if (!in_array($size, ['thumbnail', 'medium', 'medium_large', 'large'])) {
+            remove_image_size($size);
+        }
+    }
+}
+
+add_action('init', 'remove_extra_image_sizes');
+
+add_image_size('large', 450, 0, true);
+add_image_size('medium_large', 450, 0, true);
+add_image_size('medium', 450, 350, true);
+add_image_size('thumbnail', 150, 0, true);
+
+add_theme_support('large');
+add_theme_support('medium_large');
+add_theme_support('medium');
+add_theme_support('thumbnail');
+update_option('medium_large_size_w', 150);
+
+// END - Remove default image sizes here.
+
 
 // Add Page Slug Body Class
 function add_slug_body_class($classes)
@@ -99,6 +135,7 @@ function custom_slick_posts_shortcode($atts)
         [
             'post_type' => 'post',
             'limit' => 15,
+            'order' => 'DESC'
         ],
         $atts,
         'slick_posts'
@@ -108,6 +145,8 @@ function custom_slick_posts_shortcode($atts)
     $query_args = [
         'post_type' => $atts['post_type'],
         'posts_per_page' => $atts['limit'],
+        'orderby' => 'date',
+        'order' => $atts['order'],
     ];
 
     // Fetch posts
@@ -118,18 +157,24 @@ function custom_slick_posts_shortcode($atts)
 
     // Check if there are any posts
     if ($slick_posts_query->have_posts()) {
-        $output .= '<div class="slick-slider">';
+        $output .= '<div class="posts-slider">';
 
+        $i = 1;
         while ($slick_posts_query->have_posts()) {
             $slick_posts_query->the_post();
-            $output .= '<div class="slick-slide">';
-            // Get the featured image
-            if (has_post_thumbnail()) {
-                $output .= '<div class="featured-image">' . get_the_post_thumbnail() . '</div>';
-            }
-            $output .= '<h2>' . get_the_title() . '</h2>';
-            $output .= '<div class="entry-content">' . get_the_content() . '</div>';
-            $output .= '</div>'; // .slick-slide
+            $postID = get_the_ID();
+            $link = get_the_permalink();
+            $output .= '<div class="test">';
+
+            // Get the ACF featured image
+            $acfHomeImgID = get_field("image_for_home_slider", $postID);
+            $thumbnail = wp_get_attachment_image($acfHomeImgID, 'medium');
+            $output .= '<div class="acfImage">' . $thumbnail . '</div>';
+
+            $output .= "<h2>" . get_the_title() . '</h2>';
+            $output .= '<div class="entry-content">' . get_the_excerpt() . '</div>';
+            $output .= '</div>';
+            $i++;
         }
 
         $output .= '</div>'; // .slick-slider

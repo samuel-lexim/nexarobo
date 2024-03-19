@@ -94,81 +94,27 @@
 
 
 /* Home Product Slider */
-.homeProductCoverImg {
-    padding-bottom: 0;
+.gradientWrap {
+
 }
 
-.homeProductCoverImg .wp-block-cover__inner-container {
-    margin-top: 20vw !important;
-}
-
-.homeProductCoverImg ._headingSection .wp-block-stackable-heading {
-    margin-bottom: 20px;
-}
-
-
-.postSliderSection,
-.postSliderSection.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
-    width: 100% !important;
-    max-width: 1350px !important;
-}
-
-.postSliderSection .stk-block-card__content {
+.homeGradientBg {
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 61%;
-    margin-left: auto;
-    margin-right: auto;
+    left: -25vw;
+    width: 150vw;
+    height: 338px;
+    background: linear-gradient(180deg, rgba(55, 167, 244, 0.08) 0%, rgba(211, 244, 11, 0.47) 100%);
+    transform: rotate(-5deg);
 }
 
-.postSliderSection .stk-block-card__content * {
-    color: #fff !important;
-    text-align: center;
-}
-
-
-.postSliderSection .stk-block-card__content .wp-block-stackable-heading {
-    margin-bottom: 6px !important;
-}
-
-.postSliderSection .stk-block-card__content .stk-block-subtitle__text {
-    font-size: 16px !important;
-}
-
-@media only screen and (max-width: 689px) {
-    .postSliderSection,
-    .postSliderSection .wp-block-stackable-carousel {
-        width: 100% !important;
-    }
-}
 
 @media only screen and (min-width: 1000px) {
-    .homeProductCoverImg {
-        padding-bottom: 0;
-    }
+    .homeGradientBg {
+        height: 470px;
     
-    .homeProductCoverImg .wp-block-cover__inner-container {
-        margin-top: 12vw !important;
-    }
-    
-    .postSliderSection {
-        margin-top: -22vw;
-    }
-    
-    .postSliderSection,
-    .postSliderSection.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
-        max-width: 1440px !important;
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .postSliderSection .stk-block-card__content {
-        top: 52%;
     }
 }
+
 
 
 /* Accordion section */
