@@ -1,70 +1,52 @@
 .h1, .s70 {
-    font-family: "ProximaNova", sans-serif;
     font-size: 50px;
     font-weight: 600;
     line-height: 48px;
-    letter-spacing: 0.01em;
 }
 
 .h2 {
-    font-family: "ProximaNova", sans-serif;
     font-size: 40px;
     font-weight: 600;
     line-height: 42px;
-    letter-spacing: 0.01em;
 }
 
 .h3 {
-    font-family: "ProximaNova", sans-serif;
     font-size: 30px;
     font-weight: 500;
     line-height: 1.25;
-    letter-spacing: 0.01em;
 }
 
 .h4 {
-    font-family: "ProximaNova", sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 1.4;
-    letter-spacing: 0.01em;
 }
 
 .h5 {
-    font-family: "ProximaNova", sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 26px;
-    letter-spacing: 0.01em;
 }
 
 .h6, .s16 {
-    font-family: "ProximaNova", sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.25;
-    letter-spacing: 0.01em;
 }
 
 .s18 {
-    font-family: "ProximaNova", sans-serif;
     font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.01em;
+    line-height: 20px;
 }
 
 .s14 {
-    font-family: "ProximaNova", sans-serif;
     font-size: 12px;
     line-height: 1.25;
-    letter-spacing: 0.01em;
 }
 
 .s12 {
-    font-family: "ProximaNova", sans-serif;
     font-size: 12px;
     line-height: 1.25;
-    letter-spacing: 0.01em;
 }
 
 .fw100 {
@@ -104,47 +86,9 @@
 }
 
 
-@media only screen and (min-width: 690px) {
-    .h1, .s70 {
-        font-size: 63px;
-    }
-    
-    .h2 {
-        font-size: 46px;
-        line-height: 49px;
-    }
-    
-    .h3 {
-        font-size: 34px;
-    }
-    
-    .h4 {
-        font-size: 22px;
-    }
-    
-    .h5 {
-        font-size: 19px;
-        line-height: 1.4;
-    }
-    
-    .h6, .s16 {
-        font-size: 15px;
-    }
-    
-    .s18 {
-        font-size: 17px;
-        line-height: 1.3;
-    }
-    
-    .s14 {
-        font-size: 13px;
-    }
-}
-
 @media only screen and (min-width: 1000px) {
     .h1, .s70 {
         font-size: 70px;
-        line-height: 1.08;
     }
     
     .h2 {
@@ -174,7 +118,7 @@
     
     .h6, .s16 {
         font-size: 16px;
-        line-height: 24px;
+        line-height: 20px;
     }
     
     .s14 {
@@ -184,7 +128,7 @@
 }
 
 .gradient-text, .gradient-text  > * {
-    background: linear-gradient(to right, #37A7F4 0%, #D3F40B 100%);
+    background: linear-gradient(90deg, #37A7F4 2.71%, #D3F40B 100%);
     background-clip: text;
     color: transparent;
 }
