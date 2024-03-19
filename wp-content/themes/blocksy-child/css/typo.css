@@ -4,50 +4,45 @@
     line-height: 48px;
 }
 
-.h2 {
+.h2, .s52 {
     font-size: 40px;
     font-weight: 600;
     line-height: 42px;
 }
 
-.h3 {
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 1.25;
-}
-
-.h4 {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1.4;
-}
-
-.h5 {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 26px;
-}
-
-.h6, .s16 {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.25;
-}
-
 .s18 {
+    font-weight: 400;
     font-size: 16px;
     line-height: 20px;
 }
 
 .s14 {
     font-size: 12px;
-    line-height: 1.25;
+    font-weight: 600;
+    line-height: 14px;
 }
 
-.s12 {
-    font-size: 12px;
-    line-height: 1.25;
+@media only screen and (min-width: 1000px) {
+    .h1, .s70 {
+        font-size: 70px;
+    }
+    
+    .h2, .s52 {
+        font-size: 52px;
+        line-height: 56px;
+    }
+    
+    .s18 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    
+    .s14 {
+        font-size: 14px;
+        line-height: 16px;
+    }
 }
+
 
 .fw100 {
     font-weight: 100 !important;
@@ -83,48 +78,6 @@
 
 .fw900 {
     font-weight: 900 !important;
-}
-
-
-@media only screen and (min-width: 1000px) {
-    .h1, .s70 {
-        font-size: 70px;
-    }
-    
-    .h2 {
-        font-size: 52px;
-        line-height: 56px;
-    }
-    
-    .h3 {
-        font-size: 38px;
-        line-height: 1.25;
-    }
-    
-    .h4 {
-        font-size: 24px;
-        line-height: 1.4;
-    }
-    
-    .h5 {
-        font-size: 20px;
-        line-height: 1.4;
-    }
-    
-    .s18 {
-        font-size: 18px;
-        line-height: 26px;
-    }
-    
-    .h6, .s16 {
-        font-size: 16px;
-        line-height: 20px;
-    }
-    
-    .s14 {
-        font-size: 14px;
-        line-height: 1.25;
-    }
 }
 
 .gradient-text, .gradient-text  > * {

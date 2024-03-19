@@ -53,9 +53,8 @@ nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg path {
 
 @media only screen and (min-width: 1000px) and (max-width: 1200px) {
     .ct-header .menu > li > .ct-menu-link {
-        --menu-item-padding: 0 20px;
+        --menu-item-padding: 0 20px !important;
     }
-    
 }
 
 @media only screen and (min-width: 1000px) {

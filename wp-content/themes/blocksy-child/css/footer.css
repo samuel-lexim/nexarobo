@@ -1,5 +1,11 @@
 #footer {
+    padding-left: 0;
+    padding-right: 0;
     border-top: 1px solid #ABE1FA;
+}
+
+#footer [data-row="middle"] {
+    border-bottom: 1px solid #ABE1FA;
 }
 
 nav#footer-menu {
@@ -22,6 +28,12 @@ nav#footer-menu {
 }
 
 @media only screen and (max-width: 689px) {
+    .ct-footer > [data-row="middle"],
+    .ct-footer > [data-row="bottom"] {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
     .ct-footer [data-id="menu"] ul {
         display: flex;
         max-width: 300px;
