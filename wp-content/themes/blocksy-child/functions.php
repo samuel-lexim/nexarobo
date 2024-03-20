@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.9';
+const __VERSION = '7.10';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -24,6 +24,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('page-home', get_stylesheet_directory_uri() . '/css/page-home.css', [], __VERSION);
     wp_enqueue_style('page-about', get_stylesheet_directory_uri() . '/css/page-about.css', [], __VERSION);
     wp_enqueue_style('page-get-your-quote', get_stylesheet_directory_uri() . '/css/page-get-your-quote.css', [], __VERSION);
+    wp_enqueue_style('pdp-css', get_stylesheet_directory_uri() . '/css/PDP.css', [], __VERSION);
 
 
     // Jquery
@@ -42,6 +43,12 @@ function add_custom_script_to_footer()
     // Main js
     wp_enqueue_script('main-script', get_stylesheet_directory_uri() . '/js/main.js',
         [], __VERSION, true);
+
+    // Custom JS for PDP
+    if (is_single()) {
+        wp_enqueue_script('pdp-js', get_stylesheet_directory_uri() . '/js/pdp.js',
+            [], __VERSION, true);
+    }
 }
 
 add_action('wp_footer', 'add_custom_script_to_footer');
