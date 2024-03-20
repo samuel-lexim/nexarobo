@@ -3,11 +3,16 @@
     --toggle-icon-transform: none !important;
 }
 
+nav[class*=menu] li:hover > .ct-menu-link svg,
+nav[class*=menu] li:hover > .ct-sub-menu-parent svg,
 nav[class*=menu] li[class*=current-menu-] > .ct-menu-link svg,
 nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg {
     fill: none !important;
 }
 
+
+nav[class*=menu] li:hover > .ct-menu-link svg path,
+nav[class*=menu] li:hover > .ct-sub-menu-parent svg path,
 nav[class*=menu] li[class*=current-menu-] > .ct-menu-link svg path,
 nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg path {
     stroke: var(--theme-icon-active-color, var(--theme-icon-hover-color, var(--theme-link-active-color, var(--theme-link-hover-color))));
@@ -111,7 +116,6 @@ nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg path {
     
     .ct-header .menu > li > ul.sub-menu .sub-menu .ct-menu-link {
         font-weight: 400;
-    
     }
     
 }

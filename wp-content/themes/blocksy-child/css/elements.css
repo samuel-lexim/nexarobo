@@ -58,7 +58,15 @@
     }
 }
 
+/* STK button */
+.stk-block .stk-button.stk--hover-effect-darken:hover {
+    filter: none;
+    background-color: #fff !important;
+}
 
+.stk-block .stk-button.stk--hover-effect-darken:hover .stk-button__inner-text {
+    color: #37A7F4 !important;
+}
 
 /* Schedule button */
 .scheduleBlueButton button {

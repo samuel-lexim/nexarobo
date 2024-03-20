@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.8';
+const __VERSION = '7.9';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -153,38 +153,39 @@ function custom_slick_posts_shortcode($atts)
     $slick_posts_query = new WP_Query($query_args);
 
     // Start building the output
-    $output = '<div class="slick-posts">';
+    $output = '<section class="section-posts_slider">';
 
     // Check if there are any posts
     if ($slick_posts_query->have_posts()) {
-        $output .= '<div class="posts-slider">';
+        $output .= '<div class="slider-slick_posts">';
 
-        $i = 1;
         while ($slick_posts_query->have_posts()) {
             $slick_posts_query->the_post();
             $postID = get_the_ID();
             $link = get_the_permalink();
-            $output .= '<div class="test">';
-
             // Get the ACF featured image
             $acfHomeImgID = get_field("image_for_home_slider", $postID);
             $thumbnail = wp_get_attachment_image($acfHomeImgID, 'medium');
-            $output .= '<div class="acfImage">' . $thumbnail . '</div>';
 
-            $output .= "<h2>" . get_the_title() . '</h2>';
-            $output .= '<div class="entry-content">' . get_the_excerpt() . '</div>';
+            $output .= '<div class="slider-slick_posts-item">';
+            $output .= "<a class='_link' href='{$link}'>";
+            $output .= '<div class="_acfImage">' . $thumbnail;
+
+            $output .= '<div class="_bottomInner">';
+            $output .= '<h4 class="_h4 s24">' . get_the_title() . '</h2>';
+            $output .= '<p class="_excerpt">' . get_the_excerpt() . '</p>';
             $output .= '</div>';
-            $i++;
+
+            $output .= '</div>';
+            $output .= '</a></div>';
         }
 
         $output .= '</div>'; // .slick-slider
-    } else {
-        $output .= '<p>No posts found</p>';
     }
 
     // Restore original post data
     wp_reset_postdata();
-    $output .= '</div>'; // .slick-posts
+    $output .= '</section>'; // .slick-posts
     return $output;
 }
 

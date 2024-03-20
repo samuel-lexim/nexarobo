@@ -1,9 +1,10 @@
 $(document).ready(function () {
 
-    $('.posts-slider').slick({
+    $('.slider-slick_posts').slick({
         slidesToShow: 3,
         slidesToScroll: 3,
         arrows: true,
+        autoplay: false,
         dots: true,
         responsive: [
             {
@@ -11,7 +12,7 @@ $(document).ready(function () {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
-                    dots: false
+                    dots: true
                 }
             },
             {

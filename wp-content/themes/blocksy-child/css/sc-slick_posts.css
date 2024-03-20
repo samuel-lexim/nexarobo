@@ -1,0 +1,38 @@
+.slider-slick_posts-item ._link {
+    text-decoration: none !important;
+    color: #fff
+}
+
+.slider-slick_posts-item ._acfImage {
+    position: relative;
+}
+
+.slider-slick_posts-item img {
+    width: 100%;
+    height: auto;
+}
+
+.slider-slick_posts-item ._bottomInner {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+
+.slider-slick_posts-item ._h4 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.slider-slick_posts-item ._excerpt {
+    margin-bottom: 0;
+    max-width: 230px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (min-width: 690px) {
+}
