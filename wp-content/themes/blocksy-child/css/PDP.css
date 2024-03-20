@@ -97,3 +97,61 @@
         max-width: 100% !important;
     }
 }
+
+/* Our customer */
+.pdp-our_customer {
+}
+
+.pdp-testimonial_slider .slick-slide {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+@media only screen and (max-width: 689px) {
+    .pdp-testimonial_slider .slick-slide > .gspb_container {
+        max-width: 360px !important;
+    }
+    
+    .pdp-testimonial_slider .slick-slide {
+        padding-left: 25px;
+        padding-right: 0;
+    }
+    
+    .pdp-testimonial_slider .slick-list {
+        padding-right: calc(100vw - 385px) !important;
+        padding-left: 0 !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .pdp-testimonial_slider .slick-slide > .gspb_container {
+        max-width: 320px !important;
+    }
+    
+    .pdp-testimonial_slider .slick-list {
+        padding-right: calc(100vw - 345px) !important;
+    }
+}
+
+@media only screen and (min-width: 690px) {
+    .pdp-testimonial_slider {
+        max-width: 820px !important;
+    }
+    
+    .pdp-testimonial_slider .slick-slide {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .pdp-testimonial_slider .slick-slide > .gspb_container {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+}
+
+@media only screen and (min-width: 1200px) {
+    .pdp-testimonial_slider {
+        max-width: 1230px !important;
+    }
+}
