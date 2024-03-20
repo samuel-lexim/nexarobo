@@ -145,6 +145,11 @@
 .slick-dots li.slick-active button:before {
 }
 
+@media only screen and (min-width: 1000px) {
+    .slick-dots li button {
+        width: 50px;
+    }
+}
 
 /* Home product slider */
 
