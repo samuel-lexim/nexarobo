@@ -5,6 +5,7 @@
 
 /* icon list */
 .pdp-icon_list {
+    margin-bottom: 0 !important;
     padding: 50px 0;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -21,7 +22,7 @@
     margin-bottom: 10px;
 }
 
-.pdp-icon_list  .stk-img-wrapper img {
+.pdp-icon_list .stk-img-wrapper img {
     width: auto !important;
     height: auto !important;
     margin: auto !important;
@@ -59,7 +60,7 @@
 }
 
 @media only screen and (min-width: 690px) {
-    .pdp-icon_list  .stk-img-wrapper img {
+    .pdp-icon_list .stk-img-wrapper img {
         max-width: 135px;
     }
     
@@ -85,5 +86,14 @@
     .pdp-icon_list .wp-block-group {
         margin: 0 !important;
         width: auto;
+    }
+}
+
+/* Example */
+@media only screen and (min-width: 690px) and (max-width: 999px) {
+    .pdp-2_examples .stk-row {
+        column-gap: 40px !important;
+        --stk-column-gap: 40px !important;
+        max-width: 100% !important;
     }
 }
