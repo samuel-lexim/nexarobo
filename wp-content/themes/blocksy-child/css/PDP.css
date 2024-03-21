@@ -94,6 +94,10 @@
     margin-bottom: 0 !important;
 }
 
+.pdp-video_img .wp-block-embed {
+    margin-bottom: 0 !important;
+}
+
 /* Example */
 .pdp-4_examples {
     margin-bottom: 0 !important;
@@ -187,9 +191,37 @@
 }
 
 /* FAQ */
+.pdp-accordion details.stk-block-accordion {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.pdp-accordion details.stk-block-accordion > summary.stk-column .stk-block-column__content {
+    padding: 20px 0 !important;
+}
+
 .pdp-accordion details.stk-block-accordion:last-child {
     border-bottom-width: 0 !important;
 }
+
+@media only screen and (min-width: 690px) {
+    .pdp-accordion details.stk-block-accordion {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    
+    .pdp-accordion details.stk-block-accordion > summary.stk-column .stk-block-column__content {
+        margin: 0 !important;
+    }
+    
+    .pdp-accordion details.stk-block-accordion > .stk-block-accordion__content {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 20px !important;
+    }
+}
+
+
 
 /* Schedule a Call */
 .pdp-SAC_wrap {
