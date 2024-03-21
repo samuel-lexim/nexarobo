@@ -89,16 +89,42 @@
     }
 }
 
-/* Example */
-.pdp-2_examples {
+/* Video Image */
+.pdp-video_img {
     margin-bottom: 0 !important;
 }
 
-@media only screen and (min-width: 690px) and (max-width: 999px) {
-    .pdp-2_examples .stk-row {
-        column-gap: 40px !important;
-        --stk-column-gap: 40px !important;
+/* Example */
+.pdp-4_examples {
+    margin-bottom: 0 !important;
+}
+
+.pdp-4_examples .stk-row > .stk-column {
+    margin-bottom: 70px;
+}
+
+@media only screen and (min-width: 690px) {
+    .pdp-4_examples .stk-row {
+        column-gap: 0 !important;
+        --stk-column-gap: 0 !important;
         max-width: 100% !important;
+        flex-wrap: wrap;
+    }
+    
+    .pdp-4_examples .stk-row > .stk-column {
+        flex-basis: 50% !important;
+        margin-bottom: 40px !important;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .pdp-4_examples .stk-row > .stk-column {
+        padding-left: 40px;
+        padding-right: 40px;
+        margin-bottom: 50px !important;
+        
     }
 }
 
@@ -159,3 +185,10 @@
         max-width: 1230px !important;
     }
 }
+
+/* FAQ */
+.pdp-accordion details.stk-block-accordion:last-child {
+    border-bottom-width: 0 !important;
+}
+
+/* */
