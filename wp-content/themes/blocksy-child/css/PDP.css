@@ -333,6 +333,10 @@
     display: none;
 }
 
+.single-post .ct-breadcrumbs {
+    display: none;
+}
+
 /* Right Content */
 .pdp-right_content {
     padding-left: 15px;
@@ -355,7 +359,6 @@
     font-size: 24px;
     line-height: 26px;
 }
-
 
 .pdp-right_content .pdp-right_content-content {
     margin-top: 20px;
@@ -472,6 +475,10 @@
         flex-grow: 0;
         flex-shrink: 0;
         margin: 0;
+    }
+    
+    .single-post .ct-breadcrumbs {
+        display: block;
     }
     
     .pdp-right_content {
