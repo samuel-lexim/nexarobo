@@ -59,6 +59,10 @@
 }
 
 /* STK button */
+.stk-block .stk-button {
+    white-space: nowrap !important;
+}
+
 .stk-block .stk-button.stk--hover-effect-darken:hover {
     filter: none;
     background-color: #fff !important;
@@ -85,6 +89,7 @@
     min-width: 213px !important;
     letter-spacing: 0.01em;
     text-align: center;
+    white-space: nowrap !important;
 }
 
 .scheduleBlueButton button:hover {

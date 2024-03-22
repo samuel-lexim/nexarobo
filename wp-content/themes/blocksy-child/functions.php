@@ -74,16 +74,17 @@ function remove_extra_image_sizes()
 
 add_action('init', 'remove_extra_image_sizes');
 
-add_image_size('large', 450, 0, true);
-add_image_size('medium_large', 450, 0, true);
+add_image_size('large', 500, 650, true);
+add_image_size('medium_large', 500, 650, true);
 add_image_size('medium', 450, 350, true);
-add_image_size('thumbnail', 150, 0, true);
+add_image_size('thumbnail', 101, 101, true);
 
 add_theme_support('large');
 add_theme_support('medium_large');
 add_theme_support('medium');
 add_theme_support('thumbnail');
-update_option('medium_large_size_w', 150);
+update_option('medium_large_size_w', 500);
+update_option('medium_large_size_h', 650);
 
 // END - Remove default image sizes here.
 
@@ -213,3 +214,5 @@ function custom_slick_posts_shortcode($atts)
 }
 
 add_shortcode('slick_posts', 'custom_slick_posts_shortcode');
+
+
