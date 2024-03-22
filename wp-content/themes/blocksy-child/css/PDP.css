@@ -308,6 +308,31 @@
     }
 }
 
+/* breadcrumbs */
+.ct-breadcrumbs {
+    text-transform: initial !important;
+}
+
+.ct-breadcrumbs a {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #252525
+}
+
+.ct-breadcrumbs .separator {
+    margin: 0 3px !important;
+}
+
+.ct-breadcrumbs a:hover {
+    color: #37a7f4;
+}
+
+.single-post .ct-breadcrumbs .item-1 .separator,
+.single-post .ct-breadcrumbs .last-item {
+    display: none;
+}
+
 /* Right Content */
 .pdp-right_content {
     padding-left: 15px;

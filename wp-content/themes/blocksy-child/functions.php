@@ -133,6 +133,22 @@ add_action("manage_ct_content_block_posts_custom_column", "my_custom_page_column
 
 // END - Add slug column for PAGE posts
 
+// Custom Blocksy Breadcrumbs
+add_filter(
+    'blocksy:breadcrumbs:items-array',
+    function ($items) {
+        $customItem = [
+            'url' => '/products',
+            'name' => 'Products'
+        ];
+
+        if (is_single()) {
+            // Add custom item
+            array_splice($items, 1, 0, [$customItem]);
+        }
+        return $items;
+    }
+);
 
 // Custom shortcode to display posts with Slick slider
 function custom_slick_posts_shortcode($atts)
