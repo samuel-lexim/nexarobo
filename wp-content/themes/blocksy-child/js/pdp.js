@@ -33,7 +33,7 @@ $(document).ready(function () {
             let thumbsSliderHtml = '<div class="' + _this.classes.gallery_thumb_slick + '">';
             for (let key in galleryItems) {
                 if (galleryItems.hasOwnProperty(key) && parseInt(key) >= 0) {
-
+                    let _type = '_img';
                     let item = galleryItems[key];
                     let _item = $(item);
                     let thumbUrl = null;
@@ -43,6 +43,7 @@ $(document).ready(function () {
                     }
 
                     if ($.inArray('wp-block-embed', classArray) !== -1) { // video
+                        _type = '_video';
                         let iframeSrc = _item.find('iframe').attr('src');
                         let type = 0;
                         type = $.inArray('is-provider-youtube', classArray) !== -1 ? 1 : type;
@@ -50,12 +51,14 @@ $(document).ready(function () {
                         thumbUrl = _this.getYoutubeVimeoThumbnail(iframeSrc, type);
 
                     } else if ($.inArray('stk-block-image', classArray) !== -1) { // image
+                        _type = '_img';
                         thumbUrl = _item.find('img').attr('src');
                         thumbUrl = await _this.getThumbnailUrl(thumbUrl);
                     }
 
                     // show correct thumbUrl async
-                    thumbsSliderHtml += '<div class="_navThumb"><img src="' + thumbUrl + '" alt="thumb"></div>';
+                    thumbsSliderHtml += '<div class="_navThumb ' + _type + '">' +
+                        '<div class="_navThumbInner"><img src="' + thumbUrl + '" alt="thumb"></div></div>';
 
                 }
             } // End for
@@ -105,13 +108,14 @@ $(document).ready(function () {
             });
 
             $("." + _this.classes.gallery_thumb_slick).slick({
-                slidesToShow: 5,
-                slidesToScroll: 1,
+                slidesToShow: 1,
                 asNavFor: "." + _this.classes.gallery_slick,
                 dots: false,
                 arrows: false,
+                infinite: false,
                 mobileFirst: true,
-                focusOnSelect: true
+                focusOnSelect: true,
+                variableWidth: true
             });
         },
 

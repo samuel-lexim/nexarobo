@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.11';
+const __VERSION = '7.13';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -8,7 +8,7 @@ if (!defined('WP_DEBUG')) {
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css', [], __VERSION);
 
-    // custom css
+    // custom components
     wp_enqueue_style('typo', get_stylesheet_directory_uri() . '/css/typo.css', [], __VERSION,);
     wp_enqueue_style('elements', get_stylesheet_directory_uri() . '/css/elements.css', [], __VERSION,);
     wp_enqueue_style('layout', get_stylesheet_directory_uri() . '/css/layout.css', [], __VERSION,);
@@ -19,6 +19,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('slick-theme', get_stylesheet_directory_uri() . '/css/slick/slick-theme.min.css', [], __VERSION);
     wp_enqueue_style('slick-posts', get_stylesheet_directory_uri() . '/css/sc-slick_posts.css', [], __VERSION);
 
+    // Page Sections
     wp_enqueue_style('header', get_stylesheet_directory_uri() . '/css/header.css', [], __VERSION);
     wp_enqueue_style('footer', get_stylesheet_directory_uri() . '/css/footer.css', [], __VERSION);
     wp_enqueue_style('page-home', get_stylesheet_directory_uri() . '/css/page-home.css', [], __VERSION);
