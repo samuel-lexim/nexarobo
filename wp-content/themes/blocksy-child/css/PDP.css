@@ -108,6 +108,15 @@
     margin-bottom: 70px;
 }
 
+.pdp-4_examples .stk-row > .stk-column .wp-block-embed,
+.pdp-4_examples .stk-row > .stk-column .stk-block-image {
+    margin-bottom: 0 !important;
+}
+
+.pdp-4_examples .stk-row > .stk-column .stk-block-heading {
+    margin-top: 35px !important;
+}
+
 @media only screen and (min-width: 690px) {
     .pdp-4_examples .stk-row {
         column-gap: 0 !important;
@@ -121,6 +130,23 @@
         margin-bottom: 40px !important;
         padding-left: 20px;
         padding-right: 20px;
+    }
+    
+    .pdp-4_examples .stk-row > .stk-column .stk-img-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 71.42857%;
+    }
+    
+    .pdp-4_examples .stk-row > .stk-column .stk-img-wrapper img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
     }
 }
 
@@ -316,6 +342,12 @@
 .slick-gallery .slick-track {
     align-items: center;
     display: flex;
+}
+
+.slick-gallery .stk-block-image.slick-slide {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0;
 }
 
 .slick-gallery .stk-block-image .stk-img-wrapper {
@@ -529,14 +561,19 @@
         margin: 0 !important;
     }
     
+    .slick-gallery .slick-slide {
+        min-width: 49vw !important;
+        max-width: 49vw !important;
+    }
+    
     .slick-gallery .stk-block-image.slick-slide {
         padding-left: 4.84vw;
         padding-right: 4.84vw;
     }
     
     .slick-gallery .wp-block-embed.slick-slide {
-        min-width: 50vw !important;
-        max-width: 50vw !important;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     
     /* Right content */
@@ -595,9 +632,15 @@
         padding: 0 60px;
     }
     
+    .slick-gallery .slick-slide,
     .slick-gallery .wp-block-embed.slick-slide {
         min-width: 620px !important;
         max-width: 620px !important;
+    }
+    
+    .slick-gallery .wp-block-embed.slick-slide {
+        padding-left: 5px;
+        padding-right: 5px;
     }
     
     .slick_gallery_thumbs {
