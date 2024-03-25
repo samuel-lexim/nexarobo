@@ -1,0 +1,128 @@
+/* Category slider */
+.plp-category_section {
+    margin-left: 20px !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-bottom: 0 !important;
+}
+
+.plp-category_section ._categoryHeading {
+    margin-bottom: 30px;
+}
+
+.plp-category_slick .slick-track {
+    display: flex;
+}
+
+.category_slick-item {
+    width: 320px;
+    max-width: 320px;
+    height: inherit;
+    margin-right: 30px;
+    background-color: #F4F7F9;
+    border-radius: 30px;
+}
+
+.category_slick-item:nth-child(even) {
+    background-color: #F9FAFA;
+}
+
+.category_slick-item ._itemInner {
+    padding: 26px 31px 31px;
+}
+
+.category_slick-item ._image {
+    position: relative;
+    width: 183px;
+    padding-bottom: 251px;
+    margin: 0 auto;
+}
+
+.category_slick-item ._image > img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.category_slick-item ._tit {
+    font-weight: 500 !important;
+    letter-spacing: 0.01em !important;
+    margin-bottom: 5px;
+}
+
+.category_slick-item ._tag {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    margin-bottom: 20px;
+}
+
+.category_slick-item .button {
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+@media only screen and (min-width: 690px) {
+    .plp-category_section {
+        margin-left: 40px !important;
+    }
+    
+    .plp-category_section ._categoryHeading {
+        margin-bottom: 50px;
+    }
+    
+    .category_slick-item {
+        width: 445px;
+        max-width: 445px;
+        margin-right: 50px;
+    }
+    
+    .category_slick-item ._itemInner {
+        padding: 38px 40px 40px;
+    }
+    
+    .category_slick-item ._image {
+        width: 251px;
+        padding-bottom: 344px;
+        margin-bottom: 43px;
+    }
+    
+    .category_slick-item ._tit {
+        margin-bottom: 10px;
+        font-size: 46px !important;
+        line-height: 50px !important;
+        letter-spacing: normal !important;
+    }
+    
+    .category_slick-item ._tag {
+        margin-bottom: 30px;
+    }
+    
+    .category_slick-item .button {
+        min-height: 44px;
+        height: 44px;
+        line-height: 44px;
+        letter-spacing: 0.01em;
+        font-weight: 500;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .plp-category_section ._categoryHeading {
+        padding-right: 230px;
+    }
+}
+
+@media only screen and (min-width: 1441px) {
+    .category_slick-item {
+        width: calc(33.3333vw - 40px);
+        max-width: calc(33.3333vw - 40px);
+    }
+}

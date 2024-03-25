@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.13';
+const __VERSION = '7.14';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -26,6 +26,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('page-about', get_stylesheet_directory_uri() . '/css/page-about.css', [], __VERSION);
     wp_enqueue_style('page-get-your-quote', get_stylesheet_directory_uri() . '/css/page-get-your-quote.css', [], __VERSION);
     wp_enqueue_style('pdp-css', get_stylesheet_directory_uri() . '/css/PDP.css', [], __VERSION);
+    wp_enqueue_style('listing-css', get_stylesheet_directory_uri() . '/css/listing.css', [], __VERSION);
 
 
     // Jquery
@@ -76,7 +77,7 @@ function remove_extra_image_sizes()
 add_action('init', 'remove_extra_image_sizes');
 
 add_image_size('large', 500, 650, true);
-add_image_size('medium_large', 500, 650, true);
+add_image_size('medium_large', 251, 344, true); // not same the large ratio
 add_image_size('medium', 450, 350, true);
 add_image_size('thumbnail', 101, 101, true);
 
@@ -84,8 +85,8 @@ add_theme_support('large');
 add_theme_support('medium_large');
 add_theme_support('medium');
 add_theme_support('thumbnail');
-update_option('medium_large_size_w', 500);
-update_option('medium_large_size_h', 650);
+update_option('medium_large_size_w', 251);
+update_option('medium_large_size_h', 344);
 
 // END - Remove default image sizes here.
 
@@ -145,14 +146,18 @@ add_filter(
         ];
 
         if (is_single()) {
-            // Add custom item
+            // Add Products item to the index 1
             array_splice($items, 1, 0, [$customItem]);
+
+            // Remove the last item (Post Title) and the link on category (item index = 2)
+            unset($items[3]);
         }
         return $items;
     }
 );
 
 // Custom shortcode to display posts with Slick slider
+add_shortcode('slick_posts', 'custom_slick_posts_shortcode');
 function custom_slick_posts_shortcode($atts)
 {
     // Extract shortcode attributes
@@ -214,6 +219,80 @@ function custom_slick_posts_shortcode($atts)
     return $output;
 }
 
-add_shortcode('slick_posts', 'custom_slick_posts_shortcode');
 
+// Category slider
+add_shortcode('category_listing', 'category_listing_shortcode');
+function category_listing_shortcode($atts)
+{
+    // Extract shortcode attributes
+    $atts = shortcode_atts(
+        [
+            'post_type' => 'post',
+            'cat' => 'cooking-robots',
+            'heading' => '',
+            'limit' => 20,
+            'order' => 'DESC'
+        ],
+        $atts,
+        'category_listing'
+    );
+
+    // Query arguments
+    $query_args = [
+        'post_type' => $atts['post_type'],
+        'post_status' => 'publish',
+        'tax_query' => [
+            [
+                'taxonomy' => 'category',
+                'field' => 'slug',
+                'terms' => $atts['cat'],
+            ],
+        ],
+        'posts_per_page' => $atts['limit'],
+        'orderby' => 'date',
+        'order' => $atts['order'],
+    ];
+
+    // Fetch posts
+    $slick_posts_query = new WP_Query($query_args);
+
+    // Start building the output
+    $output = '<section class="plp-category_section">';
+
+    $output .= "<h2 class='_categoryHeading'>Cooking Robots</h2>";
+
+
+    // Check if there are any posts
+    if ($slick_posts_query->have_posts()) {
+        $output .= '<div class="plp-category_slick topRightArrow">';
+
+        while ($slick_posts_query->have_posts()) {
+            $slick_posts_query->the_post();
+            $postID = get_the_ID();
+            $link = get_the_permalink();
+            $thumbnail = get_the_post_thumbnail($postID, 'medium_large');
+
+            $output .= '<div class="category_slick-item">'; // item-wrap
+            $output .= '<div class="_itemInner">'; // _itemInner
+
+            $output .= "<div class='_image'>{$thumbnail}</div>";
+
+            $output .= '<div class="_bottomInner">';
+            $output .= '<h2 class="_tit">' . get_the_title() . '</h2>';
+            $output .= '<p class="_tag">Recommended for:<br>#cooking #Fryer #restaurant</p>';
+            $output .= "<a class='button' href='{$link}'>Learn More</a>";
+            $output .= '</div>';
+
+            $output .= '</div>'; // ._itemInner
+            $output .= '</div>'; // .category_slick-item
+        }
+
+        $output .= '</div>'; // .slick-slider
+    }
+
+    // Restore original post data
+    wp_reset_postdata();
+    $output .= '</section>';
+    return $output;
+}
 

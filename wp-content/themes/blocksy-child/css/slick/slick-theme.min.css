@@ -153,3 +153,66 @@
 
 /* Home product slider */
 
+/* Listing Slider */
+.slick-slider.topRightArrow {
+    padding-bottom: 77px;
+}
+
+.slick-slider.topRightArrow .slick-prev:before,
+.slick-slider.topRightArrow .slick-next:before {
+    background-size: 30px;
+    background-position: center;
+}
+
+.slick-slider.topRightArrow .slick-prev:before,
+.slick-slider.topRightArrow [dir=rtl] .slick-next:before {
+    background-image: url("black-left.svg");
+}
+
+.slick-slider.topRightArrow .slick-next:before,
+.slick-slider.topRightArrow [dir=rtl] .slick-prev:before {
+    background-image: url("black-right.svg");
+}
+
+.slick-slider.topRightArrow .slick-next, .slick-slider.topRightArrow .slick-prev {
+    top: auto;
+    bottom: 0;
+    transform: none;
+    width: 50px;
+}
+
+.slick-slider.topRightArrow .slick-next {
+    right: 40px;
+}
+
+.slick-slider.topRightArrow .slick-prev {
+    left: auto;
+    right: 100px;
+}
+
+.slick-slider.topRightArrow .slick-arrow.slick-disabled {
+    opacity: 0.433;
+}
+
+@media only screen and (min-width: 1000px) {
+    .slick-slider.topRightArrow {
+        padding-bottom: 0;
+    }
+    
+    .slick-slider.topRightArrow .slick-prev:before, .slick-slider.topRightArrow .slick-next:before {
+        background-size: 40px;
+    }
+    
+    .slick-slider.topRightArrow .slick-next, .slick-slider.topRightArrow .slick-prev {
+        top: -100px;
+        bottom: auto;
+    }
+    
+    .slick-slider.topRightArrow .slick-next {
+        right: 82px;
+    }
+    
+    .slick-slider.topRightArrow .slick-prev {
+        right: 172px;
+    }
+}
