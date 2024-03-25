@@ -14,7 +14,7 @@ nav[class*=menu] li:hover > .ct-menu-link svg path,
 nav[class*=menu] li:hover > .ct-sub-menu-parent svg path,
 nav[class*=menu] li[class*=current-menu-] > .ct-menu-link svg path,
 nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg path {
-    stroke: var(--theme-icon-active-color, var(--theme-icon-hover-color, var(--theme-link-active-color, var(--theme-link-hover-color))));
+    fill: var(--theme-icon-hover-color, var(--theme-link-hover-color)) !important;
 }
 
 @media only screen and (max-width: 999px) {
@@ -70,6 +70,13 @@ nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg path {
 }
 
 @media only screen and (min-width: 1000px) {
+    nav[class*=menu] li:hover > .ct-menu-link svg path,
+    nav[class*=menu] li:hover > .ct-sub-menu-parent svg path,
+    nav[class*=menu] li[class*=current-menu-] > .ct-menu-link svg path,
+    nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg path {
+        fill: transparent !important
+    }
+    
     .ct-header [data-device="desktop"] .ct-container-fluid {
         max-width: 1218px;
     }
