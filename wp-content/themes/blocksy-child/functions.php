@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.14';
+const __VERSION = '7.16';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -253,13 +253,16 @@ function category_listing_shortcode($atts)
         'order' => $atts['order'],
     ];
 
+    //
+    $category = get_term_by('slug', $atts['cat'], 'category');
+
     // Fetch posts
     $slick_posts_query = new WP_Query($query_args);
 
     // Start building the output
     $output = '<section class="plp-category_section">';
 
-    $output .= "<h2 class='_categoryHeading'>Cooking Robots</h2>";
+    $output .= "<h2 class='_categoryHeading'>{$category->name}</h2>";
 
 
     // Check if there are any posts

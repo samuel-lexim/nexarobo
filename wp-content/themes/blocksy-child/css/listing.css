@@ -311,6 +311,7 @@
         left: auto !important;
         bottom: 0 !important;
         right: 0 !important;
+        max-height: max-content;
     }
     
     .plp-contact_us > .gspb_container:first-child .stk-block-image img {
@@ -328,6 +329,7 @@
         position: absolute;
         width: 225px;
         height: auto;
+        max-height: max-content;
         top: auto !important;
         left: auto !important;
         bottom: 0 !important;
