@@ -53,6 +53,19 @@ $(document).ready(function () {
                     infinite: false,
                     variableWidth: true,
                 });
+
+                // Check arrow
+                let plpSliders = $('.' + _this.classes.PLP_cat_slick + '.topRightArrow');
+                for (let key in plpSliders) {
+                    if (plpSliders.hasOwnProperty(key) && parseInt(key) >= 0) {
+                        let item = plpSliders[key];
+                        let _item = $(item);
+                        let findArrows = _item.find('.slick-arrow');
+                        if (findArrows && findArrows.length <= 0) {
+                            _item.addClass("noArrows");
+                        }
+                    }
+                }
             }
         }
     };

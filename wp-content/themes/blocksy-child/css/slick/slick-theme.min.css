@@ -154,7 +154,7 @@
 /* Home product slider */
 
 /* Listing Slider */
-.slick-slider.topRightArrow {
+.slick-slider.topRightArrow:not(.noArrows) {
     padding-bottom: 77px;
 }
 

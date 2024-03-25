@@ -150,13 +150,17 @@
 }
 
 .plp-contact_us > .gspb_container .stk-block-heading {
-    margin-bottom: 20px;
+    margin-bottom: 14px;
     max-width: 320px;
 }
 
 .plp-contact_us > .gspb_container .stk-block-text {
     margin-bottom: 30px;
     letter-spacing: 0.01em;
+}
+
+.plp-contact_us > .gspb_container:last-child .stk-block-text {
+    margin-bottom: 23px;
 }
 
 .plp-contact_us > .gspb_container .stk-button,
@@ -168,7 +172,7 @@
 
 /* First */
 .plp-contact_us > .gspb_container:first-child {
-    padding-top: 46vw;
+    padding-top: 190px;
     padding-bottom: 33px;
     margin-bottom: 30px;
     background: linear-gradient(164.35deg, #37A7F4 2.22%, #4E1EA3 89.06%) !important;
@@ -178,8 +182,9 @@
     position: absolute;
     top: 0 !important;
     right: 0 !important;
-    width: 49.5vw;
-    height: 50vw;
+    width: 205px;
+    height: auto;
+    max-height: 190px;
 }
 
 .plp-contact_us > .gspb_container:first-child .stk-block-image img {
@@ -194,7 +199,7 @@
 
 /* Last */
 .plp-contact_us > .gspb_container:last-child {
-    padding-top: 41vw;
+    padding-top: 174px;
     padding-bottom: 36px;
 }
 
@@ -206,8 +211,9 @@
     position: absolute;
     top: 0 !important;
     right: 0 !important;
-    width: 54vw;
-    height: 50vw;
+    height: auto;
+    width: 222px;
+    max-height: 190px;
 }
 
 .plp-contact_us > .gspb_container:last-child .stk-block-image img {
@@ -216,15 +222,16 @@
     margin: -18px -22px auto auto !important;
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 800px)  and (max-width: 1199px) {
     .plp-contact_us {
         padding: 0 40px !important;
         display: flex !important;
         position: relative;
         align-items: stretch !important;
         flex-direction: row !important;
-        height: 446px;
         justify-content: space-between;
+        flex-wrap: nowrap !important;
+        height: 505px;
     }
     
     .plp-contact_us > .gspb_container {
@@ -237,6 +244,36 @@
         overflow: hidden;
     }
     
+    .plp-contact_us > .gspb_container .wp-block-group .gspb_container {
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .plp-contact_us {
+        padding: 0 40px !important;
+        display: flex !important;
+        position: relative;
+        align-items: stretch !important;
+        flex-direction: row !important;
+        height: 446px;
+        justify-content: space-between;
+        flex-wrap: nowrap !important;
+    }
+    
+    .plp-contact_us > .gspb_container {
+        position: relative;
+        display: flex;
+        flex-basis: calc(50vw - 54px);
+        width: 0 !important;
+        height: inherit;
+        margin: 0 !important;
+        overflow: hidden;
+    }
+    
+    /* */
     .plp-contact_us > .gspb_container:last-child,
     .plp-contact_us > .gspb_container:first-child {
         padding-top: 0;
@@ -306,6 +343,7 @@
         margin-bottom: -48px !important;
         max-width: 150%;
     }
+    
 }
 
 @media only screen and (min-width: 1440px) {
