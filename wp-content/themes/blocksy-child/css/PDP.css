@@ -335,8 +335,11 @@
 }
 
 /* Left Gallery */
+.showOnlyFirst > *:not(:first-child) {
+    display: none;
+}
+
 .pdp-left_gallery {
-    visibility: hidden;
     margin-bottom: 70px !important;
 }
 

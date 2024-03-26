@@ -1,7 +1,7 @@
 "use strict";
 
 $(document).ready(function () {
-    console.log("PDP PAGE");
+    console.log("PDP PAGE 1");
 
     let PDP = {
         classes: {
@@ -13,7 +13,7 @@ $(document).ready(function () {
         init: function () {
             let _this = this;
             this.gallery_init().then(() => {
-                $('.'+_this.classes.left_gallery).css("visibility", "visible");
+                $('.'+_this.classes.left_gallery).removeClass('showOnlyFirst');
                 _this.gallery_slider_init();
             });
             this.icon_list_init();
