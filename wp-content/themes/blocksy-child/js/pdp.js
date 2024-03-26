@@ -1,19 +1,19 @@
 "use strict";
 
 $(document).ready(function () {
-    console.log("PDP PAGE 1");
+    console.log("PDP PAGE");
 
     let PDP = {
         classes: {
             gallery_slick: 'slick-gallery',
             gallery_thumb_slick: 'slick_gallery_thumbs',
-            left_gallery : 'pdp-left_gallery',
+            left_gallery: 'pdp-left_gallery',
         },
 
         init: function () {
             let _this = this;
             this.gallery_init().then(() => {
-                $('.'+_this.classes.left_gallery).removeClass('showOnlyFirst');
+                $('.' + _this.classes.gallery_slick).removeClass('showOnlyFirst');
                 _this.gallery_slider_init();
             });
             this.icon_list_init();

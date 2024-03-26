@@ -116,7 +116,6 @@
     }
 }
 
-
 @media only screen and (min-width: 1000px) {
     .gradientWrap {
         padding-top: 90px;
@@ -127,7 +126,374 @@
     }
 }
 
+/* Archive BEP */
+.home-achieveBEP_section {
 
+}
+
+.home-achieveBEP_section > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+    width: 100% !important;
+}
+
+.home-achieveBEP_section ._tit {
+    margin-bottom: 10px !important;
+}
+
+.home-achieveBEP_section ._tit .stk-block-heading__text {
+    font-weight: 600 !important;
+    font-size: 50px !important;
+    line-height: 48px !important;
+    margin-bottom: 0 !important;
+    text-align: center;
+    background-image: linear-gradient(90deg, #37A7F4 2.71%, #D3F40B 100%) !important;
+    -webkit-text-fill-color: #0000;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.home-achieveBEP_section ._subTit .stk-block-heading__text {
+    font-weight: 600 !important;
+    font-size: 50px !important;
+    line-height: 48px !important;
+    margin-bottom: 50px !important;
+    text-align: center;
+}
+
+.home-achieveBEP_section .home-BEP_line {
+    gap: 0;
+    margin-top: 80px !important;
+    margin-bottom: 0 !important;
+}
+
+.home-achieveBEP_section ._subTit + .home-BEP_line {
+    margin-top: 0 !important;
+}
+
+.home-BEP_line ._name {
+    margin-bottom: 50px !important;
+}
+
+.home-BEP_line ._name .stk-block-heading {
+    margin-bottom: 20px !important;
+}
+
+.home-BEP_line ._name .stk-block-heading__text {
+    font-size: 30px !important;
+    font-weight: 600 !important;
+    line-height: 34px !important;
+    letter-spacing: 0.01em !important;
+    text-align: center;
+}
+
+.home-BEP_line ._name .stk-img-wrapper {
+    height: auto !important;
+}
+
+.home-BEP_line ._name .stk-img {
+    width: auto !important;
+    height: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.home-BEP_line ._avgRate {
+    margin-bottom: 30px !important;
+}
+
+.home-BEP_line ._avgRate .stk-block-text:first-child {
+    margin-bottom: 0 !important;
+}
+
+.home-BEP_line ._avgRate .stk-block-text:first-child .stk-block-text__text {
+    font-size: 30px !important;
+    font-weight: 600 !important;
+    line-height: 34px !important;
+    letter-spacing: 0.01em !important;
+    text-align: center;
+    margin-bottom: 0 !important;
+}
+
+.home-BEP_line ._avgRate .stk-block-text:first-child .stk-block-text__text strong {
+    font-size: 36px !important;
+    font-weight: 600 !important;
+    line-height: 42px !important;
+    letter-spacing: 0 !important;
+    text-align: center;
+}
+
+.home-BEP_line ._avgRate .stk-block-text:last-child .stk-block-text__text {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    letter-spacing: 0.01em !important;
+    text-align: center;
+    margin-bottom: 0 !important;
+}
+
+.home-BEP_line ._arrow {
+    margin-bottom: 30px !important;
+}
+
+.home-BEP_line ._arrow .stk-block-image {
+    margin-bottom: 0 !important;
+}
+
+.home-BEP_line ._arrow .stk-img {
+    margin-bottom: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.home-BEP_line ._arrow .stk-block-image:last-child {
+    display: none;
+}
+
+.home-BEP_line ._result {
+    margin-bottom: 0 !important;
+}
+
+.home-BEP_line ._result .stk-block-text__text {
+    font-size: 30px !important;
+    font-weight: 600 !important;
+    line-height: 34px !important;
+    letter-spacing: 0.01em !important;
+    text-align: center;
+}
+
+.home-BEP_line ._result .stk-block-text__text strong {
+    font-size: 50px !important;
+    font-weight: 600 !important;
+    line-height: 50px !important;
+    letter-spacing: 0 !important;
+    text-align: center;
+}
+
+.home-BEP_line ._result._gradient .stk-block-text__text strong {
+    background: linear-gradient(90deg, #37A7F4 0%, #D2F538 100%);
+    -webkit-text-fill-color: #0000;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.home-achieveBEP_section ._slogan {
+    margin-top: 45px !important;
+    margin-bottom: 45px !important;
+}
+
+.home-achieveBEP_section ._slogan .stk-block-text__text {
+    font-size: 30px !important;
+    font-weight: 600 !important;
+    line-height: 34px !important;
+    letter-spacing: 0.01em !important;
+    text-align: center;
+    background: linear-gradient(90deg, #37A7F4 19.33%, #D2F538 122.12%);
+    -webkit-text-fill-color: #0000;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.home-achieveBEP_section ._button {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+
+@media only screen and (min-width: 768px) {
+    /* layout */
+    .home-achieveBEP_section .home-BEP_line {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100%;
+        max-width: 850px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .home-BEP_line ._arrow .stk-block-image:last-child {
+        display: block;
+    }
+    
+    .home-BEP_line ._arrow .stk-block-image:first-child {
+        display: none;
+    }
+    
+    .home-BEP_line ._name {
+        flex: 1 1 auto !important;
+    }
+    
+    .home-BEP_line ._name, .home-BEP_line ._avgRate,
+    .home-BEP_line ._arrow, .home-BEP_line ._result {
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    .home-BEP_line ._avgRate {
+        flex: 0 0 185px !important;
+        margin-left: 20px;
+    }
+    
+    .home-BEP_line ._arrow {
+        flex: 0 0 121px !important;
+        margin: 0 30px !important;
+    }
+    
+    .home-BEP_line ._result {
+        flex: 0 0 220px !important;
+    }
+    
+    /* Fonts - space */
+    .home-achieveBEP_section ._tit .stk-block-heading__text {
+        font-size: 70px !important;
+        line-height: 60px !important;
+    }
+    
+    .home-achieveBEP_section ._subTit .stk-block-heading__text {
+        font-size: 52px !important;
+        line-height: 56px !important;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    /* layout 2 column */
+    .home-achieveBEP_section .home-BEP_line {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100%;
+        max-width: 1060px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .home-BEP_line ._arrow .stk-block-image:last-child {
+        display: block;
+    }
+    
+    .home-BEP_line ._arrow .stk-block-image:first-child {
+        display: none;
+    }
+    
+    .home-BEP_line ._name {
+        flex: 1 1 auto !important;
+    }
+    
+    .home-BEP_line ._name, .home-BEP_line ._avgRate,
+    .home-BEP_line ._arrow, .home-BEP_line ._result {
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    .home-BEP_line ._avgRate {
+        flex: 0 0 245px !important;
+        margin-left: 50px;
+    }
+    
+    .home-BEP_line ._arrow {
+        flex: 0 0 121px !important;
+        margin: 0 30px !important;
+    }
+    
+    .home-BEP_line ._result {
+        flex: 0 0 310px !important;
+    }
+    
+    /* Fonts - space */
+    .home-achieveBEP_section .home-BEP_line {
+        margin-top: 100px !important;
+    }
+    
+    .home-achieveBEP_section ._tit .stk-block-heading__text {
+        font-size: 70px !important;
+        line-height: 60px !important;
+    }
+    
+    .home-achieveBEP_section ._subTit .stk-block-heading__text {
+        font-size: 52px !important;
+        line-height: 56px !important;
+        margin-bottom: 50px !important;
+    }
+    
+    .home-BEP_line ._name .stk-block-heading__text {
+        font-size: 36px !important;
+        line-height: 42px !important;
+        letter-spacing: 0.01em !important;
+    }
+    
+    .home-BEP_line ._avgRate .stk-block-text:first-child {
+        margin-bottom: 10px !important;
+    }
+    
+    .home-BEP_line ._avgRate .stk-block-text:first-child .stk-block-text__text {
+        font-size: 36px !important;
+        line-height: 42px !important;
+        letter-spacing: 0.01em !important;
+    }
+    
+    .home-BEP_line ._avgRate .stk-block-text:first-child .stk-block-text__text strong {
+        font-size: 46px !important;
+        line-height: 50px !important;
+        letter-spacing: 0 !important;
+    }
+    
+    .home-BEP_line ._avgRate .stk-block-text:last-child .stk-block-text__text {
+        font-size: 18px !important;
+        font-weight: 400 !important;
+        line-height: 26px !important;
+        letter-spacing: 0.01em !important;
+        text-align: center;
+        margin-bottom: 0 !important;
+    }
+    
+    .home-BEP_line ._result .stk-block-text__text {
+        font-size: 36px !important;
+        font-weight: 600 !important;
+        line-height: 42px !important;
+        letter-spacing: 0.01em !important;
+        text-align: center;
+    }
+    
+    .home-BEP_line ._result .stk-block-text__text strong {
+        font-size: 60px !important;
+        font-weight: 600 !important;
+        line-height: 60px !important;
+        letter-spacing: 0 !important;
+        text-align: center;
+    }
+    
+    .home-BEP_line ._result._gradient .stk-block-text__text strong {
+        font-size: 70px !important;
+        
+    }
+    
+    .home-achieveBEP_section ._slogan {
+        margin-top: 30px !important;
+        margin-bottom: 100px !important;
+    }
+    
+    .home-achieveBEP_section ._slogan .stk-block-text__text {
+        font-size: 36px !important;
+        font-weight: 600 !important;
+        line-height: 42px !important;
+        letter-spacing: 0.01em !important;
+        text-align: center;
+    }
+    
+    .home-achieveBEP_section ._slogan .stk-block-text__text br {
+        display: none;
+    }
+    
+}
 
 /* Accordion section */
 .journey-group ._stepImg {
