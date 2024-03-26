@@ -496,6 +496,13 @@
 }
 
 /* Accordion section */
+.journey-group > .stk-block-text .stk-block-text__text {
+    font-size: 16px !important;
+    line-height: 20px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.01em !important;
+}
+
 .journey-group ._stepImg {
     display: none;
     margin-bottom: 2px !important;
@@ -520,18 +527,43 @@
     }
 }
 
+@media only screen and (max-width: 689px) {
+    .journey-group > .stk-block-heading {
+        max-width: 292px;
+    }
+    
+    .journey-group > .stk-block-text {
+        max-width: 354px !important;
+    }
+}
+
+@media only screen and (min-width: 690px) {
+    .journey-group > .stk-block-heading {
+        max-width: 690px !important;
+    }
+    
+    .journey-group > .stk-block-text {
+        max-width: 664px !important;
+    }
+    
+    .journey-group > .stk-block-heading .stk-block-heading__text {
+        font-size: 52px !important;
+        line-height: 56px !important;
+        font-weight: 600 !important;
+        letter-spacing: 0 !important;
+    }
+    
+    .journey-group > .stk-block-text .stk-block-text__text {
+        font-size: 18px !important;
+        line-height: 26px !important;
+        font-weight: 400 !important;
+        letter-spacing: 0.01em !important;
+    }
+}
+
 @media only screen and (min-width: 1000px) {
     .journey-group {
         max-width: 860px !important;
-    }
-    
-    .journey-group > .wp-block-stackable-heading {
-        padding: 0 40px;
-    }
-    
-    .journey-group > p {
-        padding: 0 90px;
-        
     }
     
     .journey-group ._stepImg {
