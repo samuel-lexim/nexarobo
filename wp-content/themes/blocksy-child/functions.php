@@ -165,19 +165,35 @@ function custom_slick_posts_shortcode($atts)
         [
             'post_type' => 'post',
             'limit' => 15,
-            'order' => 'DESC'
+            'order' => 'DESC',
+            'list' => ''
         ],
         $atts,
         'slick_posts'
     );
 
+    $ids = [];
+    if ($atts['list']) {
+        $ids = explode(",", $atts['list']);
+    }
+
     // Query arguments
-    $query_args = [
-        'post_type' => $atts['post_type'],
-        'posts_per_page' => $atts['limit'],
-        'orderby' => 'date',
-        'order' => $atts['order'],
-    ];
+    if ($ids && count($ids) > 0) {
+        $query_args = [
+            'post_type' => $atts['post_type'],
+            'posts_per_page' => $atts['limit'],
+            'post__in' => $ids,
+            'orderby' => 'date',
+            'order' => $atts['order'],
+        ];
+    } else {
+        $query_args = [
+            'post_type' => $atts['post_type'],
+            'posts_per_page' => $atts['limit'],
+            'orderby' => 'date',
+            'order' => $atts['order'],
+        ];
+    }
 
     // Fetch posts
     $slick_posts_query = new WP_Query($query_args);
