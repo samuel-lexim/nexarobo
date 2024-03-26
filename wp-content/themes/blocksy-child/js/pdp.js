@@ -6,24 +6,24 @@ $(document).ready(function () {
     let PDP = {
         classes: {
             gallery_slick: 'slick-gallery',
-            gallery_thumb_slick: 'slick_gallery_thumbs'
+            gallery_thumb_slick: 'slick_gallery_thumbs',
+            left_gallery : 'pdp-left_gallery',
         },
 
         init: function () {
-            this.gallery_init();
+            let _this = this;
+            this.gallery_init().then(() => {
+                $('.'+_this.classes.left_gallery).css("visibility", "visible");
+                _this.gallery_slider_init();
+            });
             this.icon_list_init();
             this.our_customer_init();
         },
 
         gallery_init: async function () {
             let _this = this;
-            try {
-                let html = await _this.gallery_thumb_init();
-                $("." + _this.classes.gallery_slick).after(html);
-                _this.gallery_slider_init();
-            } catch (error) {
-                console.log(error);
-            }
+            let html = await _this.gallery_thumb_init();
+            $("." + _this.classes.gallery_slick).after(html);
         },
 
         gallery_thumb_init: async function () {

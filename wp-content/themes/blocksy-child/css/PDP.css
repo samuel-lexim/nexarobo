@@ -336,6 +336,7 @@
 
 /* Left Gallery */
 .pdp-left_gallery {
+    visibility: hidden;
     margin-bottom: 70px !important;
 }
 
