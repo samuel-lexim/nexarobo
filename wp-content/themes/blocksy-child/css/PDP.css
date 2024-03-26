@@ -117,6 +117,19 @@
     margin-top: 35px !important;
 }
 
+.pdp-4_examples .stk-row > .stk-column .stk-block-heading .stk-block-heading__text {
+    font-size: 20px !important;
+    line-height: 22px !important;
+    letter-spacing: 0.01em !important;
+}
+
+.pdp-4_examples .stk-row > .stk-column .stk-block-text .stk-block-text__text {
+    letter-spacing: 0.01em !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 400 !important;
+}
+
 @media only screen and (min-width: 690px) {
     .pdp-4_examples .stk-row {
         column-gap: 0 !important;
@@ -147,6 +160,24 @@
         right: 0;
         bottom: 0;
         margin: auto;
+    }
+    
+    .pdp-4_examples .stk-row > .stk-column .stk-block-heading {
+        margin-top: 35px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .pdp-4_examples .stk-row > .stk-column .stk-block-heading .stk-block-heading__text {
+        font-size: 24px !important;
+        line-height: 26px !important;
+        letter-spacing: 0.01em !important;
+    }
+    
+    .pdp-4_examples .stk-row > .stk-column .stk-block-text .stk-block-text__text {
+        letter-spacing: 0.01em !important;
+        font-size: 18px !important;
+        line-height: 26px !important;
+        font-weight: 400 !important;
     }
 }
 
@@ -486,10 +517,10 @@
 
 .pdp-right_content .pdp-right_content-content ul li {
     position: relative;
-    font-size: 20px !important;
-    line-height: 22px !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
     letter-spacing: 0.01em !important;
-    font-weight: 600 !important;
+    font-weight: 400 !important;
     margin-bottom: 15px;
 }
 
@@ -599,8 +630,8 @@
     }
     
     .pdp-right_content .pdp-right_content-content ul li {
-        font-size: 24px !important;
-        line-height: 28px !important;
+        font-size: 18px !important;
+        line-height: 26px !important;
     }
     
     .pdp-right_content .taxonomy-post_tag a {
