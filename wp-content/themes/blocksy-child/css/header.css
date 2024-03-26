@@ -70,6 +70,10 @@ nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg path {
 }
 
 @media only screen and (min-width: 1000px) {
+    .ct-header .menu li.menu-item-home {
+        display: none;
+    }
+
     nav[class*=menu] li:hover > .ct-menu-link svg path,
     nav[class*=menu] li:hover > .ct-sub-menu-parent svg path,
     nav[class*=menu] li[class*=current-menu-] > .ct-menu-link svg path,
