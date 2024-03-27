@@ -211,11 +211,54 @@
     .pdp-our_customer > .stk-block-heading {
         max-width: 1084px !important;
     }
+    
+    .pdp-our_customer > .stk-block {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+        max-width: 770px !important;
+    }
+}
+
+.pdp-testimonial_slider .slick-track {
+    display: flex;
 }
 
 .pdp-testimonial_slider .slick-slide {
     padding-top: 15px;
     padding-bottom: 15px;
+    height: auto !important;
+    display: flex !important;
+}
+
+.pdp-testimonial_slider .slick-slide .gspb_container {
+    position: relative;
+    max-height: 250px !important;
+    overflow: hidden;
+}
+
+.pdp-testimonial_slider .slick-slide.hasThreeDots {
+    cursor: pointer;
+}
+
+.pdp-testimonial_slider .slick-slide.hasThreeDots .gspb_container:after {
+    content: '.......';
+    position: absolute;
+    width: 100%;
+    height: 55px;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    background-color: #fcfcfc;
+    z-index: 1;
+}
+
+.pdp-testimonial_slider .slick-slide.hasThreeDots.expanded .gspb_container {
+    max-height: max-content !important;
+}
+
+.pdp-testimonial_slider .slick-slide.hasThreeDots.expanded .gspb_container:after {
+    height: 0;
+    visibility: hidden;
 }
 
 @media only screen and (max-width: 689px) {
@@ -257,6 +300,14 @@
     .pdp-testimonial_slider .slick-slide > .gspb_container {
         margin-left: auto !important;
         margin-right: auto !important;
+    }
+    
+    .pdp-testimonial_slider .slick-slide .gspb_container {
+        max-height: 280px !important;
+    }
+    
+    .pdp-testimonial_slider .slick-slide.hasThreeDots .gspb_container:after {
+        height: 42px;
     }
     
 }

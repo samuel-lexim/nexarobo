@@ -8,6 +8,7 @@ $(document).ready(function () {
             gallery_slick: 'slick-gallery',
             gallery_thumb_slick: 'slick_gallery_thumbs',
             left_gallery: 'pdp-left_gallery',
+            ourCustomer_slider: 'pdp-testimonial_slider'
         },
 
         init: function () {
@@ -19,6 +20,7 @@ $(document).ready(function () {
             this.icon_list_init();
             this.our_customer_init();
             this.disableTagLink();
+            this.resize();
         },
 
         gallery_init: async function () {
@@ -172,11 +174,17 @@ $(document).ready(function () {
         },
 
         our_customer_init: function () {
-            let OC_slider = $('.pdp-testimonial_slider');
-            let items = $('.pdp-testimonial_slider > div');
+            let _this = this;
+            let OC_slider = $('.' + _this.classes.ourCustomer_slider);
+            let items = $('.' + _this.classes.ourCustomer_slider + ' > div');
             let n = items.length;
 
             if (OC_slider && OC_slider.length > 0) {
+
+                OC_slider.on('init.slick', function (event, slick) {
+                    _this.our_customer_expand_event();
+                });
+
                 OC_slider.slick({
                     slidesToShow: 3,
                     slidesToScroll: 3,
@@ -205,7 +213,44 @@ $(document).ready(function () {
                     ]
                 });
             }
-        }
+        },
+
+        our_customer_expand_event: function () {
+            console.log("our_customer_expand_event");
+            let _this = this;
+            let maxHeight = $(window).width() > 690 ? 280 : 250;
+            let padding = $(window).width() > 690 ? 97 : 109;
+            console.log(`maxHeight: ${maxHeight} - Padding: ${padding}`);
+            let OC_slider = $('.' + _this.classes.ourCustomer_slider);
+            let items = OC_slider.find('.slick-slide');
+            items.each(function (i, e) {
+                let _innerContent = $(e).find('.gspb_container');
+                let totalHeight = 0;
+                _innerContent.children().each(function () {
+                    totalHeight += $(this).outerHeight(true);
+                });
+                console.log(totalHeight);
+                if ((totalHeight + padding) > maxHeight) {
+                    $(e).addClass('hasThreeDots').removeClass('expanded');
+                    console.log("add hasThreeDots");
+                } else {
+                    $(e).removeClass('hasThreeDots').removeClass('expanded');
+                    console.log("remove hasThreeDots");
+                }
+            });
+
+            // Add click event for each item
+            $('.' + _this.classes.ourCustomer_slider + ' .slick-slide').click(function () {
+                $(this).toggleClass('expanded');
+            });
+        },
+
+        resize: function () {
+            let _this = this;
+            $(window).resize(function () {
+                _this.our_customer_expand_event();
+            });
+        },
 
     };
 
