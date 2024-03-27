@@ -33,7 +33,7 @@ nav#footer-menu {
         padding-left: 30px;
         padding-right: 30px;
     }
-
+    
     .ct-footer [data-id="menu"] ul {
         display: flex;
         max-width: 300px;
@@ -56,6 +56,7 @@ nav#footer-menu {
     
     .ct-footer-copyright[data-id=copyright] {
         font-weight: 400;
+        text-align: left;
     }
     
     #footer .footer-links {
@@ -166,4 +167,77 @@ nav#footer-menu {
         margin-bottom: 12px;
     }
     
+}
+
+/* footer_links_rows */
+.footer_links_rows .wp-block-group {
+    display: flex !important;
+    column-gap: 40px !important;
+    flex-wrap: wrap;
+    row-gap: 0 !important;
+}
+
+.footer_links_rows .wp-block-group .stk-block-text {
+    margin: 0 0 15px !important;
+}
+
+.footer_links_rows .wp-block-group .stk-block-text .stk-block-text__text {
+    line-height: 0 !important;
+    margin: 0 !important;
+}
+
+.footer_links_rows a {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    line-height: 14px !important;
+    text-decoration: none !important;
+    letter-spacing: 0 !important;
+    color: #000 !important;
+}
+
+.footer_links_rows a:hover {
+    color: #37a7f4 !important;
+}
+
+
+@media only screen and (min-width: 690px) {
+    .footer_links_rows {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .footer_links_rows .wp-block-group {
+        display: flex;
+        flex-direction: column;
+        width: 0;
+        max-width: max-content !important;
+        flex: auto !important;
+        column-gap: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Copyrights */
+    .ct-footer [data-row*="bottom"] > .ct-container {
+        display: block;
+    }
+    
+    .ct-footer [data-row*="bottom"] > .ct-container .ct-footer-copyright {
+        text-align: right;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .footer_links_rows a {
+        font-size: 14px !important;
+        line-height: 16px !important;
+    }
+    
+    .footer_links_rows {
+        padding-right: 10vw;
+    }
+    
+    .footer_links_rows .wp-block-group .stk-block-text {
+        margin: 0 0 20px !important;
+    }
 }
