@@ -533,7 +533,7 @@
 }
 
 .pdp-right_content .taxonomy-post_tag a {
-    color: #252525;
+    color: #252525 !important;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -587,6 +587,10 @@
         margin: 0 auto !important;
         padding: 0 20px !important;
         display: flex;
+    }
+    
+    body.single-post .site-main {
+        padding-top: 80px;
     }
     
     /* Left gallery */

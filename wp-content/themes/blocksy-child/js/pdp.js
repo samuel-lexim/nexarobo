@@ -18,6 +18,7 @@ $(document).ready(function () {
             });
             this.icon_list_init();
             this.our_customer_init();
+            this.disableTagLink();
         },
 
         gallery_init: async function () {
@@ -150,6 +151,10 @@ $(document).ready(function () {
             return null;
         },
 
+        disableTagLink: function () {
+            let tags = $('.taxonomy-post_tag a');
+            tags.removeAttr('href');
+        },
 
         icon_list_init: function () {
             let container = $('.pdp-icon_list');

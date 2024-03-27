@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.22';
+const __VERSION = '7.24';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -269,7 +269,7 @@ function category_listing_shortcode($atts)
         'order' => $atts['order'],
     ];
 
-    //
+    // Get Category
     $category = get_term_by('slug', $atts['cat'], 'category');
 
     // Fetch posts
@@ -298,7 +298,19 @@ function category_listing_shortcode($atts)
 
             $output .= '<div class="_bottomInner">';
             $output .= '<h2 class="_tit">' . get_the_title() . '</h2>';
-            $output .= '<p class="_tag">Recommended for:<br>#cooking #Fryer #restaurant</p>';
+
+            // Tag
+            $tags = get_the_tags();
+            $tag_cloud = '';
+            if ($tags) {
+                $tag_links = [];
+                foreach ($tags as $tag) {
+                    $tag_links[] = '#' . $tag->name;
+                }
+                $tag_cloud = implode(' ', $tag_links);
+            }
+
+            $output .= '<p class="_tag">Recommended for:<br>' . $tag_cloud . '</p>';
             $output .= "<a class='button' href='{$link}'>Learn More</a>";
             $output .= '</div>';
 
