@@ -216,3 +216,31 @@
         right: 172px;
     }
 }
+
+/* PDP = thumb */
+.slick-slider.blackArrow .slick-next,
+.slick-slider.blackArrow .slick-prev {
+    width: 50px;
+}
+
+.slick-slider.blackArrow .slick-prev:before,
+.slick-slider.blackArrow .slick-next:before {
+    background-size: 30px;
+    background-position: center;
+}
+
+.slick-slider.blackArrow .slick-prev:before,
+.slick-slider.blackArrow [dir=rtl] .slick-next:before {
+    background-image: url("black-left.svg");
+    background-position: left;
+}
+
+.slick-slider.blackArrow .slick-next:before,
+.slick-slider.blackArrow [dir=rtl] .slick-prev:before {
+    background-image: url("black-right.svg");
+    background-position: right;
+}
+
+.slick-slider.blackArrow .slick-arrow.slick-disabled {
+    opacity: 0.433;
+}

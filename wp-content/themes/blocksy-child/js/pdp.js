@@ -31,7 +31,7 @@ $(document).ready(function () {
             let _this = this;
             let galleryItems = $("." + _this.classes.gallery_slick + ' > *');
 
-            let thumbsSliderHtml = '<div class="' + _this.classes.gallery_thumb_slick + '">';
+            let thumbsSliderHtml = '<div class="blackArrow ' + _this.classes.gallery_thumb_slick + '">';
             for (let key in galleryItems) {
                 if (galleryItems.hasOwnProperty(key) && parseInt(key) >= 0) {
                     let _type = '_img';
@@ -116,7 +116,15 @@ $(document).ready(function () {
                 infinite: false,
                 mobileFirst: true,
                 focusOnSelect: true,
-                variableWidth: true
+                variableWidth: true,
+                responsive: [
+                    {
+                        breakpoint: 690,
+                        settings: {
+                            arrows: true,
+                        }
+                    },
+                ]
             });
         },
 

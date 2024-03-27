@@ -690,7 +690,7 @@
     
     /* Left gallery */
     .pdp-left_gallery {
-        flex-basis: calc(50% + 20px) !important;
+        flex-basis: calc(50% + 25px) !important;
     }
     
     .slick-gallery .stk-block-image.slick-slide {
@@ -709,11 +709,8 @@
     }
     
     .slick_gallery_thumbs {
-        padding-left: 20px;
-    }
-    
-    .slick_gallery_thumbs ._navThumb {
-        margin-right: 24px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
     
     .slick_gallery_thumbs ._navThumbInner {
