@@ -39,7 +39,7 @@
     margin: 0 auto;
 }
 
-.category_slick-item ._image > img {
+.category_slick-item ._image img {
     position: absolute;
     width: 100%;
     height: auto;

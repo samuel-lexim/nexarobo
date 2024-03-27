@@ -294,7 +294,7 @@ function category_listing_shortcode($atts)
             $output .= '<div class="category_slick-item">'; // item-wrap
             $output .= '<div class="_itemInner">'; // _itemInner
 
-            $output .= "<div class='_image'>{$thumbnail}</div>";
+            $output .= "<div class='_image'><a href='{$link}'>{$thumbnail}</a></div>";
 
             $output .= '<div class="_bottomInner">';
             $output .= '<h2 class="_tit">' . get_the_title() . '</h2>';
