@@ -95,8 +95,18 @@
     margin-bottom: 0 !important;
 }
 
+.pdp-video_img > .stk-block-heading {
+    max-width: 360px !important;
+}
+
 .pdp-video_img .wp-block-embed {
     margin-bottom: 0 !important;
+}
+
+@media only screen and (min-width: 690px) {
+    .pdp-video_img > .stk-block-heading {
+        max-width: 850px !important;
+    }
 }
 
 /* Example */
@@ -115,6 +125,7 @@
 
 .pdp-4_examples .stk-row > .stk-column .stk-block-heading {
     margin-top: 35px !important;
+    max-width: 360px !important;
 }
 
 .pdp-4_examples .stk-row > .stk-column .stk-block-heading .stk-block-heading__text {
@@ -191,7 +202,15 @@
 }
 
 /* Our customer */
-.pdp-our_customer {
+.pdp-our_customer > .stk-block-heading {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}
+
+@media only screen and (min-width: 690px) {
+    .pdp-our_customer > .stk-block-heading {
+        max-width: 1084px !important;
+    }
 }
 
 .pdp-testimonial_slider .slick-slide {
@@ -566,17 +585,21 @@
     .pdp-right_content-content p {
         text-align: center !important;
     }
+    
+    .pdp-right_content .taxonomy-post_tag {
+        text-align: center;
+    }
 }
 
 @media only screen and (min-width: 525px) and (max-width: 689px) {
     .pdp-GAQ_AAQ {
-        justify-content: start;
+        justify-content: center;
         flex-wrap: nowrap;
         flex-direction: row;
     }
     
     .pdp-GAQ_AAQ > .stk-block-button-group {
-        margin: 0 35px 0 0 !important;
+        margin: 0 17px !important;
     }
 }
 
