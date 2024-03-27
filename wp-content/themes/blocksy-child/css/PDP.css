@@ -105,7 +105,9 @@
 
 @media only screen and (min-width: 690px) {
     .pdp-video_img > .stk-block-heading {
-        max-width: 850px !important;
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+        max-width: 910px !important;
     }
 }
 
@@ -215,7 +217,7 @@
     .pdp-our_customer > .stk-block {
         padding-left: 30px !important;
         padding-right: 30px !important;
-        max-width: 770px !important;
+        max-width: 910px !important;
     }
 }
 
