@@ -14,6 +14,37 @@
     }
 }
 
+/* Hero section - video */
+.home-hero-video .wp-block-cover {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 134.46vw !important;
+    padding: 0 !important;
+}
+
+.home-hero-video .wp-block-cover .stk-block-heading {
+    max-width: 380px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+@media only screen and (min-width: 690px) {
+    .home-hero-video .wp-block-cover {
+        height: 48.61vw !important;
+    }
+    
+    .home-hero-video .wp-block-cover .stk-block-heading,
+    .home-hero-video .wp-block-cover .stk-block-text {
+        max-width: 720px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    
+    .home-hero-video .wp-block-cover .stk-block-text__text br:not(:last-child) {
+        display: none;
+    }
+}
+
 
 /* Video section */
 @media only screen and (min-width: 1000px) {
