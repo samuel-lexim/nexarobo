@@ -133,8 +133,8 @@
 .homeGradientBg {
     position: absolute;
     top: 0;
-    left: -25vw;
-    width: 150vw;
+    left: -25vw !important;
+    width: 150vw !important;
     height: 338px;
     background: linear-gradient(180deg, rgba(55, 167, 244, 0.08) 0%, rgba(211, 244, 11, 0.47) 100%);
     transform: rotate(-5deg);
@@ -159,7 +159,18 @@
 
 /* Archive BEP */
 .home-achieveBEP_section {
+    position: relative;
+}
 
+.home-achieveBEP_section .homeGradientBg {
+    position: absolute;
+    top: -50px !important;
+    left: -25vw !important;
+    width: 150vw !important;
+    max-width: 200vw !important;
+    height: calc(100% + 100px);
+    background: linear-gradient(180deg, rgba(239, 67, 43, 0.02) 0%, rgba(55, 167, 244, 0.12) 100%);
+    margin: 0 !important;
 }
 
 .home-achieveBEP_section > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
@@ -332,6 +343,11 @@
 
 
 @media only screen and (min-width: 768px) {
+    .home-achieveBEP_section .homeGradientBg {
+        top: -75px !important;
+        height: calc(100% + 150px);
+    }
+
     /* layout */
     .home-achieveBEP_section .home-BEP_line {
         display: flex !important;

@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.27';
+const __VERSION = '7.28';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
