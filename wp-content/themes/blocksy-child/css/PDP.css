@@ -111,9 +111,13 @@
     }
 }
 
-/* Example */
+/* 4 Examples */
 .pdp-4_examples {
     margin-bottom: 0 !important;
+}
+
+.pdp-4_examples .stk-block-feature-grid {
+    width: 100% !important;
 }
 
 .pdp-4_examples .stk-row > .stk-column {

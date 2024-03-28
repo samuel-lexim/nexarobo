@@ -216,11 +216,10 @@ $(document).ready(function () {
         },
 
         our_customer_expand_event: function () {
-            console.log("our_customer_expand_event");
             let _this = this;
             let maxHeight = $(window).width() > 690 ? 280 : 250;
             let padding = $(window).width() > 690 ? 97 : 109;
-            console.log(`maxHeight: ${maxHeight} - Padding: ${padding}`);
+            // console.log(`maxHeight: ${maxHeight} - Padding: ${padding}`);
             let OC_slider = $('.' + _this.classes.ourCustomer_slider);
             let items = OC_slider.find('.slick-slide');
             items.each(function (i, e) {
@@ -229,16 +228,19 @@ $(document).ready(function () {
                 _innerContent.children().each(function () {
                     totalHeight += $(this).outerHeight(true);
                 });
-                console.log(totalHeight);
                 if ((totalHeight + padding) > maxHeight) {
                     $(e).addClass('hasThreeDots').removeClass('expanded');
-                    console.log("add hasThreeDots");
                 } else {
                     $(e).removeClass('hasThreeDots').removeClass('expanded');
-                    console.log("remove hasThreeDots");
                 }
             });
 
+            // Add click event for each item
+            _this._toggleExpandedWhenClickedReviews();
+        },
+
+        _toggleExpandedWhenClickedReviews: function () {
+            let _this = this;
             // Add click event for each item
             $('.' + _this.classes.ourCustomer_slider + ' .slick-slide').click(function () {
                 $(this).toggleClass('expanded');
@@ -250,6 +252,7 @@ $(document).ready(function () {
             $(window).resize(function () {
                 _this.our_customer_expand_event();
             });
+            _this._toggleExpandedWhenClickedReviews();
         },
 
     };
