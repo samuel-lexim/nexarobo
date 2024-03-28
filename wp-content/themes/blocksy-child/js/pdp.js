@@ -21,6 +21,7 @@ $(document).ready(function () {
             this.our_customer_init();
             this.disableTagLink();
             this.resize();
+            _this._toggleExpandedWhenClickedReviews();
         },
 
         gallery_init: async function () {
@@ -251,6 +252,7 @@ $(document).ready(function () {
             let _this = this;
             $(window).resize(function () {
                 _this.our_customer_expand_event();
+                _this._toggleExpandedWhenClickedReviews();
             });
             _this._toggleExpandedWhenClickedReviews();
         },
