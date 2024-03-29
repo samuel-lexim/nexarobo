@@ -85,6 +85,7 @@ nav#footer-menu {
     position: relative;
     padding-left: 20px;
     line-height: 1;
+    text-align: left;
 }
 
 .ft_newsletter ._check #newsletter-checkbox {
@@ -244,5 +245,151 @@ nav#footer-menu {
     
     .footer_links_rows .wp-block-group .stk-block-text {
         margin: 0 0 20px !important;
+    }
+}
+
+/* Omnisend */
+#footer [data-row="middle"] .ct-container [data-column="widget-area-1"] {
+    --horizontal-alignment: flex-start;
+}
+
+.OF .omnisend-form-66069d847a3b55dd18524f2f-text-627932445028ebd8c6660c4f,
+.OF .omnisend-form-66069d847a3b55dd18524f2f-text-627932445028ebd8c6660c4f p,
+.OF .omnisend-form-66069d847a3b55dd18524f2f-text-627932445028ebd8c6660c4f li {
+    font-family: "ct_font_proxima__nova", sans-serif !important;
+    font-size: 14px !important;
+    margin-bottom: 13px;
+    text-align: left !important;
+    padding: 0;
+}
+
+/* Omi Response */
+.OF .omnisend-form-66069d847a3b55dd18524f2f-section-62a313b876d81914aa87ed79,
+.OF .omnisend-form-66069d847a3b55dd18524f2f-text-62a313b876d81914aa87ed77,
+.OF .omnisend-form-66069d847a3b55dd18524f2f-text-62a313b876d81914aa87ed78,
+.OF .omnisend-form-66069d847a3b55dd18524f2f-text-62a313b876d81914aa87ed78 p,
+.OF .omnisend-form-66069d847a3b55dd18524f2f-text-62a313b876d81914aa87ed78 li {
+    font-family: "ct_font_proxima__nova", sans-serif !important;
+    font-size: 14px !important;
+    margin-bottom: 13px;
+    text-align: left !important;
+    padding: 0;
+}
+
+.OF .omnisend-form-66069d847a3b55dd18524f2f-text-627932445028ebd8c6660c4f {
+    padding: 0 !important;
+}
+
+.OF form div {
+    padding: 0 !important;
+    margin: 0;
+}
+
+.omnisend-form-66069d847a3b55dd18524f2f-column-624ab2f927652f651edfd0ae {
+    margin: 0;
+}
+
+/* Omi title */
+.OF .omnisend-form-66069d847a3b55dd18524f2f-text-62a313b876d81914aa87ed77,
+.OF .omnisend-form-66069d847a3b55dd18524f2f-text-62a313b876d81914aa87ed77 p,
+.OF .omnisend-form-66069d847a3b55dd18524f2f-text-62a313b876d81914aa87ed77 li,
+.OF .omnisend-form-66069d847a3b55dd18524f2f-text-627932445028ebd8c6660c4f p {
+    font-size: 14px !important;
+    line-height: 24px !important;
+    font-weight: 700 !important;
+    color: #252525 !important;
+    text-align: left !important;
+}
+
+/* Omi form */
+#omnisend-form-66069d847a3b55dd18524f2f-submit-form {
+    position: relative !important;
+    margin-bottom: 15px !important;
+}
+
+/* Omnisend email */
+.OF #omnisend-form-66069d847a3b55dd18524f2f-field-container-62a3147776d81914aa87ed98-emailField-input.omnisend-form-66069d847a3b55dd18524f2f-field-container-62a3147776d81914aa87ed98-input {
+    padding: 0 60px 0 12px !important;
+    width: 100%;
+    color: #252525 !important;
+    font-size: 14px !important;
+    height: 40px !important;
+    border: 1px solid #c9c9c9 !important;
+    border-radius: 15px !important;
+    background-color: #fff !important;
+    letter-spacing: normal !important;
+    line-height: 40px !important;
+    outline: 0 !important;
+    min-width: 270px;
+}
+
+.OF > div form div input:focus {
+    border: 1px solid #37a7f4 !important;
+}
+
+/* Omnisend submit */
+#omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51.omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51 {
+    position: absolute !important;
+    width: 28px !important;
+    height: 28px !important;
+    min-height: 23px !important;
+    top: 43px !important;
+    right: 11px !important;
+    line-height: 0 !important;
+    padding: 0 !important;
+    border: 1px solid #37A7F4 !important;
+    font-size: 0 !important;
+    background-color: #37A7F4 !important;
+    border-radius: 50% !important;
+    display: flex;
+}
+
+#omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51.omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51:before {
+    content: "";
+    display: inline-flex;
+    width: 18px;
+    height: 13px;
+    background-image: url(../images/arrow.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 9999;
+    filter: unset !important;
+    opacity: 1 !important;
+    inset: auto;
+}
+
+.omnisend-form-66069d847a3b55dd18524f2f-action-container-627932485028ebd8c6660c51 {
+    margin: 0 !important;
+}
+
+.ct-footer .ct-widget:not(:first-child) {
+    margin-top: 0 !important;
+}
+
+@media only screen and (min-width: 690px) {
+    .OF {
+        max-width: 270px;
+    }
+    
+    #footer [data-row="middle"] .ct-container [data-column="widget-area-1"] {
+        align-items: end;
+    }
+    
+    .OF .omnisend-form-66069d847a3b55dd18524f2f-text-62a313b876d81914aa87ed77,
+    .OF .omnisend-form-66069d847a3b55dd18524f2f-text-62a313b876d81914aa87ed77 p,
+    .OF .omnisend-form-66069d847a3b55dd18524f2f-text-62a313b876d81914aa87ed77 li,
+    .OF .omnisend-form-66069d847a3b55dd18524f2f-text-627932445028ebd8c6660c4f p {
+        font-size: 18px !important;
+        line-height: 26px !important;
+        font-weight: 700 !important;
+        color: #252525 !important;
+        text-align: left !important;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .OF .omnisend-form-66069d847a3b55dd18524f2f-text-627932445028ebd8c6660c4f p {
+        font-size: 18px !important;
     }
 }
