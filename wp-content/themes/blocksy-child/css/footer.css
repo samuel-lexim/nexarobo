@@ -199,6 +199,11 @@ nav#footer-menu {
     color: #37a7f4 !important;
 }
 
+@media only screen and (max-width: 420px) {
+    .footer_links_rows .wp-block-group {
+        column-gap: 15px !important;
+    }
+}
 
 @media only screen and (min-width: 690px) {
     .footer_links_rows {
