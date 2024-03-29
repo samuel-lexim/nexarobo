@@ -1,7 +1,7 @@
 "use strict";
 
 $(document).ready(function () {
-    console.log("PDP PAGE");
+    console.log("PDP 7.37");
 
     let PDP = {
         classes: {
@@ -13,10 +13,6 @@ $(document).ready(function () {
 
         init: function () {
             let _this = this;
-            this.gallery_init().then(() => {
-                $('.' + _this.classes.gallery_slick).removeClass('showOnlyFirst');
-                _this.gallery_slider_init();
-            });
             this.icon_list_init();
             this.our_customer_init();
             this.disableTagLink();
@@ -24,53 +20,91 @@ $(document).ready(function () {
             _this._toggleExpandedWhenClickedReviews();
         },
 
-        gallery_init: async function () {
+        gallery_init: function () {
             let _this = this;
-            let html = await _this.gallery_thumb_init();
-            $("." + _this.classes.gallery_slick).after(html);
+            const galleryItems = $("." + _this.classes.gallery_slick + ' > *');
+            const thumbsSlider = $('<div class="blackArrow ' + _this.classes.gallery_thumb_slick + '"></div>');
+
+            const ids = Array.from(Array(galleryItems.length).keys());
+            const promises = ids.map(
+                id => _this.gallery_getThumbFromGalleryItem(galleryItems[id])
+            );
+
+            Promise.all(promises)
+            .then(results => {
+                thumbsSlider.append(results);
+                $("." + _this.classes.gallery_slick).after(thumbsSlider);
+                $('.' + _this.classes.gallery_slick).removeClass('showOnlyFirst');
+                _this.gallery_slider_init();
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
         },
 
-        gallery_thumb_init: async function () {
+        gallery_getThumbFromGalleryItem: function (item) {
             let _this = this;
-            let galleryItems = $("." + _this.classes.gallery_slick + ' > *');
+            return new Promise((resolve, reject) => {
+                let _item = $(item);
+                let thumbUrl = null;
+                let classArray = _item.attr('class');
+                if (classArray) {
+                    classArray = classArray.split(" ");
+                }
+                let _type = '_img';
 
-            let thumbsSliderHtml = '<div class="blackArrow ' + _this.classes.gallery_thumb_slick + '">';
-            for (let key in galleryItems) {
-                if (galleryItems.hasOwnProperty(key) && parseInt(key) >= 0) {
-                    let _type = '_img';
-                    let item = galleryItems[key];
-                    let _item = $(item);
-                    let thumbUrl = null;
-                    let classArray = _item.attr('class');
-                    if (classArray) {
-                        classArray = classArray.split(" ");
-                    }
-
-                    if ($.inArray('wp-block-embed', classArray) !== -1) { // video
-                        _type = '_video';
-                        let iframeSrc = _item.find('iframe').attr('src');
-                        let type = 0;
-                        type = $.inArray('is-provider-youtube', classArray) !== -1 ? 1 : type;
-                        type = $.inArray('is-provider-vimeo', classArray) !== -1 ? 2 : type;
-                        thumbUrl = _this.getYoutubeVimeoThumbnail(iframeSrc, type);
-
-                    } else if ($.inArray('stk-block-image', classArray) !== -1) { // image
-                        _type = '_img';
-                        thumbUrl = _item.find('img').attr('src');
-                        thumbUrl = await _this.getThumbnailUrl(thumbUrl);
-                    }
-
-                    // show correct thumbUrl async
-                    thumbsSliderHtml += '<div class="_navThumb ' + _type + '">' +
+                if ($.inArray('wp-block-embed', classArray) !== -1) { // video
+                    _type = '_video';
+                    let iframeSrc = _item.find('iframe').attr('src');
+                    let type = 0;
+                    type = $.inArray('is-provider-youtube', classArray) !== -1 ? 1 : type;
+                    type = $.inArray('is-provider-vimeo', classArray) !== -1 ? 2 : type;
+                    thumbUrl = _this.getYoutubeVimeoThumbnail(iframeSrc, type);
+                    let thumbsSliderHtml = '<div class="_navThumb ' + _type + '">' +
                         '<div class="_navThumbInner">';
                     thumbsSliderHtml += thumbUrl ? '<img src="' + thumbUrl + '" alt="thumb">' : '';
                     thumbsSliderHtml += '</div></div>';
+                    resolve(thumbsSliderHtml);
 
+                } else if ($.inArray('stk-block-image', classArray) !== -1) { // image
+                    _type = '_img';
+                    thumbUrl = _item.find('img').attr('src');
+
+                    // Extract the image ID from the full image URL
+                    let matches = thumbUrl.match(/wp-content\/uploads\/(\d{4}\/\d{2})\/(.+)$/);
+                    if (!matches || matches.length < 3) {
+                        reject('Invalid image URL format');
+                    }
+                    let imageYearMonth = matches[1];
+                    let imageName = matches[2];
+                    let originUrl = window.location.origin;
+
+                    // Make a request to Wordpress REST API to get the thumbnail URL
+                    fetch(`${originUrl}/wp-json/wp/v2/media?search=${imageName}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Find the thumbnail size URL from the API response
+                        for (const media of data) {
+                            if (media.media_details.sizes.thumbnail && media.media_details.file.includes(imageYearMonth)) {
+                                thumbUrl = media.media_details.sizes.thumbnail.source_url;
+                                let thumbsSliderHtml = '<div class="_navThumb ' + _type + '">' +
+                                    '<div class="_navThumbInner"><img src="' + thumbUrl + '" alt="thumb"></div></div>';
+                                resolve(thumbsSliderHtml);
+                                return;
+                            }
+                        }
+                        reject(`Thumbnail not found for the image. ${thumbUrl}`);
+                    })
+                    .catch(error => {
+                        reject(error);
+                    });
                 }
-            } // End for
-
-            thumbsSliderHtml += '</div>';
-            return thumbsSliderHtml;
+            });
         },
 
         /**
@@ -91,6 +125,8 @@ $(document).ready(function () {
                         videoId = match[1];
                         thumb = `https://i3.ytimg.com/vi/${videoId}/hqdefault.jpg`;
                     }
+                } else {
+                    console.error("Error embedUrl Youtube");
                 }
             } else if (type === 2) { // Vimeo
                 if (embedUrl) {
@@ -99,6 +135,8 @@ $(document).ready(function () {
                         videoId = match[1];
                         thumb = `https://vumbnail.com/${videoId}.jpg`;
                     }
+                } else {
+                    console.error("Error embedUrl Vimeo");
                 }
             }
             return thumb;
@@ -135,37 +173,6 @@ $(document).ready(function () {
                     },
                 ]
             });
-        },
-
-        /**
-         * Get the thumbnail from the full image url in WP
-         * @param fullImageUrl
-         * @returns {Promise<null>}
-         */
-        getThumbnailUrl: async function (fullImageUrl) {
-            // Extract the image ID from the full image URL
-            let matches = fullImageUrl.match(/wp-content\/uploads\/(\d{4}\/\d{2})\/(.+)$/);
-            if (!matches || matches.length < 3) {
-                console.error('Invalid image URL format');
-                return null;
-            }
-            let imageYearMonth = matches[1];
-            let imageName = matches[2];
-            let originUrl = window.location.origin;
-
-            // Make a request to Wordpress REST API to get the thumbnail URL
-            let response = await fetch(`${originUrl}/wp-json/wp/v2/media?search=${imageName}`);
-            let data = await response.json();
-
-            // Find the thumbnail size URL from the API response
-            for (const media of data) {
-                if (media.media_details.sizes.thumbnail && media.media_details.file.includes(imageYearMonth)) {
-                    return media.media_details.sizes.thumbnail.source_url;
-                }
-            }
-
-            console.error(`Thumbnail not found for the image. ${fullImageUrl}`);
-            return null;
         },
 
         disableTagLink: function () {
@@ -265,6 +272,7 @@ $(document).ready(function () {
 
     };
 
+    PDP.gallery_init();
     PDP.init();
 
 });

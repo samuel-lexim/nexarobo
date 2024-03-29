@@ -685,6 +685,7 @@
     .slick-gallery .slick-slide {
         min-width: 49vw !important;
         max-width: 49vw !important;
+        width: 100% !important;
     }
     
     .slick-gallery .stk-block-image.slick-slide {
@@ -756,8 +757,9 @@
     
     .slick-gallery .slick-slide,
     .slick-gallery .wp-block-embed.slick-slide {
-        min-width: 620px !important;
-        max-width: 620px !important;
+        min-width: 625px !important;
+        max-width: 625px !important;
+        width: 625px !important;
     }
     
     .slick-gallery .wp-block-embed.slick-slide {
