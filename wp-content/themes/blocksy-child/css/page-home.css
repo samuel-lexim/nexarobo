@@ -321,7 +321,7 @@
 
 .home-achieveBEP_section ._slogan {
     margin-top: 45px !important;
-    margin-bottom: 45px !important;
+    margin-bottom: 15px !important;
 }
 
 .home-achieveBEP_section ._slogan .stk-block-text__text {
@@ -337,7 +337,7 @@
 }
 
 .home-achieveBEP_section ._button {
-    margin-top: 0 !important;
+    margin-top: 45px !important;
     margin-bottom: 0 !important;
 }
 
@@ -347,7 +347,7 @@
         top: -75px !important;
         height: calc(100% + 150px);
     }
-
+    
     /* layout */
     .home-achieveBEP_section .home-BEP_line {
         display: flex !important;
@@ -525,7 +525,10 @@
     
     .home-achieveBEP_section ._slogan {
         margin-top: 30px !important;
-        margin-bottom: 100px !important;
+    }
+    
+    .home-achieveBEP_section ._button {
+        margin-top: 90px !important;
     }
     
     .home-achieveBEP_section ._slogan .stk-block-text__text {
