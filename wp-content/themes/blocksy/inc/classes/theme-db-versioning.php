@@ -255,6 +255,14 @@ class DbVersioning {
 					$obj = new DbVersioning\V2031();
 					$obj->migrate();
 				}
+			],
+
+			[
+				'version' => '2.0.34',
+				'cb' => function () {
+					$obj = new DbVersioning\V2034();
+					$obj->migrate();
+				}
 			]
 		];
 	}
