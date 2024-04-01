@@ -294,6 +294,7 @@ nav#footer-menu {
 .OF .omnisend-form-66069d847a3b55dd18524f2f-text-62a313b876d81914aa87ed77 p,
 .OF .omnisend-form-66069d847a3b55dd18524f2f-text-62a313b876d81914aa87ed77 li,
 .OF .omnisend-form-66069d847a3b55dd18524f2f-text-627932445028ebd8c6660c4f p {
+    font-family: "ct_font_proxima__nova", sans-serif !important;
     font-size: 14px !important;
     line-height: 24px !important;
     font-weight: 700 !important;
@@ -321,11 +322,13 @@ nav#footer-menu {
     line-height: 40px !important;
     outline: 0 !important;
     min-width: 270px;
+    font-family: "ct_font_proxima__nova", sans-serif !important;
 }
 
 .OF > div form div input:focus {
     border: 1px solid #37a7f4 !important;
 }
+
 
 /* Omnisend submit */
 #omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51.omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51 {
@@ -385,6 +388,10 @@ nav#footer-menu {
         font-weight: 700 !important;
         color: #252525 !important;
         text-align: left !important;
+    }
+    
+    #omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51.omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51 {
+        top: 45px !important;
     }
 }
 
