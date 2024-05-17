@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.43';
+const __VERSION = '7.45';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -30,8 +30,8 @@ add_action('wp_enqueue_scripts', function () {
 
 
     // Jquery
-    wp_enqueue_script('jquery3', get_stylesheet_directory_uri() . '/js/jquery/jquery-3.7.1.min.js',
-        [], __VERSION, true);
+//    wp_enqueue_script('jquery3', get_stylesheet_directory_uri() . '/js/jquery/jquery-3.7.1.min.js',
+//        [], __VERSION, true);
 
 
 });

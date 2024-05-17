@@ -1,6 +1,6 @@
 "use strict";
 
-$(document).ready(function () {
+jQuery(document).ready(function () {
     console.log("PDP new");
 
     let PDP = {
@@ -22,8 +22,8 @@ $(document).ready(function () {
 
         gallery_init: function () {
             let _this = this;
-            const galleryItems = $("." + _this.classes.gallery_slick + ' > *');
-            const thumbsSlider = $('<div class="blackArrow ' + _this.classes.gallery_thumb_slick + '"></div>');
+            const galleryItems = jQuery("." + _this.classes.gallery_slick + ' > *');
+            const thumbsSlider = jQuery('<div class="blackArrow ' + _this.classes.gallery_thumb_slick + '"></div>');
 
             const ids = Array.from(Array(galleryItems.length).keys());
             const promises = ids.map(
@@ -33,8 +33,8 @@ $(document).ready(function () {
             Promise.all(promises)
             .then(results => {
                 thumbsSlider.append(results);
-                $("." + _this.classes.gallery_slick).after(thumbsSlider);
-                $('.' + _this.classes.gallery_slick).removeClass('showOnlyFirst');
+                jQuery("." + _this.classes.gallery_slick).after(thumbsSlider);
+                jQuery('.' + _this.classes.gallery_slick).removeClass('showOnlyFirst');
                 _this.gallery_slider_init();
             })
             .catch(error => {
@@ -45,7 +45,7 @@ $(document).ready(function () {
         gallery_getThumbFromGalleryItem: function (item) {
             let _this = this;
             return new Promise((resolve, reject) => {
-                let _item = $(item);
+                let _item = jQuery(item);
                 let thumbUrl = null;
                 let classArray = _item.attr('class');
                 if (classArray) {
@@ -53,12 +53,12 @@ $(document).ready(function () {
                 }
                 let _type = '_img';
 
-                if ($.inArray('wp-block-embed', classArray) !== -1) { // video
+                if (jQuery.inArray('wp-block-embed', classArray) !== -1) { // video
                     _type = '_video';
                     let iframeSrc = _item.find('iframe').attr('src');
                     let type = 0;
-                    type = $.inArray('is-provider-youtube', classArray) !== -1 ? 1 : type;
-                    type = $.inArray('is-provider-vimeo', classArray) !== -1 ? 2 : type;
+                    type = jQuery.inArray('is-provider-youtube', classArray) !== -1 ? 1 : type;
+                    type = jQuery.inArray('is-provider-vimeo', classArray) !== -1 ? 2 : type;
                     thumbUrl = _this.getYoutubeVimeoThumbnail(iframeSrc, type);
                     let thumbsSliderHtml = '<div class="_navThumb ' + _type + '">' +
                         '<div class="_navThumbInner">';
@@ -66,7 +66,7 @@ $(document).ready(function () {
                     thumbsSliderHtml += '</div></div>';
                     resolve(thumbsSliderHtml);
 
-                } else if ($.inArray('stk-block-image', classArray) !== -1) { // image
+                } else if (jQuery.inArray('stk-block-image', classArray) !== -1) { // image
                     _type = '_img';
                     thumbUrl = _item.find('img').attr('src');
 
@@ -144,7 +144,7 @@ $(document).ready(function () {
 
         gallery_slider_init: function () {
             let _this = this;
-            $("." + _this.classes.gallery_slick).slick({
+            jQuery("." + _this.classes.gallery_slick).slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 arrows: false,
@@ -155,7 +155,7 @@ $(document).ready(function () {
                 asNavFor: "." + _this.classes.gallery_thumb_slick
             });
 
-            $("." + _this.classes.gallery_thumb_slick).slick({
+            jQuery("." + _this.classes.gallery_thumb_slick).slick({
                 slidesToShow: 1,
                 asNavFor: "." + _this.classes.gallery_slick,
                 dots: false,
@@ -176,21 +176,21 @@ $(document).ready(function () {
         },
 
         disableTagLink: function () {
-            let tags = $('.taxonomy-post_tag a');
+            let tags = jQuery('.taxonomy-post_tag a');
             tags.removeAttr('href');
         },
 
         icon_list_init: function () {
-            let container = $('.pdp-icon_list');
-            let list = $('.pdp-icon_list > .wp-block-group');
+            let container = jQuery('.pdp-icon_list');
+            let list = jQuery('.pdp-icon_list > .wp-block-group');
             let number = (list.length % 2 === 0) ? "even" : "odd";
             container.addClass(number);
         },
 
         our_customer_init: function () {
             let _this = this;
-            let OC_slider = $('.' + _this.classes.ourCustomer_slider);
-            let items = $('.' + _this.classes.ourCustomer_slider + ' > div');
+            let OC_slider = jQuery('.' + _this.classes.ourCustomer_slider);
+            let items = jQuery('.' + _this.classes.ourCustomer_slider + ' > div');
             let n = items.length;
 
             if (OC_slider && OC_slider.length > 0) {
@@ -231,21 +231,21 @@ $(document).ready(function () {
 
         our_customer_expand_event: function () {
             let _this = this;
-            let maxHeight = $(window).width() > 690 ? 280 : 250;
-            let padding = $(window).width() > 690 ? 97 : 109;
+            let maxHeight = jQuery(window).width() > 690 ? 280 : 250;
+            let padding = jQuery(window).width() > 690 ? 97 : 109;
             // console.log(`maxHeight: ${maxHeight} - Padding: ${padding}`);
-            let OC_slider = $('.' + _this.classes.ourCustomer_slider);
+            let OC_slider = jQuery('.' + _this.classes.ourCustomer_slider);
             let items = OC_slider.find('.slick-slide');
             items.each(function (i, e) {
-                let _innerContent = $(e).find('.gspb_container');
+                let _innerContent = jQuery(e).find('.gspb_container');
                 let totalHeight = 0;
                 _innerContent.children().each(function () {
-                    totalHeight += $(this).outerHeight(true);
+                    totalHeight += jQuery(this).outerHeight(true);
                 });
                 if ((totalHeight + padding) > maxHeight) {
-                    $(e).addClass('hasThreeDots').removeClass('expanded');
+                    jQuery(e).addClass('hasThreeDots').removeClass('expanded');
                 } else {
-                    $(e).removeClass('hasThreeDots').removeClass('expanded');
+                    jQuery(e).removeClass('hasThreeDots').removeClass('expanded');
                 }
             });
 
@@ -256,14 +256,14 @@ $(document).ready(function () {
         _toggleExpandedWhenClickedReviews: function () {
             let _this = this;
             // Add click event for each item
-            $('.' + _this.classes.ourCustomer_slider + ' .slick-slide').click(function () {
-                $(this).toggleClass('expanded');
+            jQuery('.' + _this.classes.ourCustomer_slider + ' .slick-slide').click(function () {
+                jQuery(this).toggleClass('expanded');
             });
         },
 
         resize: function () {
             let _this = this;
-            $(window).resize(function () {
+            jQuery(window).resize(function () {
                 _this.our_customer_expand_event();
                 _this._toggleExpandedWhenClickedReviews();
             });

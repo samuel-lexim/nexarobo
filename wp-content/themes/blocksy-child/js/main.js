@@ -1,7 +1,7 @@
-$(document).ready(function () {
+jQuery(document).ready(function () {
     console.log('main');
 
-    $('.slider-slick_posts').slick({
+    jQuery('.slider-slick_posts').slick({
         slidesToShow: 3,
         slidesToScroll: 3,
         arrows: true,
@@ -35,13 +35,13 @@ $(document).ready(function () {
         },
 
         init: function () {
-            $('p:empty').remove();
+            jQuery('p:empty').remove();
             this.init_category_slick();
         },
 
         init_category_slick: function () {
             let _this = this;
-            let sliders = $('.' + _this.classes.PLP_cat_slick);
+            let sliders = jQuery('.' + _this.classes.PLP_cat_slick);
 
             if (sliders && sliders.length > 0) {
                 sliders.slick({
@@ -56,11 +56,11 @@ $(document).ready(function () {
                 });
 
                 // Check arrow
-                let plpSliders = $('.' + _this.classes.PLP_cat_slick + '.topRightArrow');
+                let plpSliders = jQuery('.' + _this.classes.PLP_cat_slick + '.topRightArrow');
                 for (let key in plpSliders) {
                     if (plpSliders.hasOwnProperty(key) && parseInt(key) >= 0) {
                         let item = plpSliders[key];
-                        let _item = $(item);
+                        let _item = jQuery(item);
                         let findArrows = _item.find('.slick-arrow');
                         if (findArrows && findArrows.length <= 0) {
                             _item.addClass("noArrows");
@@ -83,14 +83,14 @@ $(document).ready(function () {
          * (both desktop and mobile)
          */
         scrollToTopPage: function () {
-            $('.wpforms-form').on('submit', function (event) {
+            jQuery('.wpforms-form').on('submit', function (event) {
                 // Check if form has errors
                 setTimeout(() => {
-                    let errors = $('.wpforms-form').find('.wpforms-has-error');
+                    let errors = jQuery('.wpforms-form').find('.wpforms-has-error');
                     if (errors.length > 0) {
                         // Get the position of the first error
                         let firstErrorPosition = errors.first().offset().top;
-                        $('html, body').animate({scrollTop: firstErrorPosition}, '500');
+                        jQuery('html, body').animate({scrollTop: firstErrorPosition}, '500');
                     }
                 }, 1000);
             });
