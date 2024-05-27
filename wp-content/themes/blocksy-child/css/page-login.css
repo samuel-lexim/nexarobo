@@ -54,7 +54,7 @@
 }
 
 /* Login Page */
-.page-login .mp-form-row.mepr_password + div {
+#mepr_loginform .mp-form-row.mepr_password + div {
     display: none;
 }
 
@@ -125,12 +125,12 @@
     margin: 0 auto;
 }
 
-/* Password Recovery page*/
+/* Password Recovery page */
 body._passwordRecovery ._innerForm {
     max-width: 330px;
 }
 
-body._passwordRecovery ._innerForm > .stk-block-heading ,
+body._passwordRecovery ._innerForm > .stk-block-heading,
 body._passwordRecovery ._innerForm > .stk-block-text,
 body._passwordRecovery ._innerForm > p[data-block-type="core"] {
     display: none;
@@ -158,4 +158,28 @@ body._passwordRecovery ._innerForm .mp_wrapper .mp-spacer {
 
 body._passwordRecovery ._innerForm .mp_wrapper #mepr_user_or_email {
     margin-bottom: 20px;
+}
+
+/* Password Reset page */
+body._passwordReset ._innerForm {
+    max-width: 330px;
+}
+
+body._passwordReset ._innerForm > .stk-block-heading,
+body._passwordReset ._innerForm > .stk-block-text,
+body._passwordReset ._innerForm > p[data-block-type="core"] {
+    display: none;
+}
+
+body._passwordReset ._innerForm .mp_wrapper {
+    margin-top: 0;
+}
+
+body._passwordReset ._innerForm .mp_wrapper > h3 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+body._passwordReset ._innerForm .mp_wrapper .mepr_spacer {
+    display: none;
 }

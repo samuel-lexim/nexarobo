@@ -10,10 +10,15 @@ jQuery(document).ready(function () {
         passRecoveryForm: {
             email: '#mepr_user_or_email'
         },
+        passResetForm: {
+            password: '#mepr_user_password',
+            passwordConfirm: '#mepr_user_password_confirm'
+        },
 
         init: function () {
             this.formInit();
             this.forgotPasswordInit();
+            this.resetPasswordInit();
         },
 
         formInit: function () {
@@ -35,7 +40,20 @@ jQuery(document).ready(function () {
             } else {
                 jQuery('body').removeClass('_passwordRecovery');
             }
+        },
 
+        resetPasswordInit: function () {
+            console.log("forgotPasswordInit");
+            let _this = this;
+            let action = this.getUrlParameter('action');
+            if (action && action === 'reset_password') {
+                jQuery('body').addClass('_passwordReset');
+                jQuery(_this.passResetForm.password).attr('placeholder', 'New Password');
+                jQuery(_this.passResetForm.passwordConfirm).attr('placeholder', 'Confirm');
+
+            } else {
+                jQuery('body').removeClass('_passwordReset');
+            }
         },
 
         getUrlParameter: function (sParam) {
