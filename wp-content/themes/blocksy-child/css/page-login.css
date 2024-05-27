@@ -124,3 +124,38 @@
     max-width: 290px;
     margin: 0 auto;
 }
+
+/* Password Recovery page*/
+body._passwordRecovery ._innerForm {
+    max-width: 330px;
+}
+
+body._passwordRecovery ._innerForm > .stk-block-heading ,
+body._passwordRecovery ._innerForm > .stk-block-text,
+body._passwordRecovery ._innerForm > p[data-block-type="core"] {
+    display: none;
+}
+
+body._passwordRecovery ._innerForm .mp_wrapper {
+    margin-top: 0;
+}
+
+body._passwordRecovery ._innerForm .mp_wrapper > h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+body._passwordRecovery ._innerForm .mp_wrapper label {
+    text-align: center;
+    display: block !important;
+    margin-bottom: 30px;
+    padding: 0 18px;
+}
+
+body._passwordRecovery ._innerForm .mp_wrapper .mp-spacer {
+    display: none;
+}
+
+body._passwordRecovery ._innerForm .mp_wrapper #mepr_user_or_email {
+    margin-bottom: 20px;
+}
