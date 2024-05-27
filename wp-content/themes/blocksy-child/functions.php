@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.47';
+const __VERSION = '7.48';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -33,7 +33,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('page-login', get_stylesheet_directory_uri() . '/css/page-login.css', [], __VERSION);
 
 
-    // Jquery
+    // Jquery (dont need use)
 //    wp_enqueue_script('jquery3', get_stylesheet_directory_uri() . '/js/jquery/jquery-3.7.1.min.js',
 //        [], __VERSION, true);
 
@@ -59,6 +59,10 @@ function add_custom_script_to_footer()
     // Memberpress js
     if (is_page('login')) {
         wp_enqueue_script('mpLogin-js', get_stylesheet_directory_uri() . '/js/mpLogin.js',
+            [], __VERSION, true);
+    }
+    if (is_page('register')) {
+        wp_enqueue_script('mpRegister-js', get_stylesheet_directory_uri() . '/js/mpRegister.js',
             [], __VERSION, true);
     }
 }

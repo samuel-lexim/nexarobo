@@ -1,4 +1,4 @@
-
+/* Default */
 .page-template-default .mpPageContainer {
     display: flex;
     flex-direction: column;
@@ -9,25 +9,24 @@
     min-height: calc(100vh - 80px);
 }
 
-.loginPageBlock {
+.mpPageBlock {
+    display: flex;
+    align-items: center;
     max-width: 640px;
+    min-height: 680px;
     width: 90%;
     margin: auto;
-    padding: 135px 65px;
+    padding: 0 65px;
     background: #fff;
     border-radius: 10px;
 }
-.loginPageBlock .stk-block-heading__text {
+
+.mpPageBlock .stk-block-heading__text {
     font-weight: 600 !important;
     line-height: 56px !important;
 }
 
-.loginPageBlock label[for="user_login"],
-.loginPageBlock label[for="user_pass"]  {
-    display: none !important;
-}
-
-.loginPageBlock .mepr-form {
+.mpPageBlock .mepr-form {
     width: 330px;
     text-align: center;
     margin: auto;
@@ -37,48 +36,53 @@
     text-align: center;
 }
 
-.loginPageBlock .stk-block-text__text a {
+.mpPageBlock .stk-block-text__text a {
     font-weight: 600;
     text-decoration: none;
 }
 
-#mepr_loginform input[type="submit"] {
+.mepr-form .mp-form-label label {
+    display: none !important;
+}
+
+.mepr-form .button.mp-hide-pw {
+    display: none;
+}
+
+.mepr-form input[type="submit"] {
     width: 100%;
 }
 
-.mp-form-row.mepr_password + div {
+/* Login Page */
+.page-login .mp-form-row.mepr_password + div {
     display: none;
 }
 
-.mp-form-row.mepr_password ~ div.mp-spacer {
+.page-login .mp-form-row.mepr_password ~ div.mp-spacer {
     display: none;
 }
 
-#mepr_loginform .button.mp-hide-pw {
-    display: none;
-}
-
-.mp_login_form > .mepr-login-actions a {
+.page-login .mp_login_form > .mepr-login-actions a {
     color: #8B8B8B;
     font-weight: 400;
     font-size: 18px;
     letter-spacing: 0.01em;
 }
 
-.mp_login_form > .mepr-login-actions a:hover {
+.page-login .mp_login_form > .mepr-login-actions a:hover {
     color: #00c0f3
 }
 
-.mp_login_form > .mepr-login-actions a:after {
+.page-login .mp_login_form > .mepr-login-actions a:after {
     content: '?';
 }
 
-#mepr_loginform + .mp-spacer {
+.page-login #mepr_loginform + .mp-spacer {
     height: 30px;
     line-height: 0;
 }
 
-.mp_login_form > .mepr-login-actions > p.or {
+.page-login .mp_login_form > .mepr-login-actions > p.or {
     margin: 0 0 30px;
     color: #8B8B8B;
     font-weight: 400;
@@ -90,8 +94,33 @@
     .loginPageBlock {
         max-width: 640px;
     }
-    
-    .loginPageBlock .stk-block-heading__text {
-    }
-    
+}
+
+
+/* Register Page */
+.mepr-signup-form .mp-form-label {
+    display: none !important;
+}
+
+#mepr_user_password_confirm1,
+.page-register .mepr-signup-form .mepr_price {
+    display: none !important;
+}
+
+.mepr-signup-form .mepr_spacer {
+    display: none;
+}
+
+.registerPageBlock .mp_wrapper {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.registerPageBlock ._privacyText .stk-block-text__text {
+    font-weight: 400;
+    font-size: 12px !important;
+    line-height: 16px !important;
+    color: #8B8B8B;
+    max-width: 290px;
+    margin: 0 auto;
 }
