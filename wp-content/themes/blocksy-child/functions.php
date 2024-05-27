@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.45';
+const __VERSION = '7.47';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -28,6 +28,10 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('pdp-css', get_stylesheet_directory_uri() . '/css/PDP.css', [], __VERSION);
     wp_enqueue_style('listing-css', get_stylesheet_directory_uri() . '/css/listing.css', [], __VERSION);
 
+    // MemberPress
+    wp_enqueue_style('mp-form', get_stylesheet_directory_uri() . '/css/memberpress-form.css', [], __VERSION);
+    wp_enqueue_style('page-login', get_stylesheet_directory_uri() . '/css/page-login.css', [], __VERSION);
+
 
     // Jquery
 //    wp_enqueue_script('jquery3', get_stylesheet_directory_uri() . '/js/jquery/jquery-3.7.1.min.js',
@@ -49,6 +53,12 @@ function add_custom_script_to_footer()
     // Custom JS for PDP
     if (is_single()) {
         wp_enqueue_script('pdp-js', get_stylesheet_directory_uri() . '/js/pdp.js',
+            [], __VERSION, true);
+    }
+
+    // Memberpress js
+    if (is_page('login')) {
+        wp_enqueue_script('mpLogin-js', get_stylesheet_directory_uri() . '/js/mpLogin.js',
             [], __VERSION, true);
     }
 }

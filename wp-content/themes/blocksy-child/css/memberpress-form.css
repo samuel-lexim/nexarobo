@@ -1,0 +1,11 @@
+.mp_wrapper .mp-form-row {
+    margin-bottom: 0;
+}
+
+.mp_wrapper textarea, .mp_wrapper select, .mp_wrapper input[type=text],
+.mp_wrapper input[type=url], .mp_wrapper input[type=email],
+.mp_wrapper input[type=tel], .mp_wrapper input[type=number], .mp_wrapper input[type=password] {
+    height: 50px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}

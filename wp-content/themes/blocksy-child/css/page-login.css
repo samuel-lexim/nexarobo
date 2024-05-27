@@ -1,0 +1,97 @@
+
+.page-template-default .mpPageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(180deg, #37A7F4 0%, #4E1EA3 100%);
+    width: 100%;
+    max-width: 100%;
+    min-height: calc(100vh - 80px);
+}
+
+.loginPageBlock {
+    max-width: 640px;
+    width: 90%;
+    margin: auto;
+    padding: 135px 65px;
+    background: #fff;
+    border-radius: 10px;
+}
+.loginPageBlock .stk-block-heading__text {
+    font-weight: 600 !important;
+    line-height: 56px !important;
+}
+
+.loginPageBlock label[for="user_login"],
+.loginPageBlock label[for="user_pass"]  {
+    display: none !important;
+}
+
+.loginPageBlock .mepr-form {
+    width: 330px;
+    text-align: center;
+    margin: auto;
+}
+
+.mepr-login-actions {
+    text-align: center;
+}
+
+.loginPageBlock .stk-block-text__text a {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#mepr_loginform input[type="submit"] {
+    width: 100%;
+}
+
+.mp-form-row.mepr_password + div {
+    display: none;
+}
+
+.mp-form-row.mepr_password ~ div.mp-spacer {
+    display: none;
+}
+
+#mepr_loginform .button.mp-hide-pw {
+    display: none;
+}
+
+.mp_login_form > .mepr-login-actions a {
+    color: #8B8B8B;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.01em;
+}
+
+.mp_login_form > .mepr-login-actions a:hover {
+    color: #00c0f3
+}
+
+.mp_login_form > .mepr-login-actions a:after {
+    content: '?';
+}
+
+#mepr_loginform + .mp-spacer {
+    height: 30px;
+    line-height: 0;
+}
+
+.mp_login_form > .mepr-login-actions > p.or {
+    margin: 0 0 30px;
+    color: #8B8B8B;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1 !important;
+}
+
+@media only screen and (min-width: 768px) {
+    .loginPageBlock {
+        max-width: 640px;
+    }
+    
+    .loginPageBlock .stk-block-heading__text {
+    }
+    
+}
