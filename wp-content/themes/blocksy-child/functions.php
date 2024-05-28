@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.52';
+const __VERSION = '7.53';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -341,3 +341,21 @@ function category_listing_shortcode($atts)
     return $output;
 }
 
+// Memberpress - show Login / Logout button
+function display_login_logout_link($attr)
+{
+    $output = '<div class="loginButton">';
+    if (is_user_logged_in()) {
+        // User is logged in
+        $logout_url = wp_logout_url(home_url('/'));
+        $output .= '<a href="' . $logout_url . '">Log out</a>';
+    } else {
+        // User is not logged in
+        $login_url = wp_login_url(home_url('/login'));
+        $output .= '<a href="' . $login_url . '">Log in</a>';
+    }
+    $output .= '</div>';
+    return $output;
+}
+
+add_shortcode('login_logout_link', 'display_login_logout_link');

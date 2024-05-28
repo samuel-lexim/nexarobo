@@ -17,6 +17,10 @@ nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg path {
     fill: var(--theme-icon-hover-color, var(--theme-link-hover-color)) !important;
 }
 
+.loginButton {
+    display: none;
+}
+
 @media only screen and (max-width: 999px) {
     .ct-panel .ct-panel-actions {
         padding-top: 27px;
@@ -63,17 +67,23 @@ nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg path {
     }
 }
 
-@media only screen and (min-width: 1000px) and (max-width: 1200px) {
-    .ct-header .menu > li > .ct-menu-link {
-        --menu-item-padding: 0 20px !important;
-    }
-}
-
 @media only screen and (min-width: 1000px) {
+    body #header [data-column-set="2"] > div {
+        grid-template-columns: 180px auto;
+    }
+    
+    body #header [data-column=start] [data-items=primary] > *:first-child {
+        --margin: 0 0 0 0;
+    }
+    
+    body #header [data-column=end] [data-items=primary] > *:last-child {
+        --margin: 0;
+    }
+    
     .ct-header .menu li.menu-item-home {
         display: none;
     }
-
+    
     nav[class*=menu] li:hover > .ct-menu-link svg path,
     nav[class*=menu] li:hover > .ct-sub-menu-parent svg path,
     nav[class*=menu] li[class*=current-menu-] > .ct-menu-link svg path,
@@ -82,16 +92,18 @@ nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg path {
     }
     
     .ct-header [data-device="desktop"] .ct-container-fluid {
-        max-width: 1218px;
+        width: 100%;
+        padding: 0 10px;
+        max-width: 100%;
     }
     
     .ct-header .menu > li > .ct-menu-link {
-        --menu-item-padding: 0 40px;
+        --menu-item-padding: 0 15px;
     }
     
     .ct-header .menu {
         column-gap: 0;
-        justify-content: right !important;
+        justify-content: center !important;
     }
     
     .ct-header .menu > li > ul.sub-menu {
@@ -142,6 +154,57 @@ nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg path {
     
     .ct-header .menu > li > ul.sub-menu .sub-menu .ct-menu-link {
         font-weight: 400;
+    }
+    
+}
+
+@media only screen and (min-width: 1000px) {
+    .loginButton {
+        display: block;
+        margin-left: 5px;
+    }
+    
+    .loginButton a {
+        font-weight: 500;
+        font-size: 18px;
+        white-space: nowrap;
+        padding: 6px 22px;
+        color: #fff !important;
+        border: 1px solid #fff;
+        border-radius: 12px;
+    }
+}
+
+@media only screen and (min-width: 1040px) {
+    .loginButton {
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .ct-header [data-device="desktop"] .ct-container-fluid {
+        padding: 0 20px;
+    }
+    
+    .ct-header .menu > li > .ct-menu-link {
+        --menu-item-padding: 0 20px;
+    }
+}
+
+@media only screen and (min-width: 1201px) {
+    .ct-header [data-device="desktop"] .ct-container-fluid {
+        padding: 0 30px;
+    }
+    
+    .ct-header .menu > li > .ct-menu-link {
+        --menu-item-padding: 0 30px;
+    }
+}
+
+@media only screen and (min-width: 1340px) {
+    .ct-header [data-device="desktop"] .ct-container-fluid {
+        padding: 0;
+        max-width: 1280px;
     }
     
 }
