@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.53';
+const __VERSION = '7.54';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -33,11 +33,6 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('page-login', get_stylesheet_directory_uri() . '/css/page-login.css', [], __VERSION);
 
 
-    // Jquery (dont need use)
-//    wp_enqueue_script('jquery3', get_stylesheet_directory_uri() . '/js/jquery/jquery-3.7.1.min.js',
-//        [], __VERSION, true);
-
-
 });
 
 function add_custom_script_to_footer()
@@ -56,7 +51,7 @@ function add_custom_script_to_footer()
             [], __VERSION, true);
     }
 
-    // Memberpress js
+    // START - Memberpress js
     if (is_page('login')) {
         wp_enqueue_script('mpLogin-js', get_stylesheet_directory_uri() . '/js/mpLogin.js',
             [], __VERSION, true);
@@ -65,6 +60,32 @@ function add_custom_script_to_footer()
         wp_enqueue_script('mpRegister-js', get_stylesheet_directory_uri() . '/js/mpRegister.js',
             [], __VERSION, true);
     }
+
+    if (is_page('account')) {
+        wp_enqueue_style('page-account', get_stylesheet_directory_uri() . '/css/page-account.css',
+            [], __VERSION);
+
+        wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css', [], __VERSION);
+
+        // custom components
+        wp_enqueue_style('typo', get_stylesheet_directory_uri() . '/css/typo.css', [], __VERSION,);
+        wp_enqueue_style('elements', get_stylesheet_directory_uri() . '/css/elements.css', [], __VERSION,);
+        wp_enqueue_style('layout', get_stylesheet_directory_uri() . '/css/layout.css', [], __VERSION,);
+        wp_enqueue_style('wpform', get_stylesheet_directory_uri() . '/css/wpForm.css', [], __VERSION,);
+
+        // Page Sections
+        wp_enqueue_style('header', get_stylesheet_directory_uri() . '/css/header.css', [], __VERSION);
+        wp_enqueue_style('footer', get_stylesheet_directory_uri() . '/css/footer.css', [], __VERSION);
+
+        // MemberPress Account
+//        $upload_dir = wp_get_upload_dir();
+//        $upload_path = $upload_dir['basedir'];
+//        wp_enqueue_style('blocksy-global', $upload_path . '/blocksy/css/global.css');
+
+        wp_enqueue_script('mpAccount-js', get_stylesheet_directory_uri() . '/js/mpAccount.js',
+            [], __VERSION, true);
+    }
+    // END - Memberpress js
 }
 
 add_action('wp_footer', 'add_custom_script_to_footer');
@@ -339,6 +360,22 @@ function category_listing_shortcode($atts)
     wp_reset_postdata();
     $output .= '</section>';
     return $output;
+}
+
+// Customize sub-menu in header
+if (! function_exists('blocksy_menu_get_child_svgs')) {
+    function blocksy_menu_get_child_svgs() {
+        // 'default' => '<svg class="ct-icon" width="8" height="8" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"/></svg>',
+        return [
+            'default' => '<svg class="88888" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5.5 5.5L10 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+
+            'mobile-toggle-type-1' => '<svg class="ct-icon toggle-icon-1" width="15" height="15" viewBox="0 0 15 15"><path d="M3.9,5.1l3.6,3.6l3.6-3.6l1.4,0.7l-5,5l-5-5L3.9,5.1z"/></svg>',
+
+            'mobile-toggle-type-2' => '<svg class="ct-icon toggle-icon-2" width="15" height="15" viewBox="0 0 15 15"><path d="M14.1,6.6H8.4V0.9C8.4,0.4,8,0,7.5,0S6.6,0.4,6.6,0.9v5.7H0.9C0.4,6.6,0,7,0,7.5s0.4,0.9,0.9,0.9h5.7v5.7C6.6,14.6,7,15,7.5,15s0.9-0.4,0.9-0.9V8.4h5.7C14.6,8.4,15,8,15,7.5S14.6,6.6,14.1,6.6z"/></svg>',
+
+            'mobile-toggle-type-3' => '<svg class="ct-icon toggle-icon-3" width="12" height="12" viewBox="0 0 15 15"><path d="M2.6,5.8L2.6,5.8l4.3,5C7,11,7.3,11.1,7.5,11.1S8,11,8.1,10.8l4.2-4.9l0.1-0.1c0.1-0.1,0.1-0.2,0.1-0.3c0-0.3-0.2-0.5-0.5-0.5l0,0H3l0,0c-0.3,0-0.5,0.2-0.5,0.5C2.5,5.7,2.5,5.8,2.6,5.8z"/></svg>',
+        ];
+    }
 }
 
 // Memberpress - show Login / Logout button

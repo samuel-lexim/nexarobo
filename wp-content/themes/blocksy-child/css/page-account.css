@@ -1,0 +1,267 @@
+body.page-account * {
+    font-family: "ct_font_proxima__nova", Sans-serif !important;
+    color: #252525;
+}
+
+body.page-account main {
+    visibility: hidden !important;
+}
+
+body.page-account[action] main {
+    visibility: visible !important;
+}
+
+/* My Account */
+.mepr-account-container {
+    display: block;
+    padding-top: 60px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+#mepr-account-nav .mepr-nav-item a:before {
+    display: none;
+}
+
+#mepr-account-nav .mepr-nav-item a {
+    color: #252525 !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.01em !important;
+}
+
+body[action="0"] .mpAccount-BackButton {
+    display: none;
+}
+
+body.page-account[action] .mpAccount-BackButton {
+    visibility: visible !important;
+}
+
+.mpAccount-BackButton {
+    margin-bottom: 50px;
+}
+
+.mpAccount-BackButton a {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #252525;
+    display: inline-flex;
+    align-items: center;
+}
+
+.mpAccount-BackButton a:before {
+    content: '';
+    width: 26px;
+    height: 17px;
+    display: block;
+    margin-right: 10px;
+    background-image: url("../images/arrow-left-black.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+#mepr-account-content {
+    padding: 0;
+}
+
+h1.mepr_page_header {
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    font-weight: 600;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+}
+
+.mepr-account-welcome-message {
+    display: none;
+}
+
+.mepr-profile-wrapper > div {
+    border: none;
+    padding: 0;
+}
+
+#mepr-account-content .mepr-rl-footer-widgets {
+    border: none
+}
+
+.mepr-account-container .mepr-button.btn-outline {
+    color: #252525;
+    border: 1px solid #37A7F4;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0.02em;
+    height: 30px;
+    padding: 0 18px;
+}
+
+#mepr-profile-details .mepr-profile-details__list dt {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #252525;
+    display: flex;
+    justify-content: space-between;
+}
+
+#mepr-profile-details .mepr-profile-details__list dt ._heading:after {
+    content: ':';
+}
+
+#mepr-profile-details .mepr-profile-details__list .mepr-profile-details__content {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    text-align: left;
+}
+
+#mepr-profile-details .mepr-profile-details__list .mepr-profile-details__button {
+    padding: 0 20px 0 0;
+    
+}
+
+#mepr-profile-details .mepr-profile-details__list .mepr-profile-details__button svg {
+    display: none;
+}
+
+#mepr-profile-details .mepr-profile-details__list .mepr-profile-details__button:before {
+    content: 'Edit';
+    padding: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #252525;
+    border-bottom: 1px solid;
+}
+
+@media only screen and (max-width: 999px) {
+    body[action="0"] #mepr-account-nav {
+        display: block !important;
+    }
+    
+    body[action='0'] #mepr-account-content {
+        display: none;
+    }
+    
+    #mepr-account-nav {
+        background: #fff !important;
+        display: none !important;
+    }
+    
+    #mepr-account-nav .mepr-nav-item a {
+        font-size: 16px;
+        line-height: 24px;
+        text-align: left;
+        justify-content: space-between;
+        border-bottom: 1px solid #ddd;
+        padding: 20px 0;
+    }
+    
+    #mepr-account-nav .mepr-nav-item.--active a,
+    #mepr-account-nav .mepr-nav-item.mepr-active-nav-tab a {
+        background: #fff;
+        color: #252525;
+        font-weight: 600;
+    }
+    
+    #mepr-account-nav .mepr-nav-item a:after {
+        content: '';
+        width: 26px;
+        height: 17px;
+        background-image: url("../images/arrow-right-black.svg");
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+    
+    .mepr-account-message,
+    #mepr-profile-details {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .mepr-account-container {
+        display: grid;
+        grid-template-columns: 340px auto;
+        padding-left: 0;
+        padding-right: 30px;
+        gap: 30px;
+    }
+    
+    
+    #mepr-account-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        background: #fcfcfc !important;
+        padding-top: 90px;
+    }
+    
+    .mpAccount-BackButton {
+        display: none !important;
+    }
+    
+    .mepr-account-container {
+        padding-top: 0;
+    }
+    
+    .mepr-account-message,
+    #mepr-profile-details {
+        width: 100%;
+    }
+    
+    
+    #mepr-account-nav .mepr-nav-item {
+        margin-bottom: 30px;
+        min-width: 120px;
+    }
+    
+    #mepr-account-nav .mepr-nav-item a {
+        display: inline;
+        background: transparent !important;
+        font-size: 18px;
+        line-height: 24px;
+        padding: 0;
+    }
+    
+    #mepr-account-nav .mepr-nav-item.--active a,
+    #mepr-account-nav .mepr-nav-item.mepr-active-nav-tab a {
+        border-bottom: 2px solid;
+    }
+    
+    #mepr-account-content {
+        padding-top: 90px;
+        max-width: 740px;
+    }
+    
+    h1.mepr_page_header {
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: 0.01em;
+        font-weight: 600;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .mepr-account-container {
+        gap: 66px;
+    }
+}
+
+/* Payment */
+
+
+/* Subscription */
