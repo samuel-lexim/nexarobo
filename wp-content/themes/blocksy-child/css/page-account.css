@@ -262,6 +262,122 @@ h1.mepr_page_header {
 }
 
 /* Payment */
+body[action="payments"] h1.mepr_page_header {
+    border: none;
+}
+
+#mepr-account-payments-table {
+    border: none;
+    table-layout: auto;
+    width: 100%;
+}
+
+#mepr-account-payments-table tr {
+    display: table-row;
+}
+
+#mepr-account-payments-table td {
+    display: table-cell;
+}
+
+#mepr-account-payments-table thead {
+    display: table-header-group !important;
+}
+
+#mepr-account-payments-table td:before {
+    display: none;
+}
+
+#mepr-account-payments-table th {
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    border: none;
+    color: #252525;
+}
+
+#mepr-account-payments-table td {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    border: none;
+    color: #252525;
+    padding: 0 10px 0 0;
+}
+
+#mepr-account-payments-table tbody tr td > h4 {
+    padding: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    margin: 0 0 10px;
+    color: #252525;
+}
+
+#mepr-account-payments-table tbody ._showOnMobile {
+    margin: 12px 0 0;
+}
+
+#mepr-account-payments-table tbody ._showOnMobile p:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+
+#mepr-account-payments-table tbody ._showOnMobile > p:last-child {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 999px) {
+    #mepr-account-payments-table thead,
+    #mepr-account-payments-table .th_td-date,
+    #mepr-account-payments-table .th_td-amount {
+        display: none !important;
+    }
+    
+    #mepr-account-payments-table tbody tr {
+        border-top: 1px solid #ddd;
+        border-bottom: none;
+    }
+    
+    #mepr-account-payments-table tbody tr td {
+        padding: 20px 10px 20px 0;
+    }
+    
+    #mepr-account-payments-table tbody tr > td:first-child {
+        width: 100%;
+    }
+    
+}
+
+@media only screen and (min-width: 1000px) {
+    #mepr-account-payments-table tbody tr td > h4 {
+        display: none;
+    }
+    
+    #mepr-account-payments-table ._showOnMobile {
+        display: none;
+    }
+    
+    #mepr-account-payments-table thead {
+        border-bottom: 1px solid #ddd;
+    }
+    
+    #mepr-account-payments-table thead th:not(.th_td-transaction),
+    #mepr-account-payments-table tbody tr > td:not(.th_td-transaction) {
+        text-align: center;
+    }
+    
+    #mepr-account-payments-table tbody tr > td {
+        padding: 15px 0;
+    }
+}
 
 
 /* Subscription */
