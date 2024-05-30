@@ -26,6 +26,7 @@ wp-content/themes/blocksy/inc/panel-builder/header/trigger/view.php
 
 ## HEADER - Sub menu
 wp-content/themes/blocksy/inc/components/menus.php
+Fixed on wp-content/themes/blocksy-child/functions.php
 ```php
 if (! function_exists('blocksy_menu_get_child_svgs')) {
 	function blocksy_menu_get_child_svgs() {
@@ -34,3 +35,11 @@ if (! function_exists('blocksy_menu_get_child_svgs')) {
 			'default' => '<svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5.5 5.5L10 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
 ```
+
+## Fix bug - TypeError: Cannot read properties of undefined (reading 'indexOf')  at sticky.js
+wp-content/plugins/blocksy-companion-pro/static/bundle/sticky.js
+```js
+// add the below condition on the front of document.body.dataset.header.indexOf("shrink")
+&&document.body.dataset.header&&
+```
+

@@ -1,8 +1,4 @@
-body.page-account * {
-    font-family: "ct_font_proxima__nova", Sans-serif !important;
-    color: #252525;
-}
-
+/* START - Fix bug delay css */
 body.page-account main {
     visibility: hidden !important;
 }
@@ -10,8 +6,9 @@ body.page-account main {
 body.page-account[action] main {
     visibility: visible !important;
 }
+/* END - Fix bug delay css */
 
-/* DEFAULT */
+/* DEFAULT PAGE */
 body.page-account .mepr-account-container table tr {
     border-bottom: none;
 }
@@ -31,6 +28,8 @@ body.page-account .mepr-account-container table tr {
 .mepr-account-container table td div {
     margin-left: 0;
 }
+/* END - DEFAULT PAGE */
+
 
 /* My Account */
 .mepr-account-container {

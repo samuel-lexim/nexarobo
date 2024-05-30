@@ -1,0 +1,97 @@
+#header.ct-header {
+    background-color: #37A7F4;
+    height: 80px;
+}
+
+#header.ct-header [data-row] > div.ct-container-fluid {
+    min-height: 80px;
+}
+
+#header.ct-header .site-branding img {
+    max-width: 160px;
+}
+
+body.page-account #offcanvas .ct-toggle-close svg {
+    width: initial;
+    height: initial;
+}
+
+body.page-account nav[class*=menu] .ct-menu-link {
+    color: #252525;
+    font-size: 18px;
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+}
+
+.ct-icon, .ct-icon-container svg.mobile-menu .ct-toggle-dropdown-mobile {
+    color: #252525;
+}
+
+.ct-icon, .ct-icon-container svg.ct-icon, .ct-icon, .ct-icon-container svg.ct-icon-container svg {
+    fill: #252525;
+}
+
+body.page-account nav[class*=menu] li:hover > .ct-menu-link svg,
+body.page-account nav[class*=menu] li:hover > .ct-sub-menu-parent svg,
+body.page-account nav[class*=menu] li[class*=current-menu-] > .ct-menu-link svg,
+body.page-account nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg {
+    fill: none !important;
+}
+
+body.page-account .mobile-menu .ct-menu-link {
+    --menu-item-padding: 10px 0;
+}
+
+body.page-account nav[class*=menu] li:hover > .ct-menu-link,
+body.page-account nav[class*=menu] li:hover > .ct-sub-menu-parent {
+    color: #37a7f4
+}
+
+body.page-account ul, body.page-account ol,
+body.page-account .mobile-menu li > ul, body.page-account .mobile-menu li > ol {
+    margin-left: 0;
+}
+
+@media only screen and (max-width: 999px) {
+    #header.ct-header [data-id="trigger"] {
+        --theme-icon-size: 22px;
+    }
+    
+    body.page-account #offcanvas {
+        --vertical-alignment: center;
+        --horizontal-alignment: center;
+        --text-horizontal-alignment: center;
+        --has-indentation: 0;
+        background-color: #fff;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    
+    body.page-account nav[class*=menu] .ct-menu-link {
+        color: #fff !important;
+        font-weight: 500;
+    }
+    
+    body.page-account [class*=ct-toggle] svg {
+        width: initial;
+        height: initial;
+    }
+    
+    body.page-account [class*=animated-submenu] > .sub-menu {
+        background-color: #fff;
+    }
+    
+    body.page-account .ct-header [data-id="menu"] .sub-menu .ct-menu-link {
+        color: #252525 !important;
+    }
+    
+    body.page-account .menu-item .ct-disabled-link {
+        pointer-events: none;
+    }
+    
+    body.page-account nav[class*=menu] .sub-menu .sub-menu li:hover > .ct-menu-link,
+    body.page-account nav[class*=menu] .sub-menu .sub-menu li:hover > .ct-sub-menu-parent {
+        color: #00c0f3 !important;
+    }
+}
