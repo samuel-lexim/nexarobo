@@ -19,6 +19,7 @@ body.page-account .mepr-account-container textarea {
 
 body.page-account .mepr-account-container table tr {
     border-bottom: none;
+    margin-bottom: 0;
 }
 
 .mepr-account-container table td:before {
@@ -345,6 +346,24 @@ h1.mepr_page_header {
     }
 }
 
+/* layout */
+@media only screen and (min-width: 1441px) {
+    .mepr-account-container {
+        grid-template-columns: calc(50vw - 640px + 160px + 135px) auto;
+        gap: 0;
+    }
+    
+    #mepr-account-nav {
+        padding-left: calc(100% - 399px);
+    }
+    
+    #mepr-account-content {
+        max-width: 810px;
+        padding-left: 66px;
+    }
+}
+
+
 /* Payment */
 body[action="payments"] h1.mepr_page_header {
     border: none;
@@ -533,7 +552,7 @@ body[action="subscriptions"] h1.mepr_page_header {
     padding: 0 15px;
 }
 
-#MeprAccount-SubscriptionTable tbody > tr {
+#MeprAccount-SubscriptionTable tbody > tr:not(:last-child) {
     border-bottom: 1px solid #ddd;
 }
 
@@ -555,6 +574,43 @@ body[action="subscriptions"] h1.mepr_page_header {
 
 #MeprAccount-SubscriptionTable ._showOnMobile > div:last-child,
 #MeprAccount-SubscriptionTable ._showOnMobile .mepr-pro-account-table__rebill {
+    margin-bottom: 0;
+}
+
+#MeprAccount-SubscriptionTable tbody tr.tr_action .td_action {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#MeprAccount-SubscriptionTable tbody tr.tr_action .td_action .mepr-account-row-action {
+    min-width: 180px;
+    width: 180px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #37A7F4;
+    border: 1px solid #37A7F4;
+    color: #fff;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#MeprAccount-SubscriptionTable tbody tr.tr_action .td_action .mepr-account-upgrade {
+    order: -2;
+}
+
+#MeprAccount-SubscriptionTable tbody tr.tr_action .td_action .mepr-account-cancel {
+    order: -1;
+    color: #37A7F4;
+    background-color: #fff;
+}
+
+#MeprAccount-SubscriptionTable tbody tr.tr_action .td_action .mepr-account-update {
     margin-bottom: 0;
 }
 
@@ -610,6 +666,20 @@ body[action="subscriptions"] h1.mepr_page_header {
     
     #MeprAccount-SubscriptionTable tbody td.th_td-dates > div:not(:last-child) {
         margin-bottom: 5px;
+    }
+    
+    #MeprAccount-SubscriptionTable tbody tr.tr_action .td_action {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-top: 27px;
+        padding-bottom: 27px;
+        padding-left: 0;
+    }
+    
+    #MeprAccount-SubscriptionTable tbody tr.tr_action .td_action .mepr-account-row-action {
+        height: 36px;
+        line-height: 36px;
+        font-size: 14px;
     }
     
 }
