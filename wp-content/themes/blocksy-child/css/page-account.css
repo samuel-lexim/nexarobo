@@ -194,6 +194,7 @@ h1.mepr_page_header {
 
 .mepr-profile-wrapper__footer {
     border-top: none;
+    padding-top: 0;
 }
 
 @media only screen and (max-width: 999px) {
@@ -249,7 +250,6 @@ h1.mepr_page_header {
         padding-right: 30px;
         gap: 30px;
     }
-    
     
     #mepr-account-nav {
         display: flex;
@@ -332,6 +332,10 @@ h1.mepr_page_header {
     
     #mepr-profile-details .mepr-profile-details__list .mepr-profile-details__button {
         padding: 0 5px 0 0;
+    }
+    
+    .mepr-profile-wrapper__footer {
+        padding-top: 3px;
     }
 }
 
