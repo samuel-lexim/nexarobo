@@ -21,9 +21,11 @@ if (!empty($subscriptions)) {
                 <th class="th_td-status" scope="col"><?php _ex('Status', 'ui', 'memberpress'); ?></th>
                 <th class="th_td-dates" scope="col"><?php _ex('Dates', 'ui', 'memberpress'); ?></th>
 
-                <th scope="col" style="width: 30px; display: none"><span
+                <?php /*
+                 <th scope="col" style="width: 30px; display: none"><span
                         class="screen-reader-text"><?php _ex('Actions', 'ui', 'memberpress'); ?></span>
                 </th>
+                */ ?>
                 <?php MeprHooks::do_action('mepr-account-subscriptions-th', $mepr_current_user, $subscriptions); ?>
             </tr>
             </thead>
@@ -264,10 +266,11 @@ if (!empty($subscriptions)) {
                         </div>
                     </td>
 
+                    <?php /*
                     <td class="mepr-pro-account-table__col-actions" style="display: none"
                         data-label="<?php _ex('Actions', 'ui', 'memberpress'); ?>">
                         <?php if ($row_actions) { ?>
-                            <svg class="mepr-tooltip-trigger" xmlns="http://www.w3.org/2000/svg" class="" fill="none"
+                            <svg class="mepr-tooltip-trigger" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>
@@ -278,12 +281,25 @@ if (!empty($subscriptions)) {
                             </div>
                         <?php } ?>
                     </td>
-                    <?php MeprHooks::do_action('mepr-account-subscriptions-td', $mepr_current_user, $s, $txn, $is_sub); ?>
+                    */ ?>
                 </tr>
+
+                <tr class="tr_action">
+                    <td class="td_action">
+                        <?php if ($row_actions) { ?>
+                            <?php echo $row_actions; ?>
+                        <?php } ?>
+                    </td>
+                </tr>
+
+                <?php MeprHooks::do_action('mepr-account-subscriptions-td', $mepr_current_user, $s, $txn, $is_sub); ?>
+
             <?php endforeach; ?>
             <?php MeprHooks::do_action('mepr-account-subscriptions-table', $mepr_current_user, $subscriptions); ?>
             </tbody>
         </table>
+
+
 
         <div class="mepr-account-meta">
             <?php if ($next_page) : ?>
