@@ -349,12 +349,12 @@ h1.mepr_page_header {
 /* layout */
 @media only screen and (min-width: 1441px) {
     .mepr-account-container {
-        grid-template-columns: calc(50vw - 640px + 160px + 135px) auto;
+        grid-template-columns: calc(50vw - 640px + 160px + 128px) auto;
         gap: 0;
     }
     
     #mepr-account-nav {
-        padding-left: calc(100% - 399px);
+        padding-left: calc(100% - 385px);
     }
     
     #mepr-account-content {
