@@ -1,11 +1,10 @@
 /* START - Fix bug delay css */
-body.page-account main {
-    visibility: hidden !important;
-}
-
-body.page-account[action] main {
-    visibility: visible !important;
-}
+/*body.page-account main {*/
+/*    visibility: hidden !important;*/
+/*}*/
+/*body.page-account[action] main {*/
+/*    visibility: visible !important;*/
+/*}*/
 /* END - Fix bug delay css */
 
 /* DEFAULT PAGE */
@@ -28,10 +27,16 @@ body.page-account .mepr-account-container table tr {
 .mepr-account-container table td div {
     margin-left: 0;
 }
+
 /* END - DEFAULT PAGE */
 
 
 /* My Account */
+body.page-account article.page .mp_wrapper.wp-shortcode {
+    max-width: 100%;
+    width: 100%;
+}
+
 .mepr-account-container {
     display: block;
     padding-top: 60px;
@@ -61,7 +66,7 @@ body.page-account[action] .mpAccount-BackButton {
     margin-bottom: 50px;
 }
 
-.mpAccount-BackButton a {
+.mepr-account-container .mpAccount-BackButton a {
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
@@ -118,6 +123,12 @@ h1.mepr_page_header {
     letter-spacing: 0.02em;
     height: 30px;
     padding: 0 18px;
+}
+
+#mepr-profile-details .mepr-profile-details__list ._group > div {
+    display: none;
+    font-weight: 400;
+    letter-spacing: 0.01em;
 }
 
 #mepr-profile-details .mepr-profile-details__list dt {
@@ -272,6 +283,27 @@ h1.mepr_page_header {
         line-height: 26px;
         letter-spacing: 0.01em;
         font-weight: 600;
+    }
+    
+    #mepr-profile-details .mepr-profile-details__list dt {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    
+    #mepr-profile-details .mepr-profile-details__list .mepr-profile-details__content {
+        display: none;
+    }
+    
+    #mepr-profile-details .mepr-profile-details__list ._group > div {
+        display: block;
+    }
+    
+    #mepr-profile-details .mepr-profile-details__list ._group {
+        display: flex;
+    }
+    
+    #mepr-profile-details .mepr-profile-details__list ._group > ._heading {
+        min-width: 130px;
     }
 }
 
@@ -504,7 +536,7 @@ body[action="subscriptions"] h1.mepr_page_header {
     }
     
     #MeprAccount-SubscriptionTable thead th:not(.th_td-membership),
-    #MeprAccount-SubscriptionTable tbody td:not(.th_td-membership)  {
+    #MeprAccount-SubscriptionTable tbody td:not(.th_td-membership) {
         text-align: center;
         padding-left: 10px;
         padding-right: 10px;

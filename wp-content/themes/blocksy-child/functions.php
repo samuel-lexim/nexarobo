@@ -62,17 +62,6 @@ function add_custom_script_to_footer()
     }
 
     if (is_page('account')) {
-        $data = get_plugin_data(BLOCKSY__FILE__);
-        $blocksyVersion = $data['Version'];
-        // CSS
-        wp_enqueue_style('ct-main-styles', get_template_directory_uri() . '/static/bundle/main.min.css', [], $blocksyVersion);
-
-        wp_enqueue_style('typo', get_stylesheet_directory_uri() . '/css/typo.css', [], __VERSION,);
-        wp_enqueue_style('elements', get_stylesheet_directory_uri() . '/css/elements.css', [], __VERSION,);
-        wp_enqueue_style('layout', get_stylesheet_directory_uri() . '/css/layout.css', [], __VERSION,);
-        wp_enqueue_style('wpform', get_stylesheet_directory_uri() . '/css/wpForm.css', [], __VERSION,);
-        wp_enqueue_style('header', get_stylesheet_directory_uri() . '/css/header.css', [], __VERSION);
-        wp_enqueue_style('fixed-header', get_stylesheet_directory_uri() . '/css/page-account-header.css', [], __VERSION);
         wp_enqueue_style('page-account', get_stylesheet_directory_uri() . '/css/page-account.css',
             [], __VERSION);
 

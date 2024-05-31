@@ -3,7 +3,7 @@ $mepr_current_user = MeprUtils::get_currentuserinfo();
 $delim = MeprAppCtrl::get_param_delimiter_char($account_url);
 $logout_url = MeprUtils::logout_url();
 ?>
-<div class='mepr-account-container 33333'>
+<div class='mepr-account-container _override'>
     <nav id="mepr-account-nav" x-data="{ open: false }" class="mepr-nav" :class="open ? 'open' : ''"
         @toggle-menu.window="open=!open">
         <span class="mepr-nav-item <?php MeprAccountHelper::active_nav('home'); ?>">
@@ -23,10 +23,12 @@ $logout_url = MeprUtils::logout_url();
 
         <?php MeprHooks::do_action('mepr_account_nav', $mepr_current_user); ?>
 
+        <?php /*
         <span class="mepr-nav-item <?php MeprAccountHelper::active_nav('logout'); ?>">
             <a class=""
                 href="<?php echo esc_url($logout_url); ?>"><?php echo MeprHooks::apply_filters('mepr-account-nav-logout-label', _x('Logout', 'ui', 'memberpress')); ?></a>
         </span>
+        */ ?>
 
     </nav>
 
