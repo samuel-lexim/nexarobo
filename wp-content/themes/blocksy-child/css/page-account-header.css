@@ -20,7 +20,7 @@ body.page-account nav[class*=menu] .ct-menu-link {
     color: #252525;
     font-size: 18px;
     letter-spacing: 0.01em;
-    line-height: 1.4;
+    line-height: 24px;
 }
 
 .ct-icon, .ct-icon-container svg.mobile-menu .ct-toggle-dropdown-mobile {
