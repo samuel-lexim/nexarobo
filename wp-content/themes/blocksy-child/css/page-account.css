@@ -28,6 +28,10 @@ body.page-account .mepr-account-container table tr {
     margin-left: 0;
 }
 
+.mepr-account-container a {
+    color: #252525;
+}
+
 /* END - DEFAULT PAGE */
 
 
@@ -239,6 +243,7 @@ h1.mepr_page_header {
         align-items: center;
         background: #fcfcfc !important;
         padding-top: 90px;
+        padding-left: 24px;
     }
     
     .mpAccount-BackButton {
@@ -378,6 +383,10 @@ body[action="payments"] h1.mepr_page_header {
     margin-bottom: 0;
 }
 
+#mepr-account-payments-table tbody tr > td.th_td-invoice a:hover {
+    color: #37a7f4;
+}
+
 @media only screen and (max-width: 999px) {
     #mepr-account-payments-table thead,
     #mepr-account-payments-table .th_td-date,
@@ -401,6 +410,10 @@ body[action="payments"] h1.mepr_page_header {
 }
 
 @media only screen and (min-width: 1000px) {
+    #mepr-account-payments-table {
+        max-width: 701px;
+    }
+    
     #mepr-account-payments-table th,
     #mepr-account-payments-table td {
         font-size: 14px;
@@ -426,6 +439,20 @@ body[action="payments"] h1.mepr_page_header {
     
     #mepr-account-payments-table tbody tr > td {
         padding: 15px 0;
+    }
+    
+    #mepr-account-payments-table .th_td-date {
+        width: 171px;
+    }
+    
+    #mepr-account-payments-table .th_td-amount {
+        width: 160px;
+    }
+    
+    #mepr-account-payments-table .th_td-invoice {
+        width: 133px;
+        padding-left: 57px;
+        padding-right: 0;
     }
 }
 
