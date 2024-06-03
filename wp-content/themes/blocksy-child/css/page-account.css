@@ -277,7 +277,7 @@ h1.mepr_page_header {
     
     
     #mepr-account-nav .mepr-nav-item {
-        margin-bottom: 30px;
+        margin-bottom: 36px;
         min-width: 120px;
     }
     
@@ -295,7 +295,7 @@ h1.mepr_page_header {
     }
     
     #mepr-account-content {
-        padding-top: 90px;
+        padding-top: 100px;
         max-width: 741px;
     }
     
@@ -308,11 +308,17 @@ h1.mepr_page_header {
         line-height: 26px;
         letter-spacing: 0.01em;
         font-weight: 600;
+        padding-bottom: 12px;
     }
     
     #mepr-profile-details .mepr-profile-details__list dt {
         font-size: 14px;
         line-height: 16px;
+        margin-bottom: 24px;
+    }
+    
+    #mepr-profile-details .mepr-profile-details__list dt:first-child {
+        margin-top: 15px;
     }
     
     #mepr-profile-details .mepr-profile-details__list .mepr-profile-details__content {
@@ -347,7 +353,7 @@ h1.mepr_page_header {
 }
 
 /* layout */
-@media only screen and (min-width: 1441px) {
+@media only screen and (min-width: 1439px) {
     .mepr-account-container {
         grid-template-columns: calc(50vw - 640px + 160px + 128px) auto;
         gap: 0;
