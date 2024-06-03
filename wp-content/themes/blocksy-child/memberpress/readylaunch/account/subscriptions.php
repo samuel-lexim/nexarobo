@@ -285,9 +285,11 @@ if (!empty($subscriptions)) {
                 </tr>
 
                 <tr class="tr_action">
-                    <td class="td_action">
+                    <td colspan="4" class="td_action">
                         <?php if ($row_actions) { ?>
+                        <div class="td_action_inner">
                             <?php echo $row_actions; ?>
+                        </div>
                         <?php } ?>
                     </td>
                 </tr>
