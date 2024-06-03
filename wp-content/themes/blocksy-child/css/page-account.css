@@ -619,10 +619,6 @@ body[action="subscriptions"] h1.mepr_page_header {
     margin-bottom: 0;
 }
 
-#MeprAccount-SubscriptionTable .mepr-pro-account-table__rebill {
-
-}
-
 #MeprAccount-SubscriptionTable tbody tr.tr_action .td_action_inner {
     display: flex;
     flex-direction: column;
