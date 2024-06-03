@@ -38,16 +38,35 @@ add_action('wp_enqueue_scripts', function () {
 function add_custom_script_to_footer()
 {
     // Slick JS
-    wp_enqueue_script('slick-js', get_stylesheet_directory_uri() . '/js/slick.min.js',
-        [], __VERSION, true);
+    if (is_front_page()
+        || is_single()
+        || is_home()
+        || is_page('about')
+        || is_page('products')
+    ) {
+        wp_enqueue_script('slick-js', get_stylesheet_directory_uri() . '/js/slick.min.js',
+            [], __VERSION, true);
+    }
 
     // Main js
-    wp_enqueue_script('main-script', get_stylesheet_directory_uri() . '/js/main.js',
+    wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/js/main.js',
         [], __VERSION, true);
 
-    // Custom JS for PDP
+    // Home js
+    if (is_front_page()) {
+        wp_enqueue_script('home-js', get_stylesheet_directory_uri() . '/js/home.js',
+            [], __VERSION, true);
+    }
+
+    // PDP JS
     if (is_single()) {
         wp_enqueue_script('pdp-js', get_stylesheet_directory_uri() . '/js/pdp.js',
+            [], __VERSION, true);
+    }
+
+    // PLP JS
+    if (is_page('products')) {
+        wp_enqueue_script('plp-js', get_stylesheet_directory_uri() . '/js/plp.js',
             [], __VERSION, true);
     }
 
@@ -62,7 +81,7 @@ function add_custom_script_to_footer()
     }
 
     if (is_page('account')) {
-        wp_enqueue_style('page-account', get_stylesheet_directory_uri() . '/css/page-account.css',
+        wp_enqueue_style('page-account-js', get_stylesheet_directory_uri() . '/css/page-account.css',
             [], __VERSION);
 
         // Account JS
@@ -347,8 +366,9 @@ function category_listing_shortcode($atts)
 }
 
 // Customize sub-menu in header
-if (! function_exists('blocksy_menu_get_child_svgs')) {
-    function blocksy_menu_get_child_svgs() {
+if (!function_exists('blocksy_menu_get_child_svgs')) {
+    function blocksy_menu_get_child_svgs()
+    {
         // 'default' => '<svg class="ct-icon" width="8" height="8" viewBox="0 0 15 15"><path d="M2.1,3.2l5.4,5.4l5.4-5.4L15,4.3l-7.5,7.5L0,4.3L2.1,3.2z"/></svg>',
         return [
             'default' => '<svg class="88888" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5.5 5.5L10 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',

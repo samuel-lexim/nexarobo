@@ -1,7 +1,7 @@
 "use strict";
 
 jQuery(document).ready(function () {
-    console.log("PDP new");
+    console.log("PDP.js new");
 
     let PDP = {
         classes: {
