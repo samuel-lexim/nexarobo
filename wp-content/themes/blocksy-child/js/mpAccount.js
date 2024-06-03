@@ -9,6 +9,7 @@ jQuery(document).ready(function () {
 
         init: function () {
             this.preInit();
+            this.triggerClickClosePopup();
         },
 
         preInit: function () {
@@ -32,6 +33,12 @@ jQuery(document).ready(function () {
                 }
             }
             return false;
+        },
+
+        triggerClickClosePopup: function () {
+            jQuery('.mf-toggle-close').click(function () {
+                jQuery('.mfp-close').trigger("click");
+            });
         }
     };
 

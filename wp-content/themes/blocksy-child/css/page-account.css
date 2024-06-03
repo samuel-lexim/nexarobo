@@ -13,7 +13,8 @@ body.page-account .mepr-account-container button,
 body.page-account .mepr-account-container input,
 body.page-account .mepr-account-container select,
 body.page-account .mepr-account-container optgroup,
-body.page-account .mepr-account-container textarea {
+body.page-account .mepr-account-container textarea,
+body.page-account .mepr-white-popup .mepr-btn {
     font-family: ct_font_proxima__nova, Sans-Serif;
 }
 
@@ -743,8 +744,6 @@ body[action="subscriptions"] h1.mepr_page_header {
         margin-right: 20px;
         margin-bottom: 20px;
     }
-    
-    
 }
 
 @media only screen and (min-width: 1155px) {
@@ -758,5 +757,147 @@ body[action="subscriptions"] h1.mepr_page_header {
     
     #MeprAccount-SubscriptionTable .th_td-dates {
         width: 196px;
+    }
+}
+
+/* Subscription - Popup Cancel Plan */
+.mfp-bg.mfp-ready {
+    background: #fff;
+    opacity: 0.8;
+}
+
+.mfp-bg.mfp-ready ~ #main-container header#header {
+    z-index: 9999;
+}
+
+.mfp-wrap.mfp-ready .mfp-content {
+    box-shadow: 8px 8px 15px 0 #0000001A;
+    max-width: 340px;
+    background: #fff;
+}
+
+.mepr-white-popup {
+    margin: 0 auto;
+    padding: 97px 20px 85px;
+}
+
+.mf-toggle-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 999px) {
+    .mfp-container {
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .mfp-wrap.mfp-ready .mfp-content {
+        max-width: 972px;
+    }
+    
+    .mepr-white-popup {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 93px 202px 92px;
+    }
+    
+    .mf-toggle-close {
+        width: 88px;
+        height: 70px;
+    }
+    
+    
+}
+
+/* Subscription - Cancel Plan */
+.mepr-white-popup .mepr-cancel-sub-text {
+    padding-bottom: 30px;
+}
+
+.mepr-white-popup .mepr-cancel-sub-text h3 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+.mepr-white-popup .mepr-cancel-sub-text p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    padding: 0 40px;
+    margin: 0;
+}
+
+.mepr-white-popup .mepr-cancel-sub-buttons {
+    padding: 0 40px;
+}
+
+.mepr-white-popup .mepr-btn {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #fff;
+    background: #37A7F4;
+    border: 1px solid #37A7F4;
+}
+
+.mepr-white-popup .mepr-btn:hover {
+    background: #37A7F4;
+    text-decoration: none;
+}
+
+.mepr-white-popup .mepr-btn.mepr-upgrade-cancel,
+.mepr-white-popup .mepr-btn.mepr-confirm-no {
+    color: #37A7F4;
+    background: #fff;
+}
+
+.mepr-white-popup .mepr-btn.mepr-upgrade-cancel:hover,
+.mepr-white-popup .mepr-btn.mepr-confirm-no:hover {
+    background: #fff;
+}
+
+@media only screen and (min-width: 1000px) {
+    .mepr-white-popup .mepr-cancel-sub-buttons {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+    }
+    
+    .mepr-white-popup .mepr-btn {
+        width: calc(50% - 10px);
+        margin-bottom: 0;
+    }
+    
+    .mepr-white-popup .mepr-cancel-sub-text h3 {
+        font-size: 24px;
+        line-height: 26px;
+    }
+    
+    .mepr-white-popup .mepr-cancel-sub-text p {
+        font-size: 18px;
+        line-height: 26px;
     }
 }
