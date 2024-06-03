@@ -472,6 +472,10 @@ body[action="payments"] h1.mepr_page_header {
         line-height: 16px;
     }
     
+    #mepr-account-payments-table thead th {
+        padding: 8px 0 20px;
+    }
+    
     #mepr-account-payments-table tbody tr td > h4 {
         display: none;
     }
@@ -490,7 +494,7 @@ body[action="payments"] h1.mepr_page_header {
     }
     
     #mepr-account-payments-table tbody tr > td {
-        padding: 15px 0;
+        padding: 15px 0 16px;
     }
     
     #mepr-account-payments-table .th_td-date {
