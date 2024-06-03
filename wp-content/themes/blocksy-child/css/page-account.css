@@ -43,6 +43,31 @@ body.page-account .mepr-account-container table tr {
     color: #252525;
 }
 
+.mepr-account-container input[type="submit"] {
+    min-width: 180px;
+    width: auto;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #37A7F4;
+    border: 1px solid #37A7F4 !important;
+    color: #fff;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 1000px) {
+    .mepr-account-container input[type="submit"] {
+        height: 36px;
+        line-height: 36px;
+        font-size: 14px;
+    }
+}
+
 /* END - DEFAULT PAGE */
 
 
@@ -295,8 +320,13 @@ h1.mepr_page_header {
         border-bottom: 2px solid;
     }
     
+    .mepr-account-container .mepr-button.btn-outline {
+        padding: 0 23px;
+        margin-top: 4px;
+    }
+    
     #mepr-account-content {
-        padding-top: 100px;
+        padding-top: 97px;
         max-width: 741px;
     }
     
@@ -309,7 +339,7 @@ h1.mepr_page_header {
         line-height: 26px;
         letter-spacing: 0.01em;
         font-weight: 600;
-        padding-bottom: 12px;
+        padding-bottom: 13px;
     }
     
     #mepr-profile-details .mepr-profile-details__list dt {
@@ -343,7 +373,7 @@ h1.mepr_page_header {
     }
     
     .mepr-profile-wrapper__footer {
-        padding-top: 13px;
+        padding-top: 0;
     }
 }
 
@@ -815,8 +845,6 @@ body[action="subscriptions"] h1.mepr_page_header {
         width: 88px;
         height: 70px;
     }
-    
-    
 }
 
 /* Subscription - Cancel Plan */
@@ -900,4 +928,25 @@ body[action="subscriptions"] h1.mepr_page_header {
         font-size: 18px;
         line-height: 26px;
     }
+}
+
+/* Subscription - update payment */
+.mepr_update_account_table > div > strong {
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    font-weight: 600;
+    padding-bottom: 30px;
+    margin: 0;
+}
+
+@media only screen and (min-width: 1000px) {
+    .mepr_update_account_table > div > strong {
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: 0.01em;
+        font-weight: 600;
+        padding-bottom: 12px;
+    }
+    
 }
