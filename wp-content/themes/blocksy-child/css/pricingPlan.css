@@ -224,7 +224,7 @@
     content: ': ';
 }
 
-@media only screen and (max-width: 999px) {
+@media only screen and (max-width: 1199px) {
     .pricingSection > .stk-block-heading {
         max-width: 368px;
     }
@@ -266,7 +266,7 @@
     }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1200px) {
     .pricingSection {
         width: 100% !important;
         padding: 50px 46px 45px;
@@ -389,6 +389,7 @@
     .pricingGrid .pricingHeadingGrid {
         border: 2px solid #37A7F4;
         border-radius: 10px;
+        margin-bottom: 0;
     }
     
     .pricingGrid .pricingHeadingGrid .stk-block-text__text {
@@ -415,9 +416,14 @@
         width: calc(100% - 30px);
     }
     
-    .pricingGrid._4Cols > .stk-block-columns:not(:first-child):not(:last-child) {
+    .pricingGrid._4Cols > .stk-block-columns:not(:last-child) {
         border-top: 1px solid #ddd;
     }
+    
+    .pricingGrid._4Cols > .pricingHeadingGrid + .stk-block-columns {
+        border-top: none;
+    }
+    
     
     .pricingGrid._4Cols > .stk-block-columns:last-child {
         background: #F8F8F8;
