@@ -421,6 +421,9 @@
     
     .pricingGrid._4Cols > .stk-block-columns:last-child {
         background: #F8F8F8;
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
     }
     
     .pricingGrid._4Cols > .stk-block-columns:last-child * {
