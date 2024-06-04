@@ -19,7 +19,8 @@
 
 .pricingSection .mepr-price-menu {
     padding: 0;
-    max-width: 100%;
+    max-width: 100% !important;
+    width: 100%;
 }
 
 .pricingSection .mepr-price-menu .mepr-price-boxes {
@@ -174,10 +175,6 @@
     margin-top: 0;
 }
 
-.pricingSection .mepr-price-menu .mepr-price-boxes .mepr-price-box.highlighted .mepr-price-box-content {
-    padding-top: 24px;
-}
-
 .pricingSection .mepr-price-menu .mepr-price-box-content .mepr-price-box-foot {
     margin-top: 24px;
     background: #37A7F4;
@@ -210,7 +207,7 @@
     font-size: 16px !important;
     font-weight: 600 !important;
     line-height: 24px !important;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.01em !important;
     color: #37A7F4;
     text-align: center;
 }
@@ -237,7 +234,10 @@
         font-weight: 600 !important;
         line-height: 42px !important;
         text-align: center;
-        
+    }
+    
+    .pricingSection .mepr-price-menu .mepr-price-boxes .mepr-price-box.highlighted .mepr-price-box-content {
+        padding-top: 24px;
     }
     
     .pricingGrid._2Cols > .stk-block-text {
@@ -283,7 +283,176 @@
     }
     
     /* pricingGrid 4-Columns 2-Columns */
+    .pricingSection .mepr-price-menu .mepr-price-boxes .mepr-price-box {
+        max-width: 280px;
+    }
+    
+    .pricingSection .mepr-price-menu .mepr-price-boxes .mepr-post-content {
+        display: none;
+    }
+    
+    .pricingSection .mepr-price-menu .mepr-price-boxes .mepr-price-box-price > p:after {
+        width: 0;
+        display: none;
+    }
+    
+    .pricingSection .mepr-price-menu .mepr-price-boxes .mepr-price-box-price {
+        padding-bottom: 0;
+        height: auto !important;
+    }
+    
+    .pricingSection .planGroup {
+        display: flex;
+        align-items: center;
+        margin-bottom: 35px;
+    }
+    
+    .pricingSection .planGroup > ._saveUpBlock {
+        width: 220px;
+    }
+    
+    .pricingSection .mepr-price-menu .mepr-price-boxes {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        max-width: 880px;
+        margin: 0 0 0 auto;
+    }
+    
+    .pricingSection ._saveUpBlock ._bluePricingHeading {
+        margin-bottom: 10px;
+    }
+    
+    .pricingSection ._saveUpBlock ._bluePricingHeading .stk-block-text__text {
+        font-size: 36px !important;
+        font-weight: 600 !important;
+        line-height: 42px !important;
+        letter-spacing: 0.01em !important;
+        text-align: center;
+        color: #37A7F4;
+        margin-bottom: 0;
+    }
+    
+    .pricingSection ._saveUpBlock .stk-block-text:not(._bluePricingHeading) .stk-block-text__text {
+        font-size: 18px !important;
+        font-weight: 400 !important;
+        line-height: 26px !important;
+        letter-spacing: 0.01em !important;
+        text-align: center;
+        color: #252525;
+        margin-bottom: 0;
+    }
+    
+    .pricingSection .mepr-price-menu .mepr-price-boxes .mepr-price-box-button a {
+        width: 227px;
+    }
+    
+    .pricingSection .mepr-price-menu .mepr-price-boxes .mepr-price-box {
+        position: relative;
+        margin-bottom: 0;
+    }
+    
+    .pricingSection .mepr-price-menu .mepr-price-boxes .mepr-most-popular {
+        position: absolute;
+        width: 176px;
+        height: 29px;
+        line-height: 29px;
+        padding: 0;
+        border-radius: 10px;
+        left: 0;
+        right: 0;
+        top: -14px;
+        margin: auto;
+    }
+    
     .pricingGrid {
         display: block;
+        width: 100%;
+        max-width: 1100px;
+        border: none;
+        padding: 0;
+        margin-bottom: 30px;
     }
+    
+    .pricingGrid.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+        max-width: 1100px;
+        width: 100%;
+    }
+    
+    .pricingGrid .stk-block-text__text {
+        font-size: 18px !important;
+        line-height: 26px !important;
+        font-weight: 400 !important;
+        letter-spacing: 0.01em !important;
+    }
+    
+    .pricingGrid .pricingHeadingGrid {
+        border: 2px solid #37A7F4;
+        border-radius: 10px;
+    }
+    
+    .pricingGrid .pricingHeadingGrid .stk-block-text__text {
+        text-align: left !important;
+        padding: 14px 23px 11px;
+        font-size: 18px !important;
+        line-height: 26px !important;
+    }
+    
+    .pricingGrid .stk-row > .stk-column .stk-column-wrapper {
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+    
+    .pricingGrid .stk-row > .stk-column:first-child {
+        max-width: 200px;
+        width: 200px;
+    }
+    
+    .pricingGrid > .stk-block-columns {
+        margin: 0;
+        padding: 15px 0;
+        width: calc(100% - 30px);
+    }
+    
+    .pricingGrid._4Cols > .stk-block-columns:not(:first-child):not(:last-child) {
+        border-top: 1px solid #ddd;
+    }
+    
+    .pricingGrid._4Cols > .stk-block-columns:last-child {
+        background: #F8F8F8;
+    }
+    
+    .pricingGrid._4Cols > .stk-block-columns:last-child * {
+        font-weight: 600 !important;
+    }
+    
+    .pricingGrid._4Cols .stk-row > .stk-column:not(:first-child) .stk-block-icon {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .pricingGrid .stk-row > .stk-column:not(:first-child) .stk-block-icon,
+    .pricingGrid .stk-row > .stk-column:not(:first-child) .stk-block-text {
+        text-align: center;
+    }
+    
+    .pricingGrid .stk-block-icon svg.ugb-custom-icon {
+        width: 18px !important;
+        height: 18px !important;
+    }
+    
+    .pricingGrid._2Cols > .pricingHeadingGrid {
+        background: #F8F8F8;
+        margin-bottom: 0;
+    }
+    
+    .pricingGrid._2Cols .stk-block-columns {
+        border-bottom: 1px solid #ddd;
+    }
+}
+
+
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+
 }
