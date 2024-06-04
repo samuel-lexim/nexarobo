@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.66';
+const __VERSION = '7.67';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -27,6 +27,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('page-get-your-quote', get_stylesheet_directory_uri() . '/css/page-get-your-quote.css', [], __VERSION);
     wp_enqueue_style('pdp-css', get_stylesheet_directory_uri() . '/css/PDP.css', [], __VERSION);
     wp_enqueue_style('listing-css', get_stylesheet_directory_uri() . '/css/listing.css', [], __VERSION);
+    wp_enqueue_style('pricing-css', get_stylesheet_directory_uri() . '/css/pricingPlan.css', [], __VERSION);
 
     // MemberPress
     wp_enqueue_style('mp-form', get_stylesheet_directory_uri() . '/css/memberpress-form.css', [], __VERSION);
