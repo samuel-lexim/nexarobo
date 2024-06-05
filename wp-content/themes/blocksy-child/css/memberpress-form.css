@@ -15,3 +15,9 @@
     border-radius: 20px;
     width: 100%;
 }
+
+.mepr-form input.invalid, .mepr-form select.invalid,
+.mepr-form textarea.invalid, .mepr-form label.mepr-checkbox-field.invalid,
+.mepr-form div.mepr-checkboxes-field.invalid, .mepr-form div.mepr-radios-field.invalid {
+    border: 1px solid red !important;
+}

@@ -1,0 +1,45 @@
+body.single-memberpressproduct ._mp-content {
+    display: none;
+}
+
+body.single-memberpressproduct .mp-form-row.mp-address-group {
+    box-shadow: none;
+    margin-top: 0;
+}
+
+body.single-memberpressproduct .form-wrapper .mp-form-row-group > .mepr-form-input + .mepr-form-input {
+    margin-left: 15px;
+}
+
+body.single-memberpressproduct .form-wrapper .mp-address-group .mp-form-row {
+    margin-bottom: 20px;
+    border-radius: 10px !important;
+}
+
+body.single-memberpressproduct .form-wrapper .mp-form-row-group .mepr-form-input,
+body.single-memberpressproduct .form-wrapper .mp-form-row input[type="text"],
+body.single-memberpressproduct .form-wrapper .mp-form-row input[type="email"],
+body.single-memberpressproduct .form-wrapper .mp-form-row input[type="url"],
+body.single-memberpressproduct .form-wrapper .mp-form-row input[type="tel"],
+body.single-memberpressproduct .form-wrapper .mp-form-row select {
+    box-shadow: none;
+    border-radius: 10px !important;
+    height: 40px;
+}
+
+.mp_wrapper .mp-form-row > label[for="user_first_name1"] {
+    display: none !important;
+}
+
+body.single-memberpressproduct .mepr-checkout-container .form-wrapper input[type="submit"] {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    border-radius: 10px;
+    border: 1px solid #37A7F4;
+    background: #37A7F4;
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.01em;
+}

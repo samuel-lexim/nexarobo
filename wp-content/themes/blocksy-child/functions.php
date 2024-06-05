@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.71';
+const __VERSION = '7.73';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -72,6 +72,22 @@ function add_custom_script_to_footer()
     }
 
     // START - Memberpress js
+    $data = get_plugin_data(BLOCKSY__FILE__);
+    $blocksyVersion = $data['Version'];
+
+    if (is_page('thank-you') ||
+        is_singular('memberpressproduct')
+    ) {
+        wp_enqueue_style('ct-main-styles', get_template_directory_uri() . '/static/bundle/main.min.css', [], $blocksyVersion);
+        wp_enqueue_style('typo', get_stylesheet_directory_uri() . '/css/typo.css', [], __VERSION,);
+        wp_enqueue_style('elements', get_stylesheet_directory_uri() . '/css/elements.css', [], __VERSION,);
+        wp_enqueue_style('layout', get_stylesheet_directory_uri() . '/css/layout.css', [], __VERSION,);
+        wp_enqueue_style('wpform', get_stylesheet_directory_uri() . '/css/wpForm.css', [], __VERSION,);
+        wp_enqueue_style('header', get_stylesheet_directory_uri() . '/css/header.css', [], __VERSION);
+        wp_enqueue_style('fixed-header', get_stylesheet_directory_uri() . '/css/page-account-header.css', [], __VERSION);
+        wp_enqueue_style('mp-form', get_stylesheet_directory_uri() . '/css/memberpress-form.css', [], __VERSION);
+    }
+
     if (is_page('login')) {
         wp_enqueue_script('mpLogin-js', get_stylesheet_directory_uri() . '/js/mpLogin.js',
             [], __VERSION, true);
@@ -84,10 +100,17 @@ function add_custom_script_to_footer()
     if (is_page('account')) {
         wp_enqueue_style('page-account-js', get_stylesheet_directory_uri() . '/css/page-account.css',
             [], __VERSION);
-
-        // Account JS
         wp_enqueue_script('mpAccount-js', get_stylesheet_directory_uri() . '/js/mpAccount.js',
             [], __VERSION, true);
+    }
+
+    if (is_page('thank-you')) {
+        wp_enqueue_style('mp-thanks', get_stylesheet_directory_uri() . '/css/mp-thanks.css', [], __VERSION);
+    }
+
+    if (is_singular('memberpressproduct')) {
+        wp_enqueue_style('mp-product', get_stylesheet_directory_uri() . '/css/mp-product.css', [], __VERSION);
+
     }
     // END - Memberpress js
 }
