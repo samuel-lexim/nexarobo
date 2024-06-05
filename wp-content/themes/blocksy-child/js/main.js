@@ -1,6 +1,8 @@
 jQuery(document).ready(function () {
     console.log('main');
 
+    jQuery('body').attr('data-load', 'success');
+
     let ContactPages = {
         init: function () {
             // this.scrollToTopPage();

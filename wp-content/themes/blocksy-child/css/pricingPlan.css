@@ -4,6 +4,11 @@
     margin: 0 auto;
     padding: 50px 27px 50px 27px;
     border-radius: 20px;
+    visibility: hidden;
+}
+
+body[data-load='success'] .pricingSection {
+    visibility: visible;
 }
 
 /* Price Box */
@@ -67,6 +72,7 @@
     position: relative;
     margin-top: 13px;
     padding: 0 0 20px;
+    height: auto !important;
 }
 
 .pricingSection .mepr-price-menu .mepr-price-boxes .mepr-price-box-price > h3 {
@@ -238,6 +244,8 @@
     
     .pricingSection .mepr-price-menu .mepr-price-boxes .mepr-price-box.highlighted .mepr-price-box-content {
         padding-top: 24px;
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
     }
     
     .pricingGrid._2Cols > .stk-block-text {
@@ -344,7 +352,7 @@
     }
     
     .pricingSection .mepr-price-menu .mepr-price-boxes .mepr-price-box-button a {
-        width: 227px;
+        width: 100% !important;
     }
     
     .pricingSection .mepr-price-menu .mepr-price-boxes .mepr-price-box {
@@ -406,8 +414,8 @@
     }
     
     .pricingGrid .stk-row > .stk-column:first-child {
-        max-width: 200px;
-        width: 200px;
+        max-width: 220px;
+        width: 220px;
     }
     
     .pricingGrid > .stk-block-columns {
@@ -416,6 +424,12 @@
         width: calc(100% - 30px);
     }
     
+    .pricingGrid._4Cols > .stk-block-columns .stk-row > .stk-column:nth-child(3) {
+        width: 0;
+        flex: 0 0 360px !important;
+    }
+    
+    
     .pricingGrid._4Cols > .stk-block-columns:not(:last-child) {
         border-top: 1px solid #ddd;
     }
@@ -423,7 +437,6 @@
     .pricingGrid._4Cols > .pricingHeadingGrid + .stk-block-columns {
         border-top: none;
     }
-    
     
     .pricingGrid._4Cols > .stk-block-columns:last-child {
         background: #F8F8F8;

@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.70';
+const __VERSION = '7.71';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -393,8 +393,8 @@ function display_login_logout_link($attr)
         $output .= '<a href="' . $logout_url . '">Log out</a>';
     } else {
         // User is not logged in
-        $login_url = wp_login_url(home_url('/login'));
-        $output .= '<a href="' . $login_url . '">Log in</a>';
+        // $login_url = wp_login_url(home_url('/login'));
+        $output .= '<a href="/login">Log in</a>';
     }
     $output .= '</div>';
     return $output;
