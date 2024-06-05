@@ -19,7 +19,7 @@ if (!empty($subscriptions)) {
                 <th class="th_td-membership" scope="col"><?php _ex('Membership', 'ui', 'memberpress'); ?></th>
                 <th class="th_td-terms" scope="col"><?php _ex('Terms', 'ui', 'memberpress'); ?></th>
                 <th class="th_td-status" scope="col"><?php _ex('Status', 'ui', 'memberpress'); ?></th>
-                <th class="th_td-last4" scope="col"><?php _ex('Last 4 digits', 'ui', 'memberpress'); ?></th>
+                <th class="th_td-last4" scope="col">Payment</th>
                 <th class="th_td-dates" scope="col"><?php _ex('Dates', 'ui', 'memberpress'); ?></th>
 
                 <?php /*
@@ -164,7 +164,7 @@ if (!empty($subscriptions)) {
                                     ?>
                                 </div>
                             <?php endif; ?>
-
+                            <div class="mepr-pro-account-table__last4"><?= '****-****-****-' . $sub->cc_last4 ?></div>
                             <div class="mepr-pro-account-table__created_at"><?php echo MeprAppHelper::format_date($s->created_at); ?></div>
                             <div class="mepr-pro-account-table__rebill">
 
@@ -233,8 +233,7 @@ if (!empty($subscriptions)) {
                         ?>
                     </td>
 
-                    <td class="th_td-last4"
-                    data-label="<?php _ex('Dates', 'ui', 'memberpress'); ?>"><?= $sub->cc_num(); ?></td>
+                    <td class="th_td-last4" data-label="Payment">****-****-****-<?= $sub->cc_last4 ?></td>
 
                     <td class="th_td-dates"  data-label="<?php _ex('Dates', 'ui', 'memberpress'); ?>">
                         <div class="mepr-pro-account-table__created_at"><?php echo MeprAppHelper::format_date($s->created_at); ?></div>
