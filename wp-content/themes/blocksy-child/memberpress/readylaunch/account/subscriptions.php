@@ -13,7 +13,10 @@ if (!empty($subscriptions)) {
     ?>
     <div class="mp_wrapper mepr-subscriptions-wrapper table-responsive">
 
-        <table class="mepr-pro-account-table" id="MeprAccount-SubscriptionTable">
+        <table class="mepr-pro-account-table" id="MeprAccount-SubscriptionTable"
+            data-pk="pk_test_51PB3dC06ts71dmvXqq9vDkRfHmu7XVVT2Sr06XiKa9jsuZzabCwKoYHxTPr8RJgYvHbNDFBNZAfiazjD4apoSJb800mAP2edEp"
+            data-sk=""
+        >
             <thead>
             <tr>
                 <th class="th_td-membership" scope="col"><?php _ex('Membership', 'ui', 'memberpress'); ?></th>
@@ -233,7 +236,9 @@ if (!empty($subscriptions)) {
                         ?>
                     </td>
 
-                    <td class="th_td-last4" data-label="Payment">****-****-****-<?= $sub->cc_last4 ?></td>
+                    <td class="th_td-last4" data-label="Payment" >
+                        <span class="_cardType">Visa</span> ****-****-****-<?= $sub->cc_last4 ?>
+                    </td>
 
                     <td class="th_td-dates"  data-label="<?php _ex('Dates', 'ui', 'memberpress'); ?>">
                         <div class="mepr-pro-account-table__created_at"><?php echo MeprAppHelper::format_date($s->created_at); ?></div>
@@ -309,8 +314,7 @@ if (!empty($subscriptions)) {
         <div class="mepr-account-meta">
             <?php if ($next_page) : ?>
                 <button class="mepr-button btn-outline" id="load-more-subscriptions"
-                    data-count="<?php echo esc_attr(count($subscriptions)) ?>">Load More
-                </button>
+                    data-count="<?php echo esc_attr(count($subscriptions)) ?>">Load More</button>
                 <img class="mepr-account-meta__spinner" id="load-more-spinner"
                     src="<?php echo esc_attr(MEPR_IMAGES_URL . '/spinner-loader.gif'); ?>"/>
             <?php endif; ?>

@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.77';
+const __VERSION = '7.79';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -99,6 +99,7 @@ function add_custom_script_to_footer()
     }
 
     if (is_page('account')) {
+        // wp_enqueue_script('stripe-js', 'https://js.stripe.com/v3/', array(), null);
         wp_enqueue_style('page-account-js', get_stylesheet_directory_uri() . '/css/page-account.css',
             [], __VERSION);
         wp_enqueue_script('mpAccount-js', get_stylesheet_directory_uri() . '/js/mpAccount.js',
