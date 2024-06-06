@@ -1,0 +1,94 @@
+.mepr-checkout-container {
+    min-height: auto;
+}
+
+.mepr-checkout-container .invoice-wrapper {
+    width: 100%;
+    padding: 50px 10px 50px;
+    max-width: 665px;
+    margin: 0 auto;
+}
+
+.thanks_logo {
+    margin-bottom: 20px;
+}
+
+.thanks_heading {
+    font-size: 36px !important;
+    font-weight: 600 !important;
+    line-height: 42px !important;
+    letter-spacing: 0.01em !important;
+    text-align: center;
+    color: #000000 !important;
+    margin-bottom: 20px;
+}
+
+.mepr-checkout-container .invoice-wrapper.thankyou .mepr-order-no {
+    margin: 0 0 50px;
+}
+
+.mepr-checkout-container .invoice-wrapper.thankyou .mepr-order-no p {
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    line-height: 26px !important;
+    letter-spacing: 0.01em !important;
+    text-align: center;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.mepr-checkout-container .invoice-wrapper.thankyou .mepr-order-no > :last-child {
+    margin-bottom: 0;
+}
+
+.thanks-backHome {
+    display: inline-block;
+    width: 180px;
+    height: 36px;
+    padding: 0;
+    line-height: 36px;
+    border-radius: 10px;
+    background: #37A7F4;
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-align: center;
+    text-decoration: none !important;
+    outline: none;
+    box-shadow: none;
+}
+
+.thanks-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    margin-bottom: 50px;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    border-top: 1px solid #EDEDED;
+    border-bottom: 1px solid #EDEDED;
+}
+
+@media only screen and (min-width: 680px) {
+    .thanks-grid {
+        grid-template-columns: 1fr 150px 1fr;
+        margin-bottom: 50px;
+    }
+
+    .thanks-grid ._amount {
+        text-align: right;
+    }
+    
+    .mepr-checkout-container .invoice-wrapper {
+        padding-bottom: 80px;
+    }
+    
+    .mepr-rl-footer-widgets {
+        padding: 0;
+    }
+}
+
