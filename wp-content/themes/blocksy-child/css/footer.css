@@ -263,6 +263,10 @@ nav#footer-menu {
     padding: 0;
 }
 
+.OF .omnisend-form-66069d847a3b55dd18524f2f-text-627932445028ebd8c6660c4f > p {
+    margin-bottom: 0;
+}
+
 /* Omi Response */
 .OF .omnisend-form-66069d847a3b55dd18524f2f-section-62a313b876d81914aa87ed79,
 .OF .omnisend-form-66069d847a3b55dd18524f2f-text-62a313b876d81914aa87ed77,
@@ -347,10 +351,6 @@ nav#footer-menu {
     display: flex;
 }
 
-body.mepr-pro-template #omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51.omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51 {
-    top: 56px !important;
-}
-
 #omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51.omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51:before {
     content: "";
     display: inline-flex;
@@ -398,9 +398,6 @@ body.mepr-pro-template #omnisend-form-66069d847a3b55dd18524f2f-action-6279324850
         top: 45px !important;
     }
     
-    body.mepr-pro-template #omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51.omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51 {
-        top: 58px !important;
-    }
 }
 
 @media only screen and (min-width: 1000px) {
