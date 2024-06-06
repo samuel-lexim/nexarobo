@@ -347,6 +347,10 @@ nav#footer-menu {
     display: flex;
 }
 
+body.mepr-pro-template #omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51.omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51 {
+    top: 56px !important;
+}
+
 #omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51.omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51:before {
     content: "";
     display: inline-flex;
@@ -392,6 +396,10 @@ nav#footer-menu {
     
     #omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51.omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51 {
         top: 45px !important;
+    }
+    
+    body.mepr-pro-template #omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51.omnisend-form-66069d847a3b55dd18524f2f-action-627932485028ebd8c6660c51 {
+        top: 58px !important;
     }
 }
 

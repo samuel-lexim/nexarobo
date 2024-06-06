@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.75';
+const __VERSION = '7.76';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -85,6 +85,7 @@ function add_custom_script_to_footer()
         wp_enqueue_style('wpform', get_stylesheet_directory_uri() . '/css/wpForm.css', [], __VERSION,);
         wp_enqueue_style('header', get_stylesheet_directory_uri() . '/css/header.css', [], __VERSION);
         wp_enqueue_style('fixed-header', get_stylesheet_directory_uri() . '/css/page-account-header.css', [], __VERSION);
+        wp_enqueue_style('footer', get_stylesheet_directory_uri() . '/css/footer.css', [], __VERSION);
         wp_enqueue_style('mp-form', get_stylesheet_directory_uri() . '/css/memberpress-form.css', [], __VERSION);
     }
 
