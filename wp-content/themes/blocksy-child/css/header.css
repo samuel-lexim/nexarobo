@@ -229,6 +229,7 @@ nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg path {
     .loginButton {
         display: block;
         margin-left: 5px;
+        min-width: 132px;
     }
     
     .loginButton ._desktop {
