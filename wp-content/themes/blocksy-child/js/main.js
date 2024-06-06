@@ -1,8 +1,28 @@
 jQuery(document).ready(function () {
-    console.log('main');
-
+    console.log('main.js');
     jQuery('body').attr('data-load', 'success');
 
+    let header = {
+        $: {
+            loginButton: '.loginButton',
+            clickAccountDropdown: '.loginButton ._dropdownClick',
+            accountSubMenu: '.loginButton ._accountDropMenu'
+        },
+
+        init: function () {
+            this.listenAccountDropdown();
+        },
+
+        listenAccountDropdown: function () {
+            let _this = this;
+            jQuery(_this.$.clickAccountDropdown).click(function () {
+                jQuery(_this.$.accountSubMenu).toggle();
+            });
+        }
+    };
+    header.init();
+
+    // Contact
     let ContactPages = {
         init: function () {
             // this.scrollToTopPage();
