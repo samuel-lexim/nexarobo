@@ -237,13 +237,12 @@ if (!empty($subscriptions)) {
                     </td>
 
                     <td class="th_td-last4" data-label="Payment" >
-                        <span class="_cardType">Visa</span> ****-****-****-<?= $sub->cc_last4 ?>
+                        <span class="_cardType"></span> ****-****-****-<?= $sub->cc_last4 ?>
                     </td>
 
                     <td class="th_td-dates"  data-label="<?php _ex('Dates', 'ui', 'memberpress'); ?>">
                         <div class="mepr-pro-account-table__created_at"><?php echo MeprAppHelper::format_date($s->created_at); ?></div>
                         <div class="mepr-pro-account-table__rebill">
-
                             <?php if ($txn != false && $txn instanceof MeprTransaction && !$txn->is_sub_account && $is_sub && ($nba = $sub->next_billing_at)) : ?>
                                 <?php printf(_x('Next Billing: %s', 'ui', 'memberpress'), MeprAppHelper::format_date($nba)); ?>
                             <?php elseif (!$sub->next_billing_at && ($nba = $sub->expires_at) && stripos($sub->expires_at, '0000-00') === false) : ?>
