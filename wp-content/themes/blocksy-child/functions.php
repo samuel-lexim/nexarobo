@@ -77,7 +77,8 @@ function add_custom_script_to_footer()
     $blocksyVersion = $data['Version'];
 
     if (is_page('thank-you') ||
-        is_singular('memberpressproduct')
+        is_singular('memberpressproduct') ||
+        is_page('account')
     ) {
         wp_enqueue_style('ct-main-styles', get_template_directory_uri() . '/static/bundle/main.min.css', [], $blocksyVersion);
         wp_enqueue_style('typo', get_stylesheet_directory_uri() . '/css/typo.css', [], __VERSION,);
@@ -88,6 +89,7 @@ function add_custom_script_to_footer()
         wp_enqueue_style('fixed-header', get_stylesheet_directory_uri() . '/css/page-account-header.css', [], __VERSION);
         wp_enqueue_style('footer', get_stylesheet_directory_uri() . '/css/footer.css', [], __VERSION);
         wp_enqueue_style('mp-form', get_stylesheet_directory_uri() . '/css/memberpress-form.css', [], __VERSION);
+        wp_enqueue_style('page-account-js', get_stylesheet_directory_uri() . '/css/page-account.css', [], __VERSION);
     }
 
     if (is_page('login')) {
