@@ -28,6 +28,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('pdp-css', get_stylesheet_directory_uri() . '/css/PDP.css', [], __VERSION);
     wp_enqueue_style('listing-css', get_stylesheet_directory_uri() . '/css/listing.css', [], __VERSION);
     wp_enqueue_style('pricing-css', get_stylesheet_directory_uri() . '/css/pricingPlan.css', [], __VERSION);
+    wp_enqueue_style('listing-blog-css', get_stylesheet_directory_uri() . '/css/listing-blog.css', [], __VERSION);
 
     // MemberPress
     wp_enqueue_style('mp-form', get_stylesheet_directory_uri() . '/css/memberpress-form.css', [], __VERSION);
@@ -389,6 +390,92 @@ function category_listing_shortcode($atts)
     wp_reset_postdata();
     $output .= '</section>';
     return $output;
+}
+
+
+// Category slider
+add_shortcode('category_blog_listing', 'category_blog_listing_shortcode');
+function category_blog_listing_shortcode($atts)
+{
+    // Extract shortcode attributes
+    $query_args = [
+        'post_type' => 'blog',
+        'post_status' => 'publish',
+        'orderby' => 'date',
+        'order' => 'DESC',
+    ];
+
+    // Fetch posts
+    $slick_posts_query = new WP_Query($query_args);
+
+    // Start building the output
+    $output = '<div class="category-blog-main">';
+
+    // Check if there are any posts
+    if ($slick_posts_query->have_posts()) {
+        $output .= '<div class="blog-list">';
+        $i = 1;
+        while ($slick_posts_query->have_posts()) {
+            $slick_posts_query->the_post();
+            $postID = get_the_ID();
+            $link = get_the_permalink();
+            $content = get_the_content();
+            $acfSummaryDescription = get_field("summary_description", $postID);
+            if($i < 2) {
+//                $trimmed_content = wp_trim_words($content, 9, '...');
+                $thumbnail = get_the_post_thumbnail($postID, 'full');
+                $output .= '<div class="main-blog">';
+                $output .= '<div class="container-img">';
+                $output .= "<div class='_image'><a href='{$link}'>{$thumbnail}</a></div>";
+                $output .= '</div>';
+                $output .= '<div class="container-content">';
+                $output .= '<p class="blog-nexarobo">Nexarobo Blog</p>';
+                $output .= '<strong class="title-blog"><a href="' . $link . '">' . get_the_title() . '</a></strong>';
+                $output .= '<p class="description">' . $acfSummaryDescription . '</p>';
+                $output .= '<div class="tiny-time"><span class="day">' . get_the_date('F j, Y') . '</span>|<span class="author-blog">' . get_the_author() . '</span>|<span class="time">'.reading_time().' read</span></div>';
+                $output .= '</div>';
+                $output .= '</div>';
+            } else {
+                $trimmed_content = wp_trim_words($content, 14, '...');
+                $thumbnail = get_the_post_thumbnail($postID, 'large');
+                $output .= '<div class="blog">';
+                $output .= '<div class="blog-round">';
+                $output .= "<div class='_image'><a href='{$link}'>{$thumbnail}</a></div>";
+                $output .= '<div class="container-box">';
+                $output .= '<div class="tiny-time"><span class="author-blog">' . get_the_author() . '</span>|<span class="day">' . get_the_date('F j, Y') . '</span>|<span class="time">'.reading_time().' read</span></div>';
+                $output .= '<strong class="title-blog"><a href="' . $link . '">' . get_the_title() . '</a></strong>';
+                $output .= '<p class="description">' . $acfSummaryDescription . '</p>';
+                $output .= '</div>';
+                $output .= '</div>';
+                $output .= '</div>';
+            }
+            $i++;
+        }
+
+        $output .= '</div>'; // .slick-slider
+    }
+
+    // Restore original post data
+    wp_reset_postdata();
+    $output .= '</div>';
+    return $output;
+}
+
+//estimated reading time
+function reading_time() {
+    global $post;
+    $content = get_post_field( 'post_content', $post->ID );
+    $word_count = str_word_count( strip_tags( $content ) );
+    $readingtime = ceil($word_count / 200);
+
+    if ($readingtime == 1) {
+        $timer = " minute";
+    } else {
+        $timer = " minutes";
+    }
+    $totalreadingtime = $readingtime . $timer;
+
+    return $totalreadingtime;
 }
 
 // Customize sub-menu in header
