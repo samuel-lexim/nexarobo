@@ -435,7 +435,7 @@ function category_blog_listing_shortcode($atts)
                 $output .= '<p class="blog-nexarobo">Nexarobo Blog</p>';
                 $output .= '<strong class="title-blog"><a href="' . $link . '">' . get_the_title() . '</a></strong>';
                 $output .= '<p class="description">' . $acfSummaryDescription . '</p>';
-                $output .= '<div class="tiny-time"><span class="day">' . get_the_date('F j, Y') . '</span>|<span class="author-blog">' . get_the_author() . '</span>|<span class="time">'.reading_time().' read</span></div>';
+                $output .= '<div class="tiny-time"><span class="day">' . get_the_date('F j, Y') . '</span>|<span class="author-blog">' . get_the_author() . '</span>|<span class="time">5 time read</span></div>';
                 $output .= '</div>';
                 $output .= '</div>';
             } else {
