@@ -55,6 +55,28 @@
     text-align: center;
     margin-bottom: 50px;
 }
+.blog-template-default .ct-container-full{
+    padding-bottom: 150px;
+}
+
+.blog-template-default .section-author-blog {
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    color: #8F8F8F;
+    padding-bottom: 40px;
+}
+.blog-template-default .section-author-blog .day {
+    padding-right: 10px;
+}
+.blog-template-default .section-author-blog .author-blog  {
+
+    padding: 0 20px;
+}
+.blog-template-default .section-author-blog .time {
+    padding-left: 10px;
+}
 
 
 @media only screen and (min-width: 690px) {

@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.84';
+const __VERSION = '7.86';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -571,3 +571,32 @@ function load_single_blog_scripts() {
     }
 }
 add_action('wp_enqueue_scripts', 'load_single_blog_scripts');
+
+function calculate_reading_time($content) {
+    $word_count = str_word_count(strip_tags($content));
+    var_dump(strip_tags($content));
+    $reading_speed = 200; // Tốc độ đọc trung bình (200 từ mỗi phút)
+    $reading_time1 = ceil($word_count / $reading_speed);
+
+    return $reading_time1;
+}
+
+// Hàm shortcode để hiển thị thời gian đọc
+function reading_time_shortcode($atts) {
+    global $post;
+
+    // Kiểm tra nếu post type là 'blog'
+    if ($post->post_type !== 'blog') {
+        return '111'; // Không trả về gì nếu không phải post type 'blog'
+    }
+
+    $content = $post->post_content;
+//    $content = get_the_content();
+
+    $output = '<div class="section-author-blog">';
+    $output .= '<span class="day">' . get_the_date('F j, Y') . '</span>|<span class="author-blog">' . get_the_author() . '</span>|<span class="time">5 time read<</span>';
+    $output .= '</div>';
+
+    return $output;
+}
+add_shortcode('reading_time', 'reading_time_shortcode');
