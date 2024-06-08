@@ -1,5 +1,5 @@
 <?php
-const __VERSION = '7.88';
+const __VERSION = '7.89';
 
 if (!defined('WP_DEBUG')) {
     die('Direct access forbidden.');
@@ -594,7 +594,7 @@ function reading_time_shortcode($atts) {
 //    $content = get_the_content();
 
     $output = '<div class="section-author-blog">';
-    $output .= '<span class="day">' . get_the_date('F j, Y') . '</span>|<span class="author-blog">' . get_the_author() . '</span>|<span class="time">5 time read<</span>';
+    $output .= '<span class="day">' . get_the_date('F j, Y') . '</span>|<span class="author-blog">' . get_the_author() . '</span>|<span class="time">5 time read</span>';
     $output .= '</div>';
 
     return $output;

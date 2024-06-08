@@ -123,12 +123,15 @@
     outline-style: none;
     font-size: inherit;
     font-family: inherit;
-    padding: 10px;
+    padding: 10px !important;
     letter-spacing: normal;
     border: 1px solid rgba(0, 0, 0, 0.2);
     /* margin-bottom: 10px !important; */
     display: inline;
     box-sizing: border-box;
+}
+#register .reg-form-group input.field-main:focus {
+    border-color: #37A7F4;
 }
 #register .reg-form-group input[type=submit] {
     height: 40px;
@@ -151,7 +154,8 @@
     margin-bottom: 30px;
 }
 
-.registerPageBlock ._privacyText .stk-block-text__text {
+.registerPageBlock ._privacyText .stk-block-text__text,
+.registerPageBlock .agree-register {
     font-weight: 400;
     font-size: 12px !important;
     line-height: 16px !important;
