@@ -29,6 +29,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('listing-css', get_stylesheet_directory_uri() . '/css/listing.css', [], __VERSION);
     wp_enqueue_style('pricing-css', get_stylesheet_directory_uri() . '/css/pricingPlan.css', [], __VERSION);
     wp_enqueue_style('listing-blog-css', get_stylesheet_directory_uri() . '/css/listing-blog.css', [], __VERSION);
+    wp_enqueue_style('blog-detail-css', get_stylesheet_directory_uri() . '/css/blog-detail.css', [], __VERSION);
 
     // MemberPress
     wp_enqueue_style('mp-form', get_stylesheet_directory_uri() . '/css/memberpress-form.css', [], __VERSION);
@@ -541,3 +542,32 @@ function display_login_logout_link($attr)
 }
 
 add_shortcode('login_logout_link', 'display_login_logout_link');
+
+// Releated Blog
+function get_related_posts_by_category_and_tag($post_id, $num_posts = 9) {
+    $related_posts = new WP_Query(
+        array(
+            'post_type'      => 'blog',
+            'category__in'   => wp_get_post_categories($post_id),
+            'tag__in'        => wp_get_post_tags($post_id, array('fields' => 'ids')),
+            'post__not_in'   => array($post_id),
+            'posts_per_page' => $num_posts,
+            'orderby'        => 'rand'
+        )
+    );
+//var_dump($post_id);
+    return $related_posts;
+}
+
+function load_single_blog_scripts() {
+    if (is_singular('blog')) {
+        wp_enqueue_script(
+            'single-blog-js', // Tên định danh của script
+            get_stylesheet_directory_uri() . '/js/single-blog.js', // Đường dẫn tới file script
+            array('jquery'), // Các script phụ thuộc
+            null, // Phiên bản của script (có thể dùng filemtime để tự động cập nhật khi file thay đổi)
+            true // Tải script ở footer
+        );
+    }
+}
+add_action('wp_enqueue_scripts', 'load_single_blog_scripts');
