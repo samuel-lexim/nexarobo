@@ -98,8 +98,43 @@
 
 
 /* Register Page */
-.mepr-signup-form .mp-form-label {
+#reg_forms {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.mepr-signup-form .mp-form-label,
+#register .reg-form-group label {
     display: none !important;
+}
+#register {
+    width: 330px;
+    text-align: center;
+    margin: auto;
+}
+#register .reg-form-group {
+    margin: 0;
+    padding: 0;
+}
+#register .reg-form-group input.field-main {
+    height: 50px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+    outline-style: none;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 10px;
+    letter-spacing: normal;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    /* margin-bottom: 10px !important; */
+    display: inline;
+    box-sizing: border-box;
+}
+#register .reg-form-group input[type=submit] {
+    height: 40px;
+    border-radius: 20px;
+    width: 100%;
+    margin-right: 0;
 }
 
 #mepr_user_password_confirm1,
