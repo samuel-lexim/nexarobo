@@ -26,4 +26,8 @@ jQuery(document).ready(function () {
             }
         ]
     });
+
+    jQuery('.share-blog').click(function () {
+        jQuery('.socials-blog').toggleClass('expanded');
+    });
 });
