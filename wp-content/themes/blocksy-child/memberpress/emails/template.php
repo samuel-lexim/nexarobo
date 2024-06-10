@@ -27,9 +27,12 @@
             padding: 0;
             color: #252525;
         }
+        #MP_email * {
+            box-sizing: border-box !important;
+        }
     </style>
 </head>
-<body style="font-family: 'ProximaNova', sans-serif; padding: 0; font-weight: 400;
+<body id="MP_email" style="font-family: 'ProximaNova', sans-serif; padding: 0; font-weight: 400;
    font-size: 14px;line-height: 16px;background-color: #fff;color: #252525;">
 <?php echo $body; ?>
 </body>
