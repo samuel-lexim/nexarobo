@@ -32,7 +32,7 @@ if (have_posts()) {
                             $link = get_the_permalink();
                             $content = get_the_content();
                             $acfSummaryDescription = get_field("summary_description", $postID);
-                            $thumbnail = get_the_post_thumbnail($postID, 'full');
+                            $thumbnail = get_the_post_thumbnail($postID, 'large');
                             $viewTime =  do_shortcode('[rt_reading_time postfix="min read" post_id='.$postID.']');
                             ?>
                             <div class="blog">

@@ -206,7 +206,7 @@
     padding: 0 27px 50px;
     margin-bottom: 0;
 }
-.blog-round {
+.page .ajax-load-more-wrap .blog .blog-round {
     border: 1px solid #ddd;
     border-radius: 10px;
 }

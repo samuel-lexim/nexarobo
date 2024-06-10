@@ -13,6 +13,17 @@
 .blog-related-main .blog {
     margin: 0 27px;
     background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+.blog-related-main .blog:hover {
+    border: 1px solid #37A7F4;
+}
+.blog-related-main .blog ._image img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
 .blog-related-main .section-blogs_slider {
     margin-left: -27px;
@@ -115,7 +126,7 @@
     padding-left: 10px;
 }
 .socials-blog .gspb-social-sharebox {
-    display: none;
+    display: none !important;
     opacity: 0;
 }
 
