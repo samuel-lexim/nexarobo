@@ -506,7 +506,7 @@ function display_login_logout_link($attr)
         // User is logged in
         $logout_url = wp_logout_url(home_url('/'));
         $currentUser = wp_get_current_user();
-        $name = $currentUser->get('first_name') . ' nhat';
+        $name = $currentUser->get('first_name');
         if (strlen($name) > 7) {
             $name = substr($name, 0, 7) . '...';
         }
