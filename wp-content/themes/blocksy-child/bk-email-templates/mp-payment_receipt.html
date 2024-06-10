@@ -12,8 +12,8 @@
                 Thank you for your order</h2>
             <p style='margin: 0 0 5px'>Invoice number &nbsp;{$invoice_num}</p>
             <p style='margin: 0 0 5px'>{$trans_date}</p>
-            <p style='margin: 0 0 5px'>Transaction: {$trans_num}</p>
-            <p style='margin: 0 0 5px'>Amount: {$payment_amount}/month</p>
+            <p style='margin: 0 0 5px'>Transaction:&nbsp;{$trans_num}</p>
+            <p style='margin: 0 0 5px'>Amount:&nbsp;{$payment_amount}/month</p>
         </div>
 
         <div style='width: 100%; margin: 0 0 50px; color:#000; padding: 25px 0 25px 60px;
@@ -30,7 +30,7 @@
                 <h3 style="margin: 0 0 10px; font-size: 14px;font-weight: 600;
                     line-height: 18px;letter-spacing: 0.01em;">Bill to</h3>
                 <p style="margin: 0 0 5px;">{$biz_address1}</p>
-                <p style="margin: 0 0 5px;">{$biz_city}, {$biz_state} {$biz_postcode}</p>
+                <p style="margin: 0 0 5px;">{$biz_city},&nbsp;{$biz_state}&nbsp;{$biz_postcode}</p>
                 <p style="margin: 0 0 5px;">{$biz_country}</p>
                 <p style="margin: 0 0 5px;">{$user_email}</p>
             </div>
@@ -53,22 +53,22 @@
             </thead>
             <tbody>
             <tr>
-                <td style="border-bottom: 1px solid #ddd;padding: 12px 3px">
+                <td style="vertical-align: top; border-bottom: 1px solid #ddd;padding: 12px 3px">
                     <h3 style="margin: 0 0 10px; font-weight: 600;">{$product_name}</h3>
                     <p style="margin: 0 0 5px;">{$trans_date}</p>
                     <p style="margin: 0 0 5px;">Renews {$trans_expires_at}</p>
                 </td>
-                <td style="border-bottom: 1px solid #ddd;padding: 12px 3px;
-                        text-align: center;">{$trans_gateway} ****-****-****-1234
+                <td style="vertical-align: top; border-bottom: 1px solid #ddd;padding: 12px 3px;
+                        text-align: center;">{$trans_gateway}<br>****-****-****-1234
                 </td>
-                <td style="border-bottom: 1px solid #ddd;padding: 12px 3px;
+                <td style="vertical-align: top; border-bottom: 1px solid #ddd;padding: 12px 3px;
                         text-align: right;">$1,000 / Month
                 </td>
             </tr>
             </tbody>
         </table>
 
-        <div style="width: 100%; padding: 20px 0 65px 291px; font-weight: 600; line-height: 16px;">
+        <div style="width: 567px; padding: 20px 0 65px 291px; font-weight: 600; line-height: 16px;">
             <div style="width: 100%; margin-bottom: 20px; overflow: hidden">
                 <span style="float: left">Total</span>
                 <span style="float: right; text-align: right">{$payment_amount}</span>
@@ -76,12 +76,12 @@
             <div style="clear: both"></div>
             <div style="width: 100%; overflow: hidden">
                 <span style="float: left">Amount Paid</span>
-                <span style="float: right; text-align: right">{$payment_amount} USD</span>
+                <span style="float: right; text-align: right">{$payment_amount}&nbsp;USD</span>
             </div>
             <div style="clear: both"></div>
         </div>
 
-        <div style="width: 460px; margin: 0 auto 65px; padding: 19px 65px; color: #fff;
+        <div style="width: 460px; margin: 0 auto 65px; padding: 19px 60px; color: #fff;
         background-color: #37A7F4; text-align: center; border-radius: 10px;">
             <h3 style="margin: 0 0 20px; font-size: 24px;font-weight: 600;
                     line-height: 26px;border-radius: 10px;">Need Help?</h3>
