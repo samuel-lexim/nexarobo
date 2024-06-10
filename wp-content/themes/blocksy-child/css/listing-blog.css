@@ -214,6 +214,9 @@
 .page .ajax-load-more-wrap .blog .container-box  {
 padding: 0 22px;
 }
+.page .ajax-load-more-wrap .blog .container-box .title-blog a  {
+    text-decoration: none;
+}
 .page .category-blog-main .blog .title-blog a,
 .page .ajax-load-more-wrap. .blog .title-blog a {
 font-size: 18px;
