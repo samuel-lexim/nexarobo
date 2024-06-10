@@ -33,6 +33,7 @@ if (have_posts()) {
                             $content = get_the_content();
                             $acfSummaryDescription = get_field("summary_description", $postID);
                             $thumbnail = get_the_post_thumbnail($postID, 'full');
+                            $viewTime =  do_shortcode('[rt_reading_time postfix="min read" post_id='.$postID.']');
                             ?>
                             <div class="blog">
                                 <div class="blog-round">
@@ -42,7 +43,7 @@ if (have_posts()) {
                                 </div>
                                 <div class="container-box">
                                     <div class="tiny-time">
-                                        <span class="author-blog"><?php the_author(); ?></span>|<span class="day"><?= get_the_date('F j, Y') ?></span>|<span class="time">5 time read</span>
+                                        <span class="author-blog"><?php the_author(); ?></span>|<span class="day"><?= get_the_date('F j, Y') ?></span>|<span class="time"><?= $viewTime; ?></span>
                                     </div>
                                     <strong class="title-blog"><a href="<?php the_permalink(); ?>"> <?php the_title() ?></a></strong>
                                     <p class="description"><?= $acfSummaryDescription ?></p>

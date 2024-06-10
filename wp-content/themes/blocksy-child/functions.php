@@ -424,6 +424,7 @@ function category_blog_listing_shortcode($atts)
             $link = get_the_permalink();
             $content = get_the_content();
             $acfSummaryDescription = get_field("summary_description", $postID);
+            $viewTime =  do_shortcode('[rt_reading_time postfix="min read" post_id='.$postID.']');
             if($i < 2) {
 //                $trimmed_content = wp_trim_words($content, 9, '...');
                 $thumbnail = get_the_post_thumbnail($postID, 'full');
@@ -435,7 +436,7 @@ function category_blog_listing_shortcode($atts)
                 $output .= '<p class="blog-nexarobo">Nexarobo Blog</p>';
                 $output .= '<strong class="title-blog"><a href="' . $link . '">' . get_the_title() . '</a></strong>';
                 $output .= '<p class="description">' . $acfSummaryDescription . '</p>';
-                $output .= '<div class="tiny-time"><span class="day">' . get_the_date('F j, Y') . '</span>|<span class="author-blog">' . get_the_author() . '</span>|<span class="time">5 time read</span></div>';
+                $output .= '<div class="tiny-time"><span class="day">' . get_the_date('F j, Y') . '</span>|<span class="author-blog">' . get_the_author() . '</span>|<span class="time">' . $viewTime . '</span></div>';
                 $output .= '</div>';
                 $output .= '</div>';
             } else {
@@ -445,7 +446,7 @@ function category_blog_listing_shortcode($atts)
                 $output .= '<div class="blog-round">';
                 $output .= "<div class='_image'><a href='{$link}'>{$thumbnail}</a></div>";
                 $output .= '<div class="container-box">';
-                $output .= '<div class="tiny-time"><span class="author-blog">' . get_the_author() . '</span>|<span class="day">' . get_the_date('F j, Y') . '</span>|<span class="time">'.reading_time().' read</span></div>';
+                $output .= '<div class="tiny-time"><span class="author-blog">' . get_the_author() . '</span>|<span class="day">' . get_the_date('F j, Y') . '</span>|<span class="time">' . $viewTime . '</span></div>';
                 $output .= '<strong class="title-blog"><a href="' . $link . '">' . get_the_title() . '</a></strong>';
                 $output .= '<p class="description">' . $acfSummaryDescription . '</p>';
                 $output .= '</div>';
@@ -572,29 +573,13 @@ function load_single_blog_scripts() {
 }
 add_action('wp_enqueue_scripts', 'load_single_blog_scripts');
 
-function calculate_reading_time($content) {
-    $word_count = str_word_count(strip_tags($content));
-    var_dump(strip_tags($content));
-    $reading_speed = 200; // Tốc độ đọc trung bình (200 từ mỗi phút)
-    $reading_time1 = ceil($word_count / $reading_speed);
-
-    return $reading_time1;
-}
-
 // Hàm shortcode để hiển thị thời gian đọc
 function reading_time_shortcode($atts) {
-    global $post;
-
-    // Kiểm tra nếu post type là 'blog'
-    if ($post->post_type !== 'blog') {
-        return '111'; // Không trả về gì nếu không phải post type 'blog'
-    }
-
-    $content = $post->post_content;
-//    $content = get_the_content();
+    $postID = get_the_ID();
+    $viewTime =  do_shortcode('[rt_reading_time postfix="min read" post_id='.$postID.']');
 
     $output = '<div class="section-author-blog">';
-    $output .= '<span class="day">' . get_the_date('F j, Y') . '</span>|<span class="author-blog">' . get_the_author() . '</span>|<span class="time">5 time read</span>';
+    $output .= '<span class="day">' . get_the_date('F j, Y') . '</span>|<span class="author-blog">' . get_the_author() . '</span>|<span class="time">' .$viewTime. '</span>';
     $output .= '</div>';
 
     return $output;
