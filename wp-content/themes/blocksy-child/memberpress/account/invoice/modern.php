@@ -245,8 +245,7 @@ if (isset($invoice) && !(absint($invoice->credit_number) > 0)) {
             <tbody>
             <tr>
                 <td>
-                    <div class="_heading" style="font-family: 'ProximaNova', sans-serif !important;
-                        font-weight: 600">Nexarobo</div>
+                    <div class="_heading"><strong>Nexarobo</strong></div>
                     <div><?php echo wpautop($invoice->company); ?></div>
                 </td>
                 <td>
