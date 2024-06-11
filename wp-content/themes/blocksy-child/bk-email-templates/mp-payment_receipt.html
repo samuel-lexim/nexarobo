@@ -22,17 +22,15 @@
             <div style="width: 250px; float: left">
                 <h3 style="margin: 0 0 10px; font-size: 14px;font-weight: 600;
                     line-height: 18px;letter-spacing: 0.01em;">Nexarobo</h3>
-                <p style="margin: 0 0 5px;">1201 West Peachtree st. NW</p>
-                <p style="margin: 0 0 5px;">Atlanta, GA 30518</p>
-                <p style="margin: 0 0 5px;">United States</p>
+                <p style="margin: 0 0 5px;">{$biz_address1}</p>
+                <p style="margin: 0 0 5px;">{$biz_city}, {$biz_state} {$biz_postcode}</p>
+                <p style="margin: 0 0 5px;">{$biz_country}</p>
                 <p style="margin: 0 0 5px;">help@nexarobo.com</p></div>
-            <div style="width: 250px; float: left">
+            <div style="width: 250px; float: left;">
                 <h3 style="margin: 0 0 10px; font-size: 14px;font-weight: 600;
                     line-height: 18px;letter-spacing: 0.01em;">Bill to</h3>
-                <p style="margin: 0 0 5px;">{$biz_address1}</p>
-                <p style="margin: 0 0 5px;">{$biz_city},&nbsp;{$biz_state}&nbsp;{$biz_postcode}</p>
-                <p style="margin: 0 0 5px;">{$biz_country}</p>
-                <p style="margin: 0 0 5px;">{$user_email}</p>
+                <div id="BillTo" style="font-size: 14px;font-weight: 400;">{$user_address}</div>
+                <p style="margin: 0;">{$user_email}</p>
             </div>
         </div>
         <div style="clear: both"></div>
