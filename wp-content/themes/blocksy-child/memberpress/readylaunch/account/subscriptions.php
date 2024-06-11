@@ -167,7 +167,7 @@ if (!empty($subscriptions)) {
                                     ?>
                                 </div>
                             <?php endif; ?>
-                            <div class="mepr-pro-account-table__last4"><?= '****-****-****-' . $sub->cc_last4 ?></div>
+                            <div class="mepr-pro-account-table__last4">****-****-****-<?= $sub->cc_last4 ? $sub->cc_last4 : 'xxxx' ?></div>
                             <div class="mepr-pro-account-table__created_at"><?php echo MeprAppHelper::format_date($s->created_at); ?></div>
                             <div class="mepr-pro-account-table__rebill">
 
@@ -236,8 +236,8 @@ if (!empty($subscriptions)) {
                         ?>
                     </td>
 
-                    <td class="th_td-last4" data-label="Payment" >
-                        <span class="_cardType"></span> ****-****-****-<?= $sub->cc_last4 ?>
+                    <td class="th_td-last4" data-label="Payment">
+                        <span class="_cardType"></span>****-****-****-<?= $sub->cc_last4 ? $sub->cc_last4 : 'xxxx' ?>
                     </td>
 
                     <td class="th_td-dates"  data-label="<?php _ex('Dates', 'ui', 'memberpress'); ?>">
