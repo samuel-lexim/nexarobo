@@ -35,7 +35,21 @@ blocksy_output_header();
 $global_header = ob_get_clean();
 ?>
 
-<body <?php body_class('mepr-pro-template mepr-app-layout'); ?> <?php echo blocksy_body_attr() ?>>
+<!-- Fix bug delay css / wrong content -->
+<script>
+    jQuery(document).ready(() => {
+        jQuery('body').attr('data-mp', 1).removeAttr('style');
+    });
+</script>
+<style>
+    body[data-mp="1"] {
+        visibility: visible !important;
+    }
+</style>
+<!-- END - Fix bug delay css / wrong content -->
+
+<body <?php body_class('mepr-pro-template mepr-app-layout'); ?> <?php echo blocksy_body_attr() ?>
+    data-mp="0" style="visibility: hidden">
 <a class="skip-link show-on-focus" href="<?php echo apply_filters('blocksy:head:skip-to-content:href', '#main') ?>">
     <?php echo __('Skip to content', 'blocksy'); ?>
 </a>
