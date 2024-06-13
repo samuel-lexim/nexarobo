@@ -43,3 +43,15 @@ body.single-memberpressproduct .mepr-checkout-container .form-wrapper input[type
     font-size: 18px;
     letter-spacing: 0.01em;
 }
+
+body.single-memberpressproduct .mp-form-submit {
+    position: relative;
+}
+
+body.single-memberpressproduct .mp-form-submit .mepr-loading-gif {
+    position: absolute;
+    top: 13px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
