@@ -212,6 +212,22 @@ if (isset($invoice) && !(absint($invoice->credit_number) > 0)) {
     $invoiceNumber = str_pad($invoice->invoice_number, $desiredLength, "0", STR_PAD_LEFT);
     $paidAtDate = date_i18n(get_option('date_format'), $invoice->paid_at);
 }
+
+/**
+ * array|object|stdClass
+ * {"id":"44","transaction_id":"105","invoice_number":"58","user_id":"44"}
+ */
+$i = getInvoiceByInvoiceNumber($invoice->invoice_number);
+if ($i->transaction_id && $i->user_id) {
+    $bill_street1 = get_user_meta($i->user_id, $invoice->invoice_number . "_mepr-address-one", true);
+    $bill_street2 = get_user_meta($i->user_id, $invoice->invoice_number . "_mepr-address-two", true);
+    $bill_city = get_user_meta($i->user_id, $invoice->invoice_number . "_mepr-address-city", true);
+    $bill_state = get_user_meta($i->user_id, $invoice->invoice_number . "_mepr-address-state", true);
+    $bill_zip = get_user_meta($i->user_id, $invoice->invoice_number . "_mepr-address-zip", true);
+    $bill_country = get_user_meta($i->user_id, $invoice->invoice_number . "_mepr-address-country", true);
+    $bill_email = get_user_meta($i->user_id, $invoice->invoice_number . "_mepr-address-email", true);
+    $bill_country = $bill_country == 'US' ? 'United States' : $bill_country;
+}
 ?>
 
 <header class="clearfix" style="clear: both">
@@ -250,7 +266,11 @@ if (isset($invoice) && !(absint($invoice->credit_number) > 0)) {
                 </td>
                 <td>
                     <div class="_heading"><strong>Bill to</strong></div>
-                    <?php echo wpautop($invoice->bill_to); ?>
+                    <?= (isset($bill_street1)) ? "<p>$bill_street1</p>" : ''; ?>
+                    <p><?= (isset($bill_city)) ? "$bill_city, " : ''; ?><?= (isset($bill_state)) ? "$bill_state " : ''; ?><?= (isset($bill_zip)) ? "$bill_zip " : ''; ?></p>
+                    <?= (isset($bill_country)) ? "<p>$bill_country</p>" : ''; ?>
+                    <?= (isset($bill_email)) ? "<p>$bill_email</p>" : ''; ?>
+
                 </td>
             </tr>
             </tbody>
