@@ -470,6 +470,12 @@ body[action="payments"] h1.mepr_page_header {
     color: #37a7f4;
 }
 
+.centerLoading .mepr-loading-gif {
+    position: absolute;
+    left: 82px;
+    top: 12px;
+}
+
 @media only screen and (max-width: 999px) {
     #mepr-account-payments-table thead,
     #mepr-account-payments-table .th_td-date,
