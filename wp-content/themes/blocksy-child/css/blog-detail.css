@@ -62,6 +62,9 @@
 .blog-related-main .blog .container-box {
     padding: 0 22px;
 }
+.blog-related-main .blog .container-box .title-blog a{
+    color: #252525;
+}
 .blog-related-main .blog .description {
     padding-top: 20px;
     font-size: 18px;
