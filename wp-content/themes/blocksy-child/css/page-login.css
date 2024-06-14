@@ -23,7 +23,17 @@
 
 .mpPageBlock .stk-block-heading__text {
     font-weight: 600 !important;
-    line-height: 56px !important;
+    line-height: 56px;
+}
+
+#create-an-account {
+    margin-bottom: 4px;
+}
+#dont-have-an-account-sign-up-for-free {
+    margin-bottom: 0;
+}
+#dont-have-an-account-sign-up-for-free + p {
+    display: none;
 }
 
 .mpPageBlock .mepr-form {
@@ -99,7 +109,7 @@
 
 /* Register Page */
 #reg_forms {
-    margin-top: 30px;
+    margin-top: 13px;
     margin-bottom: 30px;
 }
 .mepr-signup-form .mp-form-label,
@@ -107,7 +117,7 @@
     display: none !important;
 }
 #register {
-    width: 330px;
+    max-width: 330px;
     text-align: center;
     margin: auto;
 }

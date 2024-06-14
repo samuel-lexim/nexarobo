@@ -251,6 +251,7 @@ color: #555;
 .page .category-blog-main .blog-round:hover,
 .page .ajax-load-more-wrap .blog-round:hover {
     border: 1px solid #37A7F4;
+    box-shadow: 5px 5px 5px #E6E6E6;
 }
 .page .ajax-load-more-wrap .alm-btn-wrap .alm-load-more-btn,
 .page .ajax-load-more-wrap .alm-btn-wrap .alm-load-more-btn {

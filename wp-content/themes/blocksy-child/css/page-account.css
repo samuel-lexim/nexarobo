@@ -42,6 +42,9 @@ body.page-account .mepr-account-container table tr {
 .mepr-account-container a {
     color: #252525;
 }
+.mepr-account-container .th_td-invoice a {
+    text-decoration: underline;
+}
 
 .mepr-account-container input[type="submit"] {
     min-width: 180px;
@@ -82,6 +85,9 @@ body.page-account article.page .mp_wrapper.wp-shortcode {
     padding-top: 60px;
     padding-left: 16px;
     padding-right: 16px;
+}
+.mepr-account-container .mepr-rl-footer-widgets {
+    display: none;
 }
 
 #mepr-account-nav .mepr-nav-item a:before {
