@@ -292,10 +292,12 @@ if ($i->transaction_id && $i->user_id) {
                 $sub = null;
                 $product = null;
                 $period_type = '';
+                $brand = '';
                 if (isset($txn)) {
                     $sub = $txn->subscription();
                     $product = new MeprProduct($txn->product_id);
                     $period_type = $product->period_type;
+                    $brand = get_stripe_charge_network_details($txn->trans_num);
                 }
                 $period_type = $period_type === 'months' ? 'Month' : $period_type;
                 ?>
@@ -325,7 +327,7 @@ if ($i->transaction_id && $i->user_id) {
                     <?php endif; */ ?>
 
                     <td style="font-family: 'ProximaNova', sans-serif !important;"
-                     class="col2">****-****-****-<?= $sub->cc_last4 ? $sub->cc_last4 : "xxxx" ?></td>
+                     class="col2"><?= $brand ?> ****-****-****-<?= $sub->cc_last4 ? $sub->cc_last4 : "xxxx" ?></td>
 
                     <?php $amount = MeprAppHelper::format_currency($item['amount'], true, false); ?>
                     <td style="font-family: 'ProximaNova', sans-serif !important;"

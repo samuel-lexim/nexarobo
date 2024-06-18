@@ -237,7 +237,7 @@ if (!empty($subscriptions)) {
                     </td>
 
                     <td class="th_td-last4" data-label="Payment">
-                        <span class="_cardType"></span>****-****-****-<?= $sub->cc_last4 ? $sub->cc_last4 : 'xxxx' ?>
+                        <span class="_cardType"><?= get_stripe_charge_network_details($txn->trans_num);?></span> ****-****-****-<?= $sub->cc_last4 ? $sub->cc_last4 : 'xxxx' ?>
                     </td>
 
                     <td class="th_td-dates"  data-label="<?php _ex('Dates', 'ui', 'memberpress'); ?>">

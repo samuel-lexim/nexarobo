@@ -670,3 +670,70 @@ function getInvoiceByInvoiceNumber($invoiceNumber = null)
 
     return $invoice;
 }
+
+// Register and add the secret key setting field
+function secret_key_settings_register() {
+    add_settings_field(
+        'secret_key_setting', // Setting ID
+        'Secret Key Stripe', // Setting Title
+        'secret_key_setting_callback', // Callback function
+        'general' // Page to display the setting
+    );
+
+    register_setting('general', 'secret_key_setting', 'esc_attr');
+}
+add_action('admin_init', 'secret_key_settings_register');
+
+// Display the secret key setting field
+function secret_key_setting_callback() {
+    $value = get_option('secret_key_setting', '');
+    echo '<input type="text" id="secret_key_setting" name="secret_key_setting" value="' . esc_attr($value) . '" />';
+}
+
+/**
+ * @param $chargeId
+ * @return string
+ */
+function get_stripe_charge_network_details($chargeId) {
+    $my_custom_value = get_option('secret_key_setting', '');
+    if (!empty($my_custom_value)) {
+        $secretKey = $my_custom_value;
+    } else {
+        $secretKey = '';
+    }
+
+    $ch = curl_init();
+
+    // Set the URL for the request
+    curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/charges/' . $chargeId);
+
+    // Set the HTTP method to GET
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    // Set the header to include the authorization
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        'Authorization: Bearer ' . $secretKey,
+    ]);
+
+    // Execute the request
+    $response = curl_exec($ch);
+
+    // Check for cURL errors
+    if (curl_errno($ch)) {
+        $error_msg = curl_error($ch);
+        return "";
+    } else {
+        // No cURL errors, decode the JSON response
+        $decodedResponse = json_decode($response, true);
+
+        if (isset($decodedResponse['payment_method_details']['card']['brand'])) {
+            $networkDetails = $decodedResponse['payment_method_details']['card']['brand'];
+            return $networkDetails;
+        } else {
+            return "";
+        }
+    }
+
+    // Close the cURL handle
+    curl_close($ch);
+}
