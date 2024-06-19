@@ -643,3 +643,10 @@
 .home-GetYourQuote-wrap ._w560 {
     max-width: 560px !important;
 }
+
+.journey-group-desktop .stk-block-content .wp-block-stackable-column:first-child {
+    padding-right: 85px;
+}
+.journey-group-desktop .stk-block-content .wp-block-stackable-column:last-child {
+    padding-left: 85px;
+}
