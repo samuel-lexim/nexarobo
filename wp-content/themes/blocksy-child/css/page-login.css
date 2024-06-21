@@ -232,3 +232,20 @@ body._passwordReset ._innerForm .mp_wrapper > h3 {
 body._passwordReset ._innerForm .mp_wrapper .mepr_spacer {
     display: none;
 }
+._passwordRecovery .login-BackButton {
+    padding-top: 20px;
+}
+._passwordRecovery .login-BackButton a{
+    font-size: 0;
+}
+
+._passwordRecovery .login-BackButton a:before {
+    content: '';
+    width: 26px;
+    height: 17px;
+    display: block;
+    margin-right: 10px;
+    background-image: url("../images/arrow-left-black.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+}
