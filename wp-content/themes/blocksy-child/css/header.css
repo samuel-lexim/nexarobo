@@ -240,18 +240,38 @@ nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg path {
         display: none;
     }
     
-    
     .loginButton ._ico_arrow path {
         stroke: #fff;
     }
     
     .loginButton a {
         font-weight: 500;
-        font-size: 18px;
+        font-size: 16px;
         padding: 6px 22px;
         color: #fff !important;
         border: 1px solid #fff;
         border-radius: 12px;
+    }
+    
+    .loginButton > a:hover {
+        background: #ffffff;
+        color: #37A7F4 !important;
+    }
+    
+    .loginButton > a:hover ._ico_arrow path {
+        stroke: #37A7F4;
+    }
+    
+    .loginButton > a:hover ._ico_avatar ._mobile {
+        display: block;
+    }
+    
+    .loginButton > a:hover ._ico_avatar ._desktop {
+        display: none;
+    }
+    
+    .loginButton ._accountDropMenu a:hover {
+        color: #00c0f3 !important;
     }
     
     .loginButton ._name {
