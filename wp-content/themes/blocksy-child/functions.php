@@ -436,7 +436,8 @@ function category_blog_listing_shortcode($atts)
                 $output .= '<p class="blog-nexarobo">Nexarobo Blog</p>';
                 $output .= '<strong class="title-blog"><a href="' . $link . '">' . get_the_title() . '</a></strong>';
                 $output .= '<p class="description">' . $acfSummaryDescription . '</p>';
-                $output .= '<div class="tiny-time"><span class="day">' . get_the_date('F j, Y') . '</span>|<span class="author-blog">' . get_the_author() . '</span>|<span class="time">' . $viewTime . '</span></div>';
+                $output .= '<div class="tiny-time"><span class="day">' . get_the_date('F j, Y') .
+                    '</span>|<span class="time">' . $viewTime . '</span></div>';
                 $output .= '</div>';
                 $output .= '</div>';
             } else {
@@ -446,7 +447,8 @@ function category_blog_listing_shortcode($atts)
                 $output .= '<div class="blog-round">';
                 $output .= "<div class='_image'><a href='{$link}'>{$thumbnail}</a></div>";
                 $output .= '<div class="container-box">';
-                $output .= '<div class="tiny-time"><span class="author-blog">' . get_the_author() . '</span>|<span class="day">' . get_the_date('F j, Y') . '</span>|<span class="time">' . $viewTime . '</span></div>';
+                $output .= '<div class="tiny-time"><span class="day">' . get_the_date('F j, Y') .
+                    '</span>|<span class="time">' . $viewTime . '</span></div>';
                 $output .= '<strong class="title-blog"><a href="' . $link . '">' . get_the_title() . '</a></strong>';
                 $output .= '<p class="description">' . $acfSummaryDescription . '</p>';
                 $output .= '</div>';
@@ -584,7 +586,8 @@ function reading_time_shortcode($atts)
     $viewTime = do_shortcode('[rt_reading_time postfix="min read" post_id=' . $postID . ']');
 
     $output = '<div class="section-author-blog">';
-    $output .= '<span class="day">' . get_the_date('F j, Y') . '</span>|<span class="author-blog">' . get_the_author() . '</span>|<span class="time">' . $viewTime . '</span>';
+    $output .= '<span class="day">' . get_the_date('F j, Y') .
+        '</span>|<span class="time">' . $viewTime . '</span>';
     $output .= '</div>';
 
     return $output;

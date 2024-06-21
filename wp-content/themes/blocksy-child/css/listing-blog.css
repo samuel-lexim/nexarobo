@@ -32,7 +32,7 @@
     }
     .category-blog-main .main-blog .tiny-time .time,
     .category-blog-main .blog .tiny-time .time {
-        padding-left: 20px !important;
+        padding-left: 18px !important;
     }
     .page.page-blog .type-page.status-publish {
         padding-top: 80px !important;
@@ -154,7 +154,7 @@
     padding: 0 10px;
 }
 .category-blog-main .main-blog .tiny-time .time {
-    padding-left: 10px;
+    padding-left: 6px;
 }
 
 .category-blog-main .blog .tiny-time,
