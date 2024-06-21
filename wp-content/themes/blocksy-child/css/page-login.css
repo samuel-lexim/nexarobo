@@ -38,6 +38,7 @@
 
 .mpPageBlock .mepr-form {
     width: 330px;
+    max-width: 100%;
     text-align: center;
     margin: auto;
 }
@@ -104,12 +105,18 @@
     padding-left: 10px !important;
 }
 
+@media only screen and (max-width: 390px) {
+    .mpPageBlock {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
 @media only screen and (min-width: 768px) {
     .loginPageBlock {
         max-width: 640px;
     }
 }
-
 
 /* Register Page */
 #reg_forms {
