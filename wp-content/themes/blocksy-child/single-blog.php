@@ -43,7 +43,7 @@ if (have_posts()) {
                                 </div>
                                 <div class="container-box">
                                     <div class="tiny-time">
-                                        <span class="author-blog"><?php the_author(); ?></span>|<span class="day"><?= get_the_date('F j, Y') ?></span>|<span class="time"><?= $viewTime; ?></span>
+                                       <span class="day"><?= get_the_date('F j, Y') ?></span>|<span class="time"><?= $viewTime; ?></span>
                                     </div>
                                     <strong class="title-blog"><a href="<?php the_permalink(); ?>"> <?php the_title() ?></a></strong>
                                     <p class="description"><?= $acfSummaryDescription ?></p>

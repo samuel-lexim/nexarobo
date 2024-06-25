@@ -60,7 +60,7 @@
     text-align: left;
 }
 .blog-related-main .blog .tiny-time .day {
-    padding: 0 7px;
+    padding: 0 7px 0 0;
 }
 .blog-related-main .blog .tiny-time .author-blog  {
     padding-right: 7px;
