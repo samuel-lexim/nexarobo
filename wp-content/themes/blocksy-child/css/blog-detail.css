@@ -37,6 +37,7 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+    max-height: 263px;
 }
 .blog-related-main .section-blogs_slider {
     margin-left: -27px;
