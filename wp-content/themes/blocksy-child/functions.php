@@ -132,6 +132,26 @@ add_filter('blocksy:main:offcanvas:close:icon', function ($icon) {
     return $icon;
 });
 
+// Change dashboard Posts to Products
+function cp_change_post_object() {
+    $get_post_type = get_post_type_object('post');
+    $labels = $get_post_type->labels;
+    $labels->name = 'Products';
+    $labels->singular_name = 'Products';
+    $labels->add_new = 'Add Product';
+    $labels->add_new_item = 'Add Product';
+    $labels->edit_item = 'Edit Product';
+    $labels->new_item = 'Products';
+    $labels->view_item = 'View Product';
+    $labels->search_items = 'Search Product';
+    $labels->not_found = 'No Products found';
+    $labels->not_found_in_trash = 'No Products found in Trash';
+    $labels->all_items = 'All Products';
+    $labels->menu_name = 'Products';
+    $labels->name_admin_bar = 'Products';
+}
+add_action( 'init', 'cp_change_post_object' );
+
 // Remove default image sizes here.
 function remove_extra_image_sizes()
 {
