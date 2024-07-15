@@ -114,6 +114,9 @@
     max-width: 620px;
     max-height: 450px;
 }
+.category-blog-main .main-blog  .container-img ._image img {
+    max-height: 450px;
+}
 .category-blog-main .main-blog  .container-content {
     width: auto;
     padding: 0 0 0 40px;
