@@ -275,8 +275,7 @@ function custom_slick_posts_shortcode($atts)
             'post_type' => $atts['post_type'],
             'posts_per_page' => $atts['limit'],
             'post__in' => $ids,
-            'orderby' => 'date',
-            'order' => $atts['order'],
+            'orderby' => 'post__in'
         ];
     } else {
         $query_args = [
