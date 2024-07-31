@@ -196,6 +196,7 @@ add_filter("manage_page_posts_columns", "page_columns");
 function page_columns($columns)
 {
     $add_columns = [
+        'id'   => 'ID',
         'slug' => 'Slug',
     ];
     $res = array_slice($columns, 0, 2, true) +
@@ -210,6 +211,9 @@ function my_custom_page_columns($column)
 {
     global $post;
     switch ($column) {
+        case 'id' :
+            echo $post->ID;
+            break;
         case 'slug' :
             echo $post->post_name;
             break;
