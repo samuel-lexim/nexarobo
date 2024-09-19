@@ -25,9 +25,9 @@ nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg path {
     }
     
     .ct-panel .ct-panel-content-inner {
-        padding: 0 10px;
+        padding: 50px 10px;
         margin: 0;
-        overflow-y: hidden;
+        overflow-y: auto;
     }
     
     .ct-panel .mobile-menu .ct-sub-menu-parent {
@@ -49,6 +49,10 @@ nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg path {
     
     .ct-panel .sub-menu .ct-toggle-dropdown-mobile {
         display: none;
+    }
+    
+    .ct-panel [data-device="mobile"] ul[role="menubar"] > li.menu-item > ul.sub-menu {
+        overflow-y: hidden;
     }
     
     .ct-panel .sub-menu .sub-menu {
@@ -110,6 +114,7 @@ nav[class*=menu] li[class*=current-menu-] > .ct-sub-menu-parent svg path {
         width: auto;
         max-height: 700px;
         box-shadow: 3px 4px 10px 0 #0000001A;
+        overflow-y: auto;
     }
     
     .ct-header .menu .sub-menu .sub-menu {
