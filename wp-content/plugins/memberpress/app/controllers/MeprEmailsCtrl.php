@@ -75,9 +75,10 @@ class MeprEmailsCtrl extends MeprBaseCtrl
         'user_first_name'             => __('John', 'memberpress'),
         'user_last_name'              => __('Doe', 'memberpress'),
         'user_full_name'              => __('John Doe', 'memberpress'),
-        'user_address'                => __('111 Cool Avenue', 'memberpress') .'<br/>' .
+        'user_address'                => '<br/>' .
+                                       __('111 Cool Avenue', 'memberpress') .'<br/>' .
                                        __('New York, NY 10005', 'memberpress') . '<br/>' .
-                                       __('United States', 'memberpress'),
+                                       __('United States', 'memberpress') . '<br/>',
         'usermeta:(.*)'               => __('User Meta Field: $1', 'memberpress'),
         'membership_type'             => __('Bronze Edition', 'memberpress'),
         'signup_url'                  => home_url(),

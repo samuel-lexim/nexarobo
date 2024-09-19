@@ -1529,23 +1529,14 @@ class MeprUser extends MeprBaseModel {
       return '';
     }
 
-    $addr = $this->addP($addr1);
-    if($addr2 and !empty($addr2)) {
-        $addr .= $this->addP($addr2);
-    }
+    $addr = $addr1;
 
-    $addr .= $this->addP($city . ", " . $state . " " . $zip);
+    if($addr2 and !empty($addr2)) { $addr .= "<br/>{$addr2}"; }
+    if($country and !empty($country)) { $country = "<br/>{$country}"; } else { $country = ''; }
 
-    if($country and !empty($country)) {
-        $addr .= $this->addP($country);
-    }
+    $addr = sprintf( '<br/>' . __('%1$s', 'memberpress') . '<br/>' . __('%2$s, %3$s %4$s%5$s', 'memberpress') . '<br/>', $addr, $city, $state, $zip, $country );
 
     return MeprHooks::apply_filters( 'mepr-user-formatted-address', $addr, $this );
-  }
-
-  public function addP($text)
-  {
-      return "<p style='margin: 0 0 5px;'>" . $text . "</p>";
   }
 
   public function formatted_email() {

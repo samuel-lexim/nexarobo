@@ -360,7 +360,7 @@ abstract class MeprBaseGateway {
 
         <?php if(($grp = $product->group()) && count($grp->products('ids')) > 1 && count($grp->buyable_products()) >= 1): //Can't upgrade to no other options ?>
           <div id="mepr-upgrade-sub-<?php echo $subscription->id; ?>" class="mepr-white-popup mfp-hide">
-            <div style="text-align: center;">
+            <center>
               <div class="mepr-upgrade-sub-text">
                 <?php _e('Please select a new plan', 'memberpress'); ?>
               </div>
@@ -379,7 +379,7 @@ abstract class MeprBaseGateway {
                 <button class="mepr-btn mepr-upgrade-buy-now" data-id="<?php echo $subscription->id; ?>"><?php _e('Select Plan', 'memberpress'); ?></button>
                 <button class="mepr-btn mepr-upgrade-cancel"><?php _e('Cancel', 'memberpress'); ?></button>
               </div>
-            </div>
+            </center>
           </div>
           <?php ob_start(); ?>
           <?php
@@ -419,29 +419,19 @@ abstract class MeprBaseGateway {
         <?php endif; ?>
 
         <?php if($mepr_options->allow_cancel_subs and $this->can('cancel-subscriptions') && $subscription->status == MeprSubscription::$active_str): ?>
-          <?php
-          $expDate = new DateTime($subscription->expires_at);
-          $expDateFormated = $expDate->format('F j, Y');
-          ?>
           <div id="mepr-cancel-sub-<?php echo $subscription->id; ?>" class="mepr-white-popup mfp-hide">
-              <div class="mf-toggle-close" aria-label="Close">
-                  <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.54927 21H0L8.24556 10.2368L0.746365 0H5.2601L11.1244 8.18941L17.2019 0H21.538L13.8966 10.3538L22 21H17.4152L11.0178 12.3719L4.54927 21Z" fill="black"></path></svg>
-              </div>
-
             <div class="mepr-cancel-sub-text">
-              <h3><?php _e('Are you sure you want to cancel this subscription?', 'memberpress'); ?></h3>
-              <p>Your subscription will be expired by <?= $expDateFormated ?>.</p>
+              <?php _e('Are you sure you want to cancel this subscription?', 'memberpress'); ?>
             </div>
             <div class="mepr-cancel-sub-buttons">
-              <button class="mepr-btn mepr-left-margin mepr-confirm-yes" data-url="<?php echo "{$account_url}{$account_delim}action=cancel&sub={$subscription->id}"; ?>"><?php _e('Yes, Please', 'memberpress'); ?></button>
-              <button class="mepr-btn mepr-confirm-no"><?php _e('No, I will keep it', 'memberpress'); ?></button>
+              <button class="mepr-btn mepr-left-margin mepr-confirm-yes" data-url="<?php echo "{$account_url}{$account_delim}action=cancel&sub={$subscription->id}"; ?>"><?php _e('Yes', 'memberpress'); ?></button>
+              <button class="mepr-btn mepr-confirm-no"><?php _e('No', 'memberpress'); ?></button>
             </div>
           </div>
           <?php ob_start(); ?>
             <a href="#mepr-cancel-sub-<?php echo $subscription->id; ?>" class="mepr-open-cancel-confirm mepr-account-row-action mepr-account-cancel"><?php _e('Cancel', 'memberpress'); ?></a>
           <?php echo MeprHooks::apply_filters('mepr_custom_cancel_link', ob_get_clean(), $subscription); ?>
         <?php endif; ?>
-
       <?php endif; ?>
     <?php /* </div> */ ?>
     <?php

@@ -20,6 +20,7 @@
 
 	<?php wp_head(); ?>
 	<?php do_action('blocksy:head:end') ?>
+	<meta name="google-site-verification" content="WM8qnNRxiLOXsYejjzSfmvoYhw6KJklbMIJ9kyHD6mQ" />
 </head>
 
 <?php

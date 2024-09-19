@@ -28,7 +28,7 @@ class MeprUtils {
       return false;
     }
     global $current_screen;
-    return preg_match('/^(memberpress|mp-|mpcs-course)/', $current_screen->post_type) || preg_match('/^memberpress_page_memberpress-/', $current_screen->id);
+    return preg_match('/^(memberpress|mp-)/', $current_screen->post_type) || preg_match('/^memberpress_page_memberpress-/', $current_screen->id);
   }
 
   public static function is_image($filename) {
@@ -532,7 +532,7 @@ class MeprUtils {
     // If a full cc num happens to get here then it gets reduced to the last4 here
     $last4 = substr($last4, -4);
 
-    return "****-****-****-{$last4}";
+    return "**** **** **** {$last4}";
   }
 
   public static function calculate_proration_by_subs($old_sub, $new_sub, $reset_period=false) {
@@ -2595,5 +2595,17 @@ class MeprUtils {
     }
 
     return $data;
+  }
+
+  /**
+   * Formats the given content for display.
+   *
+   * Parses blocks, shortcodes and formats paragraphs.
+   *
+   * @param  string $content The content to format.
+   * @return string The formatted content.
+   */
+  public static function format_content($content): string {
+    return do_shortcode(shortcode_unautop(wpautop(do_blocks($content))));
   }
 } // End class

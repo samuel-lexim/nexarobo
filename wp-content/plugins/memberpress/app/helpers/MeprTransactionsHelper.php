@@ -92,7 +92,6 @@ class MeprTransactionsHelper {
         'biz_country',
         'login_url',
         'account_url',
-          'brand_payment'
       )
     );
   }
@@ -104,7 +103,6 @@ class MeprTransactionsHelper {
     $pm           = $txn->payment_method();
     $cpn          = $txn->coupon();
     $created_at   = MeprAppHelper::format_date($txn->created_at, '');
-    $brand =  get_stripe_charge_network_details($txn->trans_num);
 
     $unformatted_payment_total      = $txn->total;
     $unformatted_payment_subtotal   = $txn->amount;
@@ -191,8 +189,7 @@ class MeprTransactionsHelper {
       'biz_country'           => $mepr_options->attr('biz_country'),
       'login_page'            => $mepr_options->login_page_url(),
       'account_url'           => $mepr_options->account_page_url(),
-      'login_url'             => $mepr_options->login_page_url(),
-        'brand_payment'             => $brand
+      'login_url'             => $mepr_options->login_page_url()
     );
 
     // When lifetime, include these subscription vars too

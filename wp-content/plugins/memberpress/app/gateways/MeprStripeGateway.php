@@ -900,6 +900,13 @@ class MeprStripeGateway extends MeprBaseRealGateway {
       }
     }
 
+    if(($key = array_search('twint', $types)) !== false) {
+      if(!is_null($amount) && $amount > 5000) {
+        // TWINT does not support a payment amount greater than 5000 CHF
+        array_splice($types, $key, 1);
+      }
+    }
+
     return $types;
   }
 
@@ -2795,6 +2802,7 @@ class MeprStripeGateway extends MeprBaseRealGateway {
       <div class="mepr_spacer">&nbsp;</div>
       <input type="submit" class="mepr-submit" value="<?php echo esc_attr(_x('Submit', 'ui', 'memberpress')); ?>" />
       <img src="<?php echo esc_url(admin_url('images/loading.gif')); ?>" alt="<?php esc_attr_e('Loading...', 'memberpress'); ?>" style="display: none;" class="mepr-loading-gif" />
+
       <noscript><p class="mepr_nojs"><?php esc_html_e('Javascript is disabled in your browser. You will not be able to complete your purchase until you either enable JavaScript in your browser, or switch to a browser that supports it.', 'memberpress'); ?></p></noscript>
     </form>
     <?php
@@ -2964,10 +2972,9 @@ class MeprStripeGateway extends MeprBaseRealGateway {
               <div id="card-errors" role="alert" class="mepr-stripe-card-errors"></div>
             </div>
             <div class="mepr_spacer">&nbsp;</div>
-            <div class="centerLoading" style="position: relative">
             <input type="submit" class="mepr-submit" value="<?php echo esc_attr(_x('Submit', 'ui', 'memberpress')); ?>" />
             <img src="<?php echo esc_url(admin_url('images/loading.gif')); ?>" alt="<?php esc_attr_e('Loading...', 'memberpress'); ?>" style="display: none;" class="mepr-loading-gif" />
-            </div>
+
             <noscript><p class="mepr_nojs"><?php esc_html_e('Javascript is disabled in your browser. You will not be able to complete your purchase until you either enable JavaScript in your browser, or switch to a browser that supports it.', 'memberpress'); ?></p></noscript>
           </div>
         </form>
