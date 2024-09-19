@@ -141,6 +141,10 @@
     padding-right: 31px;
 }
 
+.plp-contact_us > .gspb_container > .wp-block-group.wp-block-group-is-layout-constrained {
+    position: initial;
+}
+
 .plp-contact_us > .gspb_container .wp-block-group .gspb_container {
     margin: 0 !important;
 }
